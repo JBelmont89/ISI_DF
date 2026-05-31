@@ -1,0 +1,20 @@
+---
+title: "ISI"
+format: revealjs
+---
+
+## Monitoring species distributions {.smaller}
+
+::: columns
+::: {.column width="40%"}
+-   Biodiversity monitoring programs have become essential to **understand** species distributions.
+
+-   The modelling of species distributions is important for both theoretical and applied ecology.
+
+-   The analysis of species distribution data is **challenging**
+:::
+
+::: {.column width="60%"}
+sss
+:::
+:::
