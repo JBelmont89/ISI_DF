@@ -4,7 +4,7 @@
     "href": "slides.html#section",
     "title": "Combining Efforts",
     "section": "",
-    "text": "“doing what little one can to increase the general stock of knowledge is as respectable an object of life, as one can in any likelihood pursue.”\nCharles Darwin"
+    "text": "“…doing what little one can to increase the general stock of knowledge is as respectable an object of life, as one can in any likelihood pursue.”\nCharles Darwin"
   },
   {
     "objectID": "slides.html#monitoring-species-distributions",
@@ -165,7 +165,7 @@
     "href": "slides.html#opportunistic-data",
     "title": "Combining Efforts",
     "section": "Opportunistic Data",
-    "text": "Opportunistic Data\nMost of the times we we only have information of where species is available.\nOpportunistic encounters produce unstructured data which constitute the majority of available information.\n\nHarnessing the power of opportunistic data is not an easy task!\n\n\n\n\n\n\n\n\nAdvantages 😄👍\nDisadvantages 😔👎\n\n\n\n\nExtensive taxonomic, spatial and temporal coverage\nUnder-reporting of rare and inconspicuous species.\n\n\nye-catching species that are easily identifiable by participants.\nVarying recording skills and uneven sampling effort."
+    "text": "Opportunistic Data\nMost of the times we we only have information of where species is available.\nOpportunistic encounters produce unstructured data which constitute the majority of available information.\n\nHarnessing the power of opportunistic data is not an easy task!\n\n\n\n\n\n\n\n\nAdvantages 😄👍\nDisadvantages 😔👎\n\n\n\n\nExtensive taxonomic, spatial and temporal coverage\nUnder-reporting of rare and inconspicuous species.\n\n\nEye-catching species that are easily identifiable by participants.\nVarying recording skills and uneven sampling effort."
   },
   {
     "objectID": "slides.html#sampling-bias-in-cs-opportunistic-data",
@@ -221,14 +221,14 @@
     "href": "slides.html#integrated-species-distribution-model",
     "title": "Combining Efforts",
     "section": "Integrated Species Distribution Model",
-    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for presence-only data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\n\n\n\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int{A_i}\\lambda(s)~ds\\right),\n\\]"
+    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for presence-only data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\n\n\n\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int_{A_i}\\lambda(s)~ds\\right),\n\\]"
   },
   {
     "objectID": "slides.html#integrated-species-distribution-model-1",
     "href": "slides.html#integrated-species-distribution-model-1",
     "title": "Combining Efforts",
     "section": "Integrated Species Distribution Model",
-    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for CS data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int{A_i}\\lambda(s)~ds\\right),\n\\]\nThus, the intensity-based OM likelihood becomes:\n\\[\nL(\\psi_i,p_{ij}) = \\left[\\prod_i^N \\left(1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\}\\right)\\prod_j^{K_i}p_{ij}^{y_{ij}}(1-p_{ij})^{1-y_{ij}} \\right] \\times\\\\ \\prod_{i=N+1}^M\\left[ \\left(1-\\exp\\left\\{\\int_{A_i}\\lambda(s) ds\\right\\}\\right) \\prod_j^{K_i}(1-p_{ij})+\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}  \\right].\n\\]"
+    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for CS data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int_{A_i}\\lambda(s)~ds\\right),\n\\]\nThus, the intensity-based OM likelihood becomes:\n\\[\nL(\\psi_i,p_{ij}) = \\left[\\prod_i^N \\left(1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\}\\right)\\prod_j^{K_i}p_{ij}^{y_{ij}}(1-p_{ij})^{1-y_{ij}} \\right] \\times\\\\ \\prod_{i=N+1}^M\\left[ \\left(1-\\exp\\left\\{\\int_{A_i}\\lambda(s) ds\\right\\}\\right) \\prod_j^{K_i}(1-p_{ij})+\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}  \\right].\n\\]"
   },
   {
     "objectID": "slides.html#integrated-species-distribution-model-2",

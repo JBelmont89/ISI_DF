@@ -34,7 +34,7 @@ bibliography: references.bib
 :::
 
 ::: quote-gold
-> "*doing what little one can to increase the general stock of knowledge is as respectable an object of life, as one can in any likelihood pursue.*"
+> "...*doing what little one can to increase the general stock of knowledge is as respectable an object of life, as one can in any likelihood pursue.*"
 >
 > Charles Darwin
 :::
@@ -306,7 +306,7 @@ Opportunistic encounters produce **unstructured data** which constitute the majo
 | Advantages 😄👍 | Disadvantages 😔👎 |
 |------------------------------------|------------------------------------|
 | Extensive taxonomic, spatial and temporal coverage | Under-reporting of rare and inconspicuous species. |
-| ye-catching species that are easily identifiable by participants. | Varying recording skills and uneven sampling effort. |
+| Eye-catching species that are easily identifiable by participants. | Varying recording skills and uneven sampling effort. |
 
 ## Sampling Bias in CS opportunistic data {.smaller}
 
@@ -408,7 +408,7 @@ $$
 -   The probability that an areal unit $A_i$ is occupied by a species is given by:
 
 $$
-\psi_i = \mathrm{Pr}\left[N(A_i)>0\right] = 1 - \exp\left(-\int{A_i}\lambda(s)~ds\right),
+\psi_i = \mathrm{Pr}\left[N(A_i)>0\right] = 1 - \exp\left(-\int_{A_i}\lambda(s)~ds\right),
 $$
 
 ## Integrated Species Distribution Model {.smaller auto-animate="true"}
@@ -420,7 +420,7 @@ $$
 -   The probability that an areal unit $A_i$ is occupied by a species is given by:
 
 $$
-\psi_i = \mathrm{Pr}\left[N(A_i)>0\right] = 1 - \exp\left(-\int{A_i}\lambda(s)~ds\right),
+\psi_i = \mathrm{Pr}\left[N(A_i)>0\right] = 1 - \exp\left(-\int_{A_i}\lambda(s)~ds\right),
 $$
 
 Thus, the intensity-based OM likelihood becomes:
