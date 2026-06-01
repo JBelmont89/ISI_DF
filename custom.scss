@@ -1,0 +1,11 @@
+/*-- scss:defaults --*/
+$body-bg: #ffffff;
+$body-color: #1c1c1c;
+$link-color: #0066CC;
+$font-family-sans-serif: 'DM Sans', system-ui, sans-serif;
+$font-family-serif: 'EB Garamond', Georgia, serif;
+
+/*-- scss:rules --*/
+.quarto-title { display: none; }
+main.content { padding: 0 !important; max-width: 100% !important; }
+#quarto-content > * { padding: 0 !important; }

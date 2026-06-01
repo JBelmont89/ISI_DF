@@ -1,9 +1,39 @@
 ---
-title: "About"
+title: " "
+page-layout: full
+toc: false
 ---
 
-About this site
+```{=html}
+<section class="page-header">
+  <div class="section-inner">
+    <h1 class="page-title">Talks & Presentations</h1>
+    <p class="page-subtitle">Slides from conferences, seminars, and workshops.</p>
+  </div>
+</section>
 
-```{r}
-1 + 1
+<section class="talks-full-section">
+  <div class="section-inner">
+    <div class="talks-full-grid">
+
+      <a class="talk-card-full" href="slides.html" target="_blank">
+        <div class="talk-card-left">
+          <span class="talk-year">2025</span>
+        </div>
+        <div class="talk-card-right">
+          <p class="talk-event">ISI World Statistics Congress</p>
+          <p class="talk-full-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></p>
+          <p class="talk-desc">Presentation on integrated species distribution models combining citizen science presence-only records with structured survey data via the INLA/inlabru framework.</p>
+          <span class="talk-cta">View slides →</span>
+        </div>
+      </a>
+
+      <!-- =====================================================
+           ADD NEW TALKS BELOW — copy and paste the block above
+           and update: href, year, event, title, desc
+           ===================================================== -->
+
+    </div>
+  </div>
+</section>
 ```

@@ -1,11 +1,130 @@
 ---
-title: "ISI_talk"
+title: " "
+page-layout: full
+toc: false
 ---
 
-This is a Quarto website.
+```{=html}
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-label">Lecturer in Statistics & Data Analysis</p>
+      <h1 class="hero-name">Jafet<br>Belmont<br>Osuna</h1>
+      <p class="hero-affil">School of Mathematics & Statistics<br>University of Glasgow</p>
+      <div class="hero-links">
+        <a href="mailto:Jafet.BelmontOsuna@glasgow.ac.uk" class="hero-link">✉ Email</a>
+        <a href="https://orcid.org/0000-0002-6879-4412" class="hero-link" target="_blank">
+          <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="vertical-align:middle;margin-right:4px;">ORCID
+        </a>
+        <a href="https://www.gla.ac.uk/schools/mathematicsstatistics/staff/jafetbelmontosuna/" class="hero-link" target="_blank">UofG Profile</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="https://www.gla.ac.uk/media/Media_913282_smxx.jpg" alt="Jafet Belmont" class="hero-photo">
+    </div>
+  </div>
+</section>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<section class="about-section">
+  <div class="section-inner">
+    <h2 class="section-heading">About</h2>
+    <div class="about-grid">
+      <div class="about-bio">
+        <p>I am a Lecturer in Statistics and Data Analysis at the University of Glasgow. My work focuses on developing statistical models to analyse biodiversity data from citizen science projects, applying Bayesian methods to characterise biological communities in changing environments.</p>
+        <p>I received my BSc in Biology from UNAM (México, 2014), Specialist in Applied Statistics from IIMAS-UNAM (2016), MSc in Environmental Statistics from the University of Glasgow (2017), and PhD in Statistics (2021). I have been employed by the University of Glasgow since 2018.</p>
+      </div>
+      <div class="about-interests">
+        <h3>Research Interests</h3>
+        <ul>
+          <li>Species distribution modelling</li>
+          <li>Citizen science data</li>
+          <li>Bayesian spatial statistics</li>
+          <li>INLA / inlabru</li>
+          <li>Model validation & diagnostics</li>
+          <li>Machine learning for ecological data</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-```{r}
-1 + 1
+<section class="pubs-section">
+  <div class="section-inner">
+    <h2 class="section-heading">Selected Publications</h2>
+    <ol class="pub-list">
+      <li>
+        <span class="pub-authors">Belmont, J., Martino, S., Illian, J., &amp; Rue, H.</span>
+        <span class="pub-year">(2025)</span>
+        <span class="pub-title">Contribution to the Discussion of the 'Discussion meeting on the analysis of citizen science data'.</span>
+        <span class="pub-journal">Journal of the Royal Statistical Society: Series A, 188(3), 708–710.</span>
+        <a class="pub-doi" href="https://doi.org/10.1093/jrsssa/qnaf022" target="_blank">DOI</a>
+      </li>
+      <li>
+        <span class="pub-authors">Wilkie, C. et al.</span>
+        <span class="pub-year">(2025)</span>
+        <span class="pub-title">Landscape-scale responses of freshwater biodiversity to connectivity and stressors.</span>
+        <span class="pub-journal">Global Ecology and Biogeography, 34(6), e70069.</span>
+        <a class="pub-doi" href="https://doi.org/10.1111/geb.70069" target="_blank">DOI</a>
+      </li>
+      <li>
+        <span class="pub-authors">Belmont, J., Martino, S., Illian, J., &amp; Rue, H.</span>
+        <span class="pub-year">(2024)</span>
+        <span class="pub-title">Spatio-temporal occupancy models with INLA.</span>
+        <span class="pub-journal">Methods in Ecology and Evolution, 15(11), 2087–2100.</span>
+        <a class="pub-doi" href="https://doi.org/10.1111/2041-210X.14422" target="_blank">DOI</a>
+      </li>
+      <li>
+        <span class="pub-authors">Belmont Osuna, J., Miller, C., Scott, M., &amp; Wilkie, C.</span>
+        <span class="pub-year">(2022)</span>
+        <span class="pub-title">A new statistical approach for identifying rare species under imperfect detection.</span>
+        <span class="pub-journal">Diversity and Distributions, 28(5), 882–893.</span>
+        <a class="pub-doi" href="https://doi.org/10.1111/ddi.13495" target="_blank">DOI</a>
+      </li>
+      <li>
+        <span class="pub-authors">Belmont, J. et al.</span>
+        <span class="pub-year">(2018)</span>
+        <span class="pub-title">Priming effects on seed germination of two perennial herb species in a disturbed lava field in central Mexico.</span>
+        <span class="pub-journal">Seed Science Research, 28(1), 63–71.</span>
+        <a class="pub-doi" href="https://doi.org/10.1017/S0960258518000016" target="_blank">DOI</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="talks-section">
+  <div class="section-inner">
+    <h2 class="section-heading">Talks & Presentations</h2>
+    <div class="talks-grid">
+      <a class="talk-card" href="slides.html" target="_blank">
+        <div class="talk-meta">ISI World Statistics Congress · 2025</div>
+        <div class="talk-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></div>
+        <div class="talk-tag">View slides →</div>
+      </a>
+      <!-- Add more talk cards here as you create new presentations -->
+      <!-- Example:
+      <a class="talk-card" href="talks/talk2/slides.html" target="_blank">
+        <div class="talk-meta">Conference Name · Year</div>
+        <div class="talk-title">Your Talk Title Here</div>
+        <div class="talk-tag">View slides →</div>
+      </a>
+      -->
+    </div>
+  </div>
+</section>
+
+<section class="supervision-section">
+  <div class="section-inner">
+    <h2 class="section-heading">PhD Supervision</h2>
+    <div class="supervision-grid">
+      <div class="supervisee">
+        <p class="supervisee-name">Louise Blackman</p>
+        <p class="supervisee-topic">Statistical methodology for assessing the impacts of offshore renewable developments on marine wildlife</p>
+      </div>
+      <div class="supervisee">
+        <p class="supervisee-name">Christine Duffield</p>
+        <p class="supervisee-topic">Spatiotemporal modelling and assessment of cetacean recording using multiple data sources</p>
+      </div>
+    </div>
+  </div>
+</section>
 ```

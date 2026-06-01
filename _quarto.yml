@@ -1,21 +1,24 @@
 project:
   type: website
   output-dir: docs
+
 website:
-  title: "ISI_talk"
+  title: "Jafet Belmont Osuna"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: talks.qmd
+        text: Talks
+    right:
+      - icon: envelope
+        href: mailto:Jafet.BelmontOsuna@glasgow.ac.uk
+      - icon: mortarboard
+        href: https://orcid.org/0000-0002-6879-4412
+        target: _blank
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: [flatly, custom.scss]
     css: styles.css
-    toc: true
-
-editor: visual
-
+    toc: false
