@@ -121,8 +121,12 @@ toc: false
         <p class="supervisee-topic">Statistical methodology for assessing the impacts of offshore renewable developments on marine wildlife</p>
       </div>
       <div class="supervisee">
-        <p class="supervisee-name">Christine Duffield</p>
-        <p class="supervisee-topic">Spatiotemporal modelling and assessment of cetacean recording using multiple data sources</p>
+        <p class="supervisee-name">Iain Bell</p>
+        <p class="supervisee-topic">Spatiotemporal multivariate modelling and water pollutants under limit of detection</p>
+      </div>
+            <div class="supervisee">
+        <p class="supervisee-name">Katarina Skopalova</p>
+        <p class="supervisee-topic">Statistical methods for Capture Recapture data under batchmarking for open populations</p>
       </div>
     </div>
   </div>

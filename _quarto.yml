@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: talks.qmd
+      - href: about.qmd
         text: Talks
     right:
       - icon: envelope

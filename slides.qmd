@@ -6,6 +6,7 @@ format:
   revealjs:
     logo:  logo.png
     theme: uofg_theme.scss
+    footer: "<a href='../index.html'>Back to Home</a>"
     header-includes: |
       <script src="custom.js" type="application/javascript"></script>
 title-slide-attributes: 
@@ -32,7 +33,7 @@ bibliography: references.bib
 ::: {style="height: 50px;"}
 :::
 
-:::{.quote-gold}
+::: quote-gold
 > "*doing what little one can to increase the general stock of knowledge is as respectable an object of life, as one can in any likelihood pursue.*"
 >
 > Charles Darwin
@@ -302,12 +303,10 @@ Opportunistic encounters produce **unstructured data** which constitute the majo
 
 -   Harnessing the power of opportunistic data is not an easy task!
 
-| Advantages 😄👍  | Disadvantages 😔👎 |
-|------|------|
-| Extensive taxonomic, spatial and temporal coverage     |  Under-reporting of rare and inconspicuous species.    |
-|   ye-catching species that are easily identifiable by participants.   |    Varying recording skills and uneven sampling effort.   |
-
-
+| Advantages 😄👍 | Disadvantages 😔👎 |
+|------------------------------------|------------------------------------|
+| Extensive taxonomic, spatial and temporal coverage | Under-reporting of rare and inconspicuous species. |
+| ye-catching species that are easily identifiable by participants. | Varying recording skills and uneven sampling effort. |
 
 ## Sampling Bias in CS opportunistic data {.smaller}
 
@@ -812,12 +811,11 @@ $$
 ## Where do I learn more about INLA and `inlabru` {.smaller}
 
 ::: {.callout-warning icon="false"}
-##  Website-tutorials
+## Website-tutorials
 
 `inlabru` <https://inlabru-org.github.io/inlabru/>
 
 `R-INLA` <https://www.r-inla.org/home>
-
 :::
 
 ::: {.callout-tip icon="false"}
@@ -826,11 +824,10 @@ $$
 `inlabru` <https://github.com/inlabru-org/inlabru/discussions>
 
 `R-INLA` <https://groups.google.com/g/r-inla-discussion-group>
-
 :::
 
 ::: {.callout-note icon="false"}
-##  Books
+## Books
 
 -   Blangiardo, M., & Cameletti, M. (2015). Spatial and spatio-temporal Bayesian models with R-INLA. John Wiley & Sons.
 
@@ -839,17 +836,14 @@ $$
 -   Krainski, E., Gómez-Rubio, V., Bakka, H., Lenzi, A., Castro-Camilo, D., Simpson, D., ... & Rue, H. (2018). Advanced spatial modeling with stochastic partial differential equations using R and INLA. Chapman and Hall/CRC.
 
 -   Wang, X., Yue, Y. R., & Faraway, J. J. (2018). Bayesian regression modeling with INLA. Chapman and Hall/CRC.
-
 :::
 
 ##  {background-image="river.png" background-size="100%"}
 
-
 ::: {style="height: 50px;"}
 :::
 
-
-:::{.quote-gold}
+::: quote-gold
 > "*An understanding of the natural world, and what's in it as a source of not only great curiosity but great fulfillment.*"
 >
 > Sir. David Attenborough
@@ -857,9 +851,7 @@ $$
 
 `Thanks for your attention`
 
-
 ## References {.smaller .scrollable style="margin-top: 0;"}
-
 
 ::: {#refs}
 :::
