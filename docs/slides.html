@@ -416,7 +416,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) &amp;= \underbrace{\pr
 \]</span></p>
 <p>The likelihood for occupancy model is factorized into univariate models for the marginal distribution of each site detection history.</p>
 <p><span class="math display">\[
-L(\pmb{\psi},\textbf{p}\|\mathbf{y}\_1,\ldots,\mathbf{y}*M) =* \prod{i=1}^{M} \left[\psi_i \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \mathbb{I}_{\sum_j y_{ij} = 0}(1-\psi_i) \right]
+L(\pmb{\psi},\textbf{p}\mid \mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \left[\psi_i \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \mathbb{I}_{\sum_j y_{ij} = 0}(1-\psi_i) \right]
 \]</span></p>
 </section>
 <section id="estimating-occupancy-models-in-inla" class="slide level2 smaller">
