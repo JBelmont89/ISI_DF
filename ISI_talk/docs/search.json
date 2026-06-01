@@ -1,10 +1,416 @@
 [
   {
+    "objectID": "slides.html#section",
+    "href": "slides.html#section",
+    "title": "Combining Efforts",
+    "section": "",
+    "text": "“doing what little one can to increase the general stock of knowledge is as respectable an object of life, as one can in any likelihood pursue.”\nCharles Darwin"
+  },
+  {
     "objectID": "slides.html#monitoring-species-distributions",
     "href": "slides.html#monitoring-species-distributions",
-    "title": "ISI",
+    "title": "Combining Efforts",
     "section": "Monitoring species distributions",
-    "text": "Monitoring species distributions\n\n\n\nBiodiversity monitoring programs have become essential to understand species distributions.\nThe modelling of species distributions is important for both theoretical and applied ecology.\nThe analysis of species distribution data is challenging\n\n\nsss"
+    "text": "Monitoring species distributions\n\nImagine planning a city without knowing where people live. This is exactly what we risk doing in conservation if we don’t accurately map where species exist—and why."
+  },
+  {
+    "objectID": "slides.html#monitoring-species-distributions-1",
+    "href": "slides.html#monitoring-species-distributions-1",
+    "title": "Combining Efforts",
+    "section": "Monitoring species distributions",
+    "text": "Monitoring species distributions\n\n\n\n\n\n\nBiodiversity monitoring programs have become essential to understand species distributions.\nThe modelling of species distributions is important for both theoretical and applied ecology.\nThe analysis of species distribution data is challenging\n\n\n\n\n\n\n\n\n\n\nFigure modified from (Mostert and O’Hara 2023)"
+  },
+  {
+    "objectID": "slides.html#the-challenge-of-data",
+    "href": "slides.html#the-challenge-of-data",
+    "title": "Combining Efforts",
+    "section": "The Challenge of Data",
+    "text": "The Challenge of Data\n\nThe information available for species distributions models is radically changing\nNew opportunities for surveying wildlife in space and time."
+  },
+  {
+    "objectID": "slides.html#the-challenge-of-data-1",
+    "href": "slides.html#the-challenge-of-data-1",
+    "title": "Combining Efforts",
+    "section": "The Challenge of Data",
+    "text": "The Challenge of Data\n\nThe information available for species distributions models is radically changing\nNew opportunities for surveying wildlife in space and time.\nAs the volume of recorded ecological data continues to grow, so does the need for computationally efficient methods for fitting complex models."
+  },
+  {
+    "objectID": "slides.html#inla-in-ecology",
+    "href": "slides.html#inla-in-ecology",
+    "title": "Combining Efforts",
+    "section": "INLA in Ecology",
+    "text": "INLA in Ecology\nThe R-INLA package has become a powerful tool for fitting complex models in ecology.\n\nGoogle scholar search (13/06/2025)"
+  },
+  {
+    "objectID": "slides.html#what-is-inla-and-inlabru",
+    "href": "slides.html#what-is-inla-and-inlabru",
+    "title": "Combining Efforts",
+    "section": "What is INLA and inlabru?",
+    "text": "What is INLA and inlabru?\n\nShort Answer\n\n\nThe Integrated Nested Laplace Approximation (INLA) is a fast method to do Bayesian inference with latent Gaussian models and inlabru is an R-package that implements this method with a flexible and simple interface."
+  },
+  {
+    "objectID": "slides.html#what-is-inla-and-inlabru-1",
+    "href": "slides.html#what-is-inla-and-inlabru-1",
+    "title": "Combining Efforts",
+    "section": "What is INLA and inlabru?",
+    "text": "What is INLA and inlabru?\n\nShort Answer\n\n\nThe Integrated Nested Laplace Approximation (INLA) is a fast method to do Bayesian inference with latent Gaussian models and inlabru is an R-package that implements this method with a flexible and simple interface.\n\n\nThe (much) longer answer\n\nRue, H., Martino, S. and Chopin, N. (2009), Approximate Bayesian inference for latent Gaussian models by using integrated nested Laplace approximations. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 71: 319-392.\nVan Niekerk, J., Krainski, E., Rustand, D., & Rue, H. (2023). A new avenue for Bayesian inference with INLA. Computational Statistics & Data Analysis, 181, 107692.\nLindgren, F., Bachl, F., Illian, J., Suen, M. H., Rue, H., & Seaton, A. E. (2024). inlabru: software for fitting latent Gaussian models with non-linear predictors. arXiv preprint arXiv:2407.00791.\nLindgren, F., Bolin, D., & Rue, H. (2022). The SPDE approach for Gaussian and non-Gaussian fields: 10 years and still running. Spatial Statistics, 50, 100599."
+  },
+  {
+    "objectID": "slides.html#why-inla",
+    "href": "slides.html#why-inla",
+    "title": "Combining Efforts",
+    "section": "Why INLA?",
+    "text": "Why INLA?\n\nEcological systems are inherently complex\nThe way we observe these processes also matter!\n\n\nsometimes we do not observe what is actually there …\n\n\n\n\n\n\n\n\nFigure from (Guillera-Arroita 2016)"
+  },
+  {
+    "objectID": "slides.html#the-problem-with-detection",
+    "href": "slides.html#the-problem-with-detection",
+    "title": "Combining Efforts",
+    "section": "The problem with detection",
+    "text": "The problem with detection"
+  },
+  {
+    "objectID": "slides.html#the-problem-with-detection-1",
+    "href": "slides.html#the-problem-with-detection-1",
+    "title": "Combining Efforts",
+    "section": "The problem with detection",
+    "text": "The problem with detection"
+  },
+  {
+    "objectID": "slides.html#possible-biases-due-to-imperfect-detection",
+    "href": "slides.html#possible-biases-due-to-imperfect-detection",
+    "title": "Combining Efforts",
+    "section": "Possible biases due to imperfect detection",
+    "text": "Possible biases due to imperfect detection\n\n\n\n\n\nUnderestimation of species distribution\nBias of the estimated relationship with covariates\nPredictive models might reflect detection instead of occurrence"
+  },
+  {
+    "objectID": "slides.html#the-occupancy-model-for-survey-data",
+    "href": "slides.html#the-occupancy-model-for-survey-data",
+    "title": "Combining Efforts",
+    "section": "The Occupancy model for survey data",
+    "text": "The Occupancy model for survey data\n\n\nBasic idea: Data contain information about two processes:\n\nThe species occupancy (ecological process)\nThe detection (observation process)\n\nBasic model form\n\nEcological process\n\\[\nz_i\\sim\\text{Bernoulli}(\\psi_i)\n\\]\nObservation process\n\\[\ny_{ij}\\mid z_i=z_i\\sim\\text{Bernoulli}(p_{ij})\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote: The model requires multiple visits per site to be identifiable"
+  },
+  {
+    "objectID": "slides.html#the-occupancy-model-for-species-distributions",
+    "href": "slides.html#the-occupancy-model-for-species-distributions",
+    "title": "Combining Efforts",
+    "section": "The Occupancy Model for Species Distributions",
+    "text": "The Occupancy Model for Species Distributions"
+  },
+  {
+    "objectID": "slides.html#the-occupancy-model-for-species-distributions-1",
+    "href": "slides.html#the-occupancy-model-for-species-distributions-1",
+    "title": "Combining Efforts",
+    "section": "The Occupancy Model for Species Distributions",
+    "text": "The Occupancy Model for Species Distributions"
+  },
+  {
+    "objectID": "slides.html#occupancy-models-in-inla",
+    "href": "slides.html#occupancy-models-in-inla",
+    "title": "Combining Efforts",
+    "section": "Occupancy Models in INLA",
+    "text": "Occupancy Models in INLA\nFor a set of set of \\(M\\) discrete sites, let the detection history of the \\(i\\)th site \\(\\mathbf{d}_i= y_{i1},\\ldots,y_{iK}\\).\nThe joint likelihood is then:\n\\[\n\\begin{aligned}\nL(\\pmb{\\psi},\\textbf{p}|\\mathbf{y}_1,\\ldots,\\mathbf{y}_M) &= \\underbrace{\\prod_{i=1}^{m} \\left[\\psi_i \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}}\\right]}_{\\text{sites with at least one detection}}\\underbrace{\\prod_{i=m+1}^M\\left[\\psi_i\\prod_j^{K_i}(1-p_{ij})+(1-\\psi_i)\\right]}_{\\text{sites with only 0's}}. \\\\\n&= \\prod_{i=1}^{M} \\left[\\psi_i \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \\mathbb{I}_{\\sum_j y_{ij} = 0}(1-\\psi_i) \\right],\n\\end{aligned}\n\\]\nThe likelihood for occupancy model is factorized into univariate models for the marginal distribution of each site detection history.\n\\[\nL(\\pmb{\\psi},\\textbf{p}\\|\\mathbf{y}\\_1,\\ldots,\\mathbf{y}*M) =* \\prod{i=1}^{M} \\left[\\psi_i \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \\mathbb{I}_{\\sum_j y_{ij} = 0}(1-\\psi_i) \\right]\n\\]"
+  },
+  {
+    "objectID": "slides.html#estimating-occupancy-models-in-inla",
+    "href": "slides.html#estimating-occupancy-models-in-inla",
+    "title": "Combining Efforts",
+    "section": "Estimating Occupancy Models in INLA",
+    "text": "Estimating Occupancy Models in INLA\nBelmont et al. (2024) show how this a LGM (and thus possible to be fitted using INLA ) under these conditions:\n\nDetection histories are conditional independent given the occurrence and detection probabilities.\nConsidering detection probabilities \\(p\\) as hyperparameters and link the linear predictor \\(\\eta_i\\) to the probability of occurrence \\(\\psi_i\\) via a known link function \\(g(\\cdot)\\).\nAssume a Gaussian prior for \\(\\eta_i\\).\n\nThe linear predictor \\(\\eta_i\\) can include covariates, smooth terms, random effects, etc. e.g., \\[g(\\psi_i)=\\beta_0 +X'\\beta + \\omega(s)\\]\nWhile the detection model is compromised by a less complex structure where only a limited number of site or survey level covariates can be included, e.g., \\[\\text{logit}(p_{ij})= \\gamma_0 + \\gamma_1 \\times w_{ij} + \\ldots\\]"
+  },
+  {
+    "objectID": "slides.html#planned-survey-data",
+    "href": "slides.html#planned-survey-data",
+    "title": "Combining Efforts",
+    "section": "Planned Survey Data",
+    "text": "Planned Survey Data\nStructured data from planned surveys has been a primary source of information for modelling species distributions\n\nStructured data involves constant monitoring schemes using standardised methods at sites on a regular basis.\n\n\nFigure modified from (Guillera-Arroita 2016)"
+  },
+  {
+    "objectID": "slides.html#planned-structured-survey-data",
+    "href": "slides.html#planned-structured-survey-data",
+    "title": "Combining Efforts",
+    "section": "Planned Structured Survey Data",
+    "text": "Planned Structured Survey Data\nTraditionally, researchers would need to choose between analysing small quantities of structured data and large quantities of unstructured data.\n\nStructured data involves constant monitoring schemes using standardised methods at sites on a regular basis.\nThese are expensive to collect and tend to be geographically and temporally restricted."
+  },
+  {
+    "objectID": "slides.html#occupancy-models-and-citizen-science",
+    "href": "slides.html#occupancy-models-and-citizen-science",
+    "title": "Combining Efforts",
+    "section": "Occupancy models and citizen science",
+    "text": "Occupancy models and citizen science\nCitizen science projects offer a cost-effective solution to investigate species distributions at large spatial and temporal scales.\n\nCitizen science \\(\\neq\\) complete lack of structure\n\nsemi-structured surveys\nopportunistic encounters"
+  },
+  {
+    "objectID": "slides.html#analysing-de-distribution-of-ringlet-butterfly-in-the-uk",
+    "href": "slides.html#analysing-de-distribution-of-ringlet-butterfly-in-the-uk",
+    "title": "Combining Efforts",
+    "section": "Analysing de distribution of Ringlet butterfly in the UK",
+    "text": "Analysing de distribution of Ringlet butterfly in the UK\nWe analysed the distribution of the Ringlet butterfly (Aphantopus hyperantus) using \\(&gt;\\) 2 million records from 140,887 unique 1 km\\(^2\\) from the BNM programme between 1970 and 2014.\n\nOccupancy model framework where\n\n\\[\n\\begin{aligned}\ny_{ijt} = \\begin{cases} 1 & \\text{if Ringlet is on checklist } i \\text{ on visit } j \\text{ during year } t\\\\ 0 & \\text{any species other than Ringlet is recorded}\\end{cases}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides.html#analysing-de-distribution-of-ringlet-butterfly-in-the-uk-1",
+    "href": "slides.html#analysing-de-distribution-of-ringlet-butterfly-in-the-uk-1",
+    "title": "Combining Efforts",
+    "section": "Analysing de distribution of Ringlet butterfly in the UK",
+    "text": "Analysing de distribution of Ringlet butterfly in the UK\nWe analysed the distribution of the Ringlet butterfly (Aphantopus hyperantus) using \\(&gt;\\) 2 million records from 140,887 unique 1 km\\(^2\\) from the BNM programme between 1970 and 2014.\n\nOccupancy model framework where\nRelative list length and date of visit allow us to account for varying sampling effort and seasonality in detection probabilities."
+  },
+  {
+    "objectID": "slides.html#analysing-de-distribution-of-ringlet-butterfly-in-the-uk-2",
+    "href": "slides.html#analysing-de-distribution-of-ringlet-butterfly-in-the-uk-2",
+    "title": "Combining Efforts",
+    "section": "Analysing de distribution of Ringlet butterfly in the UK",
+    "text": "Analysing de distribution of Ringlet butterfly in the UK\nWe analysed the distribution of the Ringlet butterfly (Aphantopus hyperantus) using \\(&gt;\\) 2 million records from 140,887 unique 1 km\\(^2\\) from the BNM programme between 1970 and 2014.\n\nOccupancy model framework where\nRelative list length and date of visit allow us to account for varying sampling effort and seasonality in detection probabilities.\nAnalysing this entire data set without any spatial effects only took 30 seconds compared to a 19h MCMC algorithm.\n\n\n\nincluding a spatial effect increased the running time to 5 minutes only on a standard Apple M2 Pro machine!"
+  },
+  {
+    "objectID": "slides.html#opportunistic-data",
+    "href": "slides.html#opportunistic-data",
+    "title": "Combining Efforts",
+    "section": "Opportunistic Data",
+    "text": "Opportunistic Data\nMost of the times we we only have information of where species is available.\nOpportunistic encounters produce unstructured data which constitute the majority of available information.\n\nHarnessing the power of opportunistic data is not an easy task!\n\n\n\n\n\n\n\n\nAdvantages 😄👍\nDisadvantages 😔👎\n\n\n\n\nExtensive taxonomic, spatial and temporal coverage\nUnder-reporting of rare and inconspicuous species.\n\n\nye-catching species that are easily identifiable by participants.\nVarying recording skills and uneven sampling effort."
+  },
+  {
+    "objectID": "slides.html#sampling-bias-in-cs-opportunistic-data",
+    "href": "slides.html#sampling-bias-in-cs-opportunistic-data",
+    "title": "Combining Efforts",
+    "section": "Sampling Bias in CS opportunistic data",
+    "text": "Sampling Bias in CS opportunistic data\nLarge volumes of CS data come from Opportunistic surveys where sampling effort is biased across space and time.\n\nPeople visit more certain places than others.\n\n\nElevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from Botella et al. (2020)).\n\nSmall populations at lower elevation could be over-sampled.\nIf we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated"
+  },
+  {
+    "objectID": "slides.html#data-integration",
+    "href": "slides.html#data-integration",
+    "title": "Combining Efforts",
+    "section": "Data Integration",
+    "text": "Data Integration\nCan we do better by integrating multiple data sources?\n\nData integration: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.\n\n\nObtained from (Isaac et al. 2020)"
+  },
+  {
+    "objectID": "slides.html#data-integration-1",
+    "href": "slides.html#data-integration-1",
+    "title": "Combining Efforts",
+    "section": "Data Integration",
+    "text": "Data Integration\nCan we do better by integrating multiple data sources?\n\nData integration: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.\nCombining different data sources is challenging due to differences in study design, spatial and temporal coverage, and potential sampling biases."
+  },
+  {
+    "objectID": "slides.html#thinned-point-process-model",
+    "href": "slides.html#thinned-point-process-model",
+    "title": "Combining Efforts",
+    "section": "Thinned point process model",
+    "text": "Thinned point process model\n\nThe true locations \\(\\mathbf{s}=s_1,\\ldots,s_m\\) where a species occur are a realization of a Point Process, specifically a log-Gaussian Cox process (LGCP).\n\n\\[\n\\lambda(s)=\\exp{X(s)'\\beta + Z(s)}\n\\]"
+  },
+  {
+    "objectID": "slides.html#thinned-point-process-model-1",
+    "href": "slides.html#thinned-point-process-model-1",
+    "title": "Combining Efforts",
+    "section": "Thinned point process model",
+    "text": "Thinned point process model\n\nThe true locations \\(\\mathbf{s}=s_1,\\ldots,s_m\\) where a species occur are a realization of a Point Process, specifically a log-Gaussian Cox process (LGCP).\nThe true point pattern is partially observed due to imperfect detection and accessibility constrains reflected by an uneven sampling effort."
+  },
+  {
+    "objectID": "slides.html#thinned-point-process-model-2",
+    "href": "slides.html#thinned-point-process-model-2",
+    "title": "Combining Efforts",
+    "section": "Thinned point process model",
+    "text": "Thinned point process model\n\nThe true locations \\(\\mathbf{s}=s_1,\\ldots,s_m\\) where a species occur are a realization of a Point Process, specifically a log-Gaussian Cox process (LGCP).\nThe true point pattern is partially observed due to imperfect detection and accessibility constrains reflected by an uneven sampling effort\n\n\n\n\nThe locations \\(\\mathbf{s}=s_1,\\ldots,s_n\\) where opportunistic encounters have actually occurred are the result of a thinned point process.\n\n\\[\n\\begin{aligned}\n\\lambda^{pp}(s)&=\\lambda(s)\\times p(s)\\\\\n\\text{logit}(p(s)) &= \\alpha^{pp}_0 + \\alpha^{pp}_1\\times g(s) + \\ldots\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides.html#estimation-of-the-thinned-point-process-model",
+    "href": "slides.html#estimation-of-the-thinned-point-process-model",
+    "title": "Combining Efforts",
+    "section": "Estimation of the thinned point process model",
+    "text": "Estimation of the thinned point process model\nThe likelihood function for the thinned point process is given by:\n\\[\nL_{thinn}(\\beta,\\alpha) = \\exp\\left\\{\\int_B\\lambda(s) p(s) ds) \\right\\}\\prod_i^m \\lambda(s_i)p(s_i)\n\\]\n\nSimpson et al. (2016) proposed an approach to approximate both the stochastic integral and the evaluation of the field at the data points using INLA.\nIn R-INLA we can defined different model components as part of the additive predictor (e.g., the Stochastic Partial Differential Equation (SPDE) approach to a GRF with Matérn covariance).\ninlabru allows the predictor to be a non-linear function of the parameter vector through an iterative model fitting scheme.\nWe can use inlabru fixed point iteration method to estimate thinning probabilities \\(p(s)\\)."
+  },
+  {
+    "objectID": "slides.html#integrated-species-distribution-model",
+    "href": "slides.html#integrated-species-distribution-model",
+    "title": "Combining Efforts",
+    "section": "Integrated Species Distribution Model",
+    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for presence-only data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\n\n\n\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int{A_i}\\lambda(s)~ds\\right),\n\\]"
+  },
+  {
+    "objectID": "slides.html#integrated-species-distribution-model-1",
+    "href": "slides.html#integrated-species-distribution-model-1",
+    "title": "Combining Efforts",
+    "section": "Integrated Species Distribution Model",
+    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for CS data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int{A_i}\\lambda(s)~ds\\right),\n\\]\nThus, the intensity-based OM likelihood becomes:\n\\[\nL(\\psi_i,p_{ij}) = \\left[\\prod_i^N \\left(1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\}\\right)\\prod_j^{K_i}p_{ij}^{y_{ij}}(1-p_{ij})^{1-y_{ij}} \\right] \\times\\\\ \\prod_{i=N+1}^M\\left[ \\left(1-\\exp\\left\\{\\int_{A_i}\\lambda(s) ds\\right\\}\\right) \\prod_j^{K_i}(1-p_{ij})+\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}  \\right].\n\\]"
+  },
+  {
+    "objectID": "slides.html#integrated-species-distribution-model-2",
+    "href": "slides.html#integrated-species-distribution-model-2",
+    "title": "Combining Efforts",
+    "section": "Integrated Species Distribution Model",
+    "text": "Integrated Species Distribution Model\nThe marginal distribution of each site detection history is given by\n\\[\nL(\\pmb{\\psi},\\textbf{p}|\\mathbf{y}_1,\\ldots,\\mathbf{y}_M) = \\prod_{i=1}^{M} \\left[1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\} \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \\mathbb{I}_{\\sum_j y_{ij} = 0}\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}\\right]\n\\]\n\n\nIn large-scale studies, species distributions are often monitored across relatively small patches.\nIf we assume a constant intensity within each cell then \\(\\int_{A_i}\\lambda(s)ds = \\lambda_i |A_i|\\)."
+  },
+  {
+    "objectID": "slides.html#integrated-species-distribution-model-3",
+    "href": "slides.html#integrated-species-distribution-model-3",
+    "title": "Combining Efforts",
+    "section": "Integrated Species Distribution Model",
+    "text": "Integrated Species Distribution Model\nThe marginal distribution of each site detection history is given by\n\\[\nL(\\pmb{\\psi},\\textbf{p}|\\mathbf{y}_1,\\ldots,\\mathbf{y}_M) = \\prod_{i=1}^{M} \\left[1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\} \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \\mathbb{I}_{\\sum_j y_{ij} = 0}\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}\\right]\n\\]\n\nIn large-scale studies, species distributions are often monitored across relatively small patches.\nIf we assume a constant intensity within each cell then \\(\\int_{A_i}\\lambda(s)ds = \\lambda_i |A_i|\\).\nWe can link the occupancy probabilities to the intensity function (\\(\\psi_i = 1 -\\exp(|A_i|\\lambda_i)\\)) through the cloglog link (\\(\\mathrm{cloglog}(\\psi) =\\log[-\\log(1-\\psi_i)]\\))\n\n\\[\n\\begin{aligned}\n\\mathrm{cloglog}(\\psi_i) &=  \\log(|A_i|) + \\log(\\lambda_i) \\\\\n&= \\log(|A_i|)+\\beta_0 + \\sum_{q=1}^P\\beta_q x_{iq} + z_i\\\\\n&= \\beta_0^* + \\sum_{q=1}^P\\beta_q x_q(s) + z_i\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides.html#integrated-species-distribution-model-4",
+    "href": "slides.html#integrated-species-distribution-model-4",
+    "title": "Combining Efforts",
+    "section": "Integrated Species Distribution Model",
+    "text": "Integrated Species Distribution Model\nThe marginal distribution of each site detection history is given by\n\\[\nL(\\pmb{\\psi},\\textbf{p}|\\mathbf{y}_1,\\ldots,\\mathbf{y}_M) = \\prod_{i=1}^{M} \\left[1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\} \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \\mathbb{I}_{\\sum_j y_{ij} = 0}\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}\\right]\n\\]\n\nIn large-scale studies, species distributions are often monitored across relatively small patches.\nIf we assume a constant intensity within each cell then \\(\\int_{A_i}\\lambda(s)ds = \\lambda_i |A_i|\\).\nWe can link the occupancy probabilities to the intensity function (\\(\\psi_i = 1 -\\exp(|A_i|\\lambda_i)\\)) through the cloglog link (\\(\\mathrm{cloglog}(\\psi) =\\log[-\\log(1-\\psi_i)]\\))\n\n\\[\n\\begin{aligned}\n\\mathrm{cloglog}(\\psi_i) &= \\beta_0^* + \\sum_{q=1}^P\\beta_q x_q(s) + z_i\n\\end{aligned}\n\\]\n\nThe likelihood of the integrated model becomes \\(L_{\\text{idm}}(\\beta,\\alpha,\\gamma) = L_{pp}(\\beta,\\alpha) \\times L_{occ}(\\beta,\\gamma)\\)"
+  },
+  {
+    "objectID": "slides.html#case-study-modelling-the-distribution-of-the-black-throated-blue-warbler-in-pennsylvania-usa.",
+    "href": "slides.html#case-study-modelling-the-distribution-of-the-black-throated-blue-warbler-in-pennsylvania-usa.",
+    "title": "Combining Efforts",
+    "section": "Case Study: Modelling the Distribution of the black-throated blue warbler in Pennsylvania, USA.",
+    "text": "Case Study: Modelling the Distribution of the black-throated blue warbler in Pennsylvania, USA.\n\nOccurrence data for the Black-throated blue warbler (Setophaga caerulescens) in Pennsylvania, USA are available from two sources:\n\n\nThe Pennsylvania Breeding Bird Atlas (BBA): Point count surveys collected through a standardized data collection protocol from 2005 to 2008 .\nThe second data set does not follow a standard data collection protocol, but instead are observations reported by citizen scientists to the eBird platform in 2008."
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-survey-data",
+    "href": "slides.html#modelling-black-throated-blue-warbler-survey-data",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Survey Data",
+    "text": "Modelling Black-throated blue warbler: Survey Data\n\nDetection/non-detection BBA survey data are available in a subregion of the Pennsylvania State."
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-opportunistic-data",
+    "href": "slides.html#modelling-black-throated-blue-warbler-opportunistic-data",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Opportunistic Data",
+    "text": "Modelling Black-throated blue warbler: Opportunistic Data\n\neBird citizen science data are usually biased due to uneven sampling effort.\nUse the locations where other species have been observed as a proxy of sampling intensity\n\n\nLocations 17 species of birds have been reported to eBird in 2008 along with the number of visits to a given location. The orange points indicate the locations where the Black-throated blue warbler has been observed."
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together",
+    "href": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Modeling BBA and eBird together",
+    "text": "Modelling Black-throated blue warbler: Modeling BBA and eBird together\n\ninlabru facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.\n\n\\[\n\\begin{aligned}\n\\log(\\lambda(s)^{(\\text{eBird})}) &= \\beta^*_0 + \\color{black}{\\beta'X(s)} + \\color{black}{Z(s)} + \\log(p(s)) \\\\\n\\mathrm{logit}(p(s)^{(\\text{eBird})}) &= \\alpha_0 + \\alpha_1 \\times \\hat{\\text{effort}}(s)\\\\\n\\mathrm{cloglog}(\\psi(s)^{(\\text{BBA})}) &=  |C_i| + \\color{black}{\\beta_0} + \\color{black}{\\beta'X(s)} + \\color{black}{Z(s)} \\\\\n\\mathrm{logit}(p_{ij}^{(\\text{BBA})}) &= \\gamma_0 + \\gamma_1 \\times \\text{Canopy} + \\gamma_2 \\times \\text{LDI}\n\\end{aligned}\n\\]\n\nLDI is the land development index proposed by Brown and Vivas (2005). The smaller the index values is, the less the urban development is."
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-1",
+    "href": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-1",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Modeling BBA and eBird together",
+    "text": "Modelling Black-throated blue warbler: Modeling BBA and eBird together\n\ninlabru facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.\n\n\\[\n\\begin{aligned}\n\\log(\\lambda(s)^{(\\text{eBird})}) &= \\beta^*_0 + \\color{red}{\\beta'X(s)} + \\color{red}{Z(s)} + \\log(p(s)) \\\\\n\\mathrm{logit}(p(s)^{(\\text{eBird})}) &= \\alpha_0 + \\alpha_1 \\times \\hat{\\text{effort}}(s)\\\\\n\\mathrm{cloglog}(\\psi(s)^{(\\text{BBA})}) &=  |C_i| + \\color{red}{\\beta_0} + \\color{red}{\\beta'X(s)} + \\color{red}{Z(s)} \\\\\n\\mathrm{logit}(p_{ij}^{(\\text{BBA})}) &= \\gamma_0 + \\gamma_1 \\times \\text{Canopy} + \\gamma_2 \\times \\text{LDI}\n\\end{aligned}\n\\]\n\nLDI is the land development index proposed by Brown and Vivas (2005). The smaller the index values is, the less the urban development is."
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-2",
+    "href": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-2",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Modeling BBA and eBird together",
+    "text": "Modelling Black-throated blue warbler: Modeling BBA and eBird together\n\ninlabru facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.\n\n\ncomponents_idm =  ~ Intercept(1) +\n  elevation(elevation_raster, model = \"linear\") +...+ spatial_field(geometry, model=matern) +\n  alpha_0(1,mean.linear= 3, prec.linear= 1/2.72) + alpha_1(1,mean.linear =1, prec.linear= 1/2.72)\n\nformula_occ = inla.mdata(Y, X) ~  log(.data.$radius) + Intercept  + elevation  + ... + spatial_field\n\nformula_thinn = geometry ~ Intercept   + elevation + ...+ spatial_field +\n                           log_detect(xy = geometry,p1 =  alpha_0, p2 = alpha_1)\n\nlik_occ =  bru_obs(formula = formula_occ,\n               family = \"occupancy\",\n               data = bba_sf,\n               response_data = list(X = X_mat,Y = Y_mat),\n               control.family = list(control.link = list(model = \"cloglog\"),\n                                     link.simple = \"logit\"))\n\nlik_thinn =  bru_obs(\"cp\",\n                  formula = formula_thinn ,\n                  data =  ebird_sf ,\n                  samplers = penn_state,\n                  domain = list(geometry = mesh))\n\nfit_IDM  = bru(components_idm , lik_occ , lik_thinn)"
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-3",
+    "href": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-3",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Modeling BBA and eBird together",
+    "text": "Modelling Black-throated blue warbler: Modeling BBA and eBird together\n\ninlabru facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.\n\n\ncomponents_idm =  ~ Intercept(1) +\n  elevation(elevation_raster, model = \"linear\") +...+ spatial_field(geometry, model=matern) +\n  alpha_0(1,mean.linear= 3, prec.linear= 1/2.72) + alpha_1(1,mean.linear =1, prec.linear= 1/2.72)\n\nformula_occ = inla.mdata(Y, X) ~  log(.data.$radius) + Intercept  + elevation  + ... + spatial_field\n\nformula_thinn = geometry ~ Intercept   + elevation + ...+ spatial_field +\n                           log_detect(xy = geometry,p1 =  alpha_0, p2 = alpha_1)\n\nlik_occ =  bru_obs(formula = formula_occ,\n               family = \"occupancy\",\n               data = bba_sf,\n               response_data = list(X = X_mat,Y = Y_mat),\n               control.family = list(control.link = list(model = \"cloglog\"),\n                                     link.simple = \"logit\"))\n\nlik_thinn =  bru_obs(\"cp\",\n                  formula = formula_thinn ,\n                  data =  ebird_sf ,\n                  samplers = penn_state,\n                  domain = list(geometry = mesh))\n\nfit_IDM  = bru(components_idm , lik_occ , lik_thinn)"
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-4",
+    "href": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-4",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Modeling BBA and eBird together",
+    "text": "Modelling Black-throated blue warbler: Modeling BBA and eBird together\n\ninlabru facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.\n\n\ncomponents_idm =  ~ Intercept(1) +\n  elevation(elevation_raster, model = \"linear\") +...+ spatial_field(geometry, model=matern) +\n  alpha_0(1,mean.linear= 3, prec.linear= 1/2.72) + alpha_1(1,mean.linear =1, prec.linear= 1/2.72)\n\nformula_occ = inla.mdata(Y, X) ~  log(.data.$radius) + Intercept  + elevation  + ... + spatial_field\n\nformula_thinn = geometry ~ Intercept   + elevation + ...+ spatial_field +\n                           log_detect(xy = geometry,p1 =  alpha_0, p2 = alpha_1)\n\nlik_occ =  bru_obs(formula = formula_occ,\n               family = \"occupancy\",\n               data = bba_sf,\n               response_data = list(X = X_mat,Y = Y_mat),\n               control.family = list(control.link = list(model = \"cloglog\"),\n                                     link.simple = \"logit\"))\n\nlik_thinn =  bru_obs(\"cp\",\n                  formula = formula_thinn ,\n                  data =  ebird_sf ,\n                  samplers = penn_state,\n                  domain = list(geometry = mesh))\n\nfit_IDM  = bru(components_idm , lik_occ , lik_thinn)"
+  },
+  {
+    "objectID": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-5",
+    "href": "slides.html#modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-5",
+    "title": "Combining Efforts",
+    "section": "Modelling Black-throated blue warbler: Modeling BBA and eBird together",
+    "text": "Modelling Black-throated blue warbler: Modeling BBA and eBird together\n\ninlabru facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.\n\n\ncomponents_idm =  ~ Intercept(1) +\n  elevation(elevation_raster, model = \"linear\") +...+ spatial_field(geometry, model=matern) +\n  alpha_0(1,mean.linear= 3, prec.linear= 1/2.72) + alpha_1(1,mean.linear =1, prec.linear= 1/2.72)\n\nformula_occ = inla.mdata(Y, X) ~  log(.data.$radius) + Intercept  + elevation  + ... + spatial_field\n\nformula_thinn = geometry ~ Intercept   + elevation + ...+ spatial_field +\n                           log_detect(xy = geometry,p1 =  alpha_0, p2 = alpha_1)\n\nlik_occ =  bru_obs(formula = formula_occ,\n               family = \"occupancy\",\n               data = bba_sf,\n               response_data = list(X = X_mat,Y = Y_mat),\n               control.family = list(control.link = list(model = \"cloglog\"),\n                                     link.simple = \"logit\"))\n\nlik_thinn =  bru_obs(\"cp\",\n                  formula = formula_thinn ,\n                  data =  ebird_sf ,\n                  samplers = penn_state,\n                  domain = list(geometry = mesh))\n\nfit_IDM  = bru(components_idm , lik_occ , lik_thinn)"
+  },
+  {
+    "objectID": "slides.html#results-integrated-model-posterior-summaries",
+    "href": "slides.html#results-integrated-model-posterior-summaries",
+    "title": "Combining Efforts",
+    "section": "Results Integrated Model: posterior summaries",
+    "text": "Results Integrated Model: posterior summaries\n\n\n\n\n\n\n\nParameter\nPosterior mean and 95% CrIs\n\n\n\n\nIntercept (\\(\\beta_0\\))\n-3.97 (-5.37,-1.61)\n\n\nCanopy (\\(\\beta_1\\))\n0.87 (0.65,1.08)\n\n\nElevation (\\(\\beta_3\\))\n1.12 (0.93,1.3)\n\n\nSlope (\\(\\beta_4\\))\n0.07 (-0.03,0.17)\n\n\nAspect (\\(\\beta_5\\))\n-0.13 (-0.24,-0.03)\n\n\nIntercept - detection eBird (\\(\\alpha_0\\))\n2.55 (1.67,3.44)\n\n\nEffort (\\(\\alpha_1\\))\n1.46 (1.22,1.7)\n\n\nIntercept - detection BBA (\\(\\gamma_0\\))s\n0.93 (0.37,1.5)\n\n\nCanopy (\\(\\gamma_1\\))\n0.31 (-0.14,0.76)\n\n\nLDI (\\(\\gamma_1\\))\n0.68 (0.13,1.23)\n\n\n\\(\\rho_z\\)\n129.82 (79.92,211.03)\n\n\n\\(\\sigma_z\\)\n2.04 (1.47,2.82)"
+  },
+  {
+    "objectID": "slides.html#results-integrated-model-predictions",
+    "href": "slides.html#results-integrated-model-predictions",
+    "title": "Combining Efforts",
+    "section": "Results Integrated Model: Predictions",
+    "text": "Results Integrated Model: Predictions"
+  },
+  {
+    "objectID": "slides.html#discussion",
+    "href": "slides.html#discussion",
+    "title": "Combining Efforts",
+    "section": "Discussion",
+    "text": "Discussion\n\nOver the last decade there has been bloom in the development of tools for fitting ISDMs (with quite a few wrappers around INLA)."
+  },
+  {
+    "objectID": "slides.html#discussion-1",
+    "href": "slides.html#discussion-1",
+    "title": "Combining Efforts",
+    "section": "Discussion",
+    "text": "Discussion\n\nOver the last decade there has been bloom in the development of tools for fitting ISDMs (with quite a few wrappers around INLA).\nDespite their popular use, the increasing adoption of ISDMs calls for careful scrutiny, as these models should not be adopted uncritically."
+  },
+  {
+    "objectID": "slides.html#discussion-2",
+    "href": "slides.html#discussion-2",
+    "title": "Combining Efforts",
+    "section": "Discussion",
+    "text": "Discussion\n\nOver the last decade there has been bloom in the development of tools for fitting ISDMs (with quite a few wrappers around INLA).\nDespite their popular use, the increasing adoption of ISDMs calls for careful scrutiny, as these models should not be adopted uncritically.\nIt is unclear whether an ISDM for the Black-throated Blue Warbler provides any more meaningful information than a point process model.\n\n\\[\nI_\\theta(W)=n(\\mathbf{s} \\cap W) - \\int_W\\widehat{\\lambda}_\\theta(u) du\n\\]\n\nPearson residuals for thinned PP and ISD models."
+  },
+  {
+    "objectID": "slides.html#discussion-3",
+    "href": "slides.html#discussion-3",
+    "title": "Combining Efforts",
+    "section": "Discussion",
+    "text": "Discussion\n\nOver the last decade there has been bloom in the development of tools for fitting ISDMs (with quite a few wrappers around INLA).\nDespite their popular use, the increasing adoption of ISDMs calls for careful scrutiny, as these models should not be adopted uncritically.\nIt is unclear whether an ISDM for the Black-throated Blue Warbler provides any more meaningful information than a point process model.\nThis example has been presented as a case study for several works."
+  },
+  {
+    "objectID": "slides.html#discussion---further-insights",
+    "href": "slides.html#discussion---further-insights",
+    "title": "Combining Efforts",
+    "section": "Discussion - further insights",
+    "text": "Discussion - further insights\n\nDo parameter-rich integrated models improve our ecological understanding?\nIn many situations, the vast amount of unstructured data far exceeds the amount of survey data.\nAre integrated models even necessary when unstructured data has been adequately modeled?"
+  },
+  {
+    "objectID": "slides.html#discussion---further-insights-1",
+    "href": "slides.html#discussion---further-insights-1",
+    "title": "Combining Efforts",
+    "section": "Discussion - further insights",
+    "text": "Discussion - further insights\n\nDo parameter-rich integrated models improve our ecological understanding?\n\nHow do we quantify the information gained by data integration?\n\nIn many situations, the vast amount of unstructured data far exceeds the amount of survey data.\nAre integrated models even necessary when unstructured data has been adequately modeled?"
+  },
+  {
+    "objectID": "slides.html#discussion---further-insights-2",
+    "href": "slides.html#discussion---further-insights-2",
+    "title": "Combining Efforts",
+    "section": "Discussion - further insights",
+    "text": "Discussion - further insights\n\nDo parameter-rich integrated models improve our ecological understanding?\nIn many situations, the vast amount of unstructured data far exceeds the amount of survey data.\n\nHow can we weight high-quality survey data so that it isn’t overwhelmed by unstructured data?\n\nAre integrated models even necessary when unstructured data has been adequately modeled?"
+  },
+  {
+    "objectID": "slides.html#discussion---further-insights-3",
+    "href": "slides.html#discussion---further-insights-3",
+    "title": "Combining Efforts",
+    "section": "Discussion - further insights",
+    "text": "Discussion - further insights\n\nDo parameter-rich integrated models improve our ecological understanding?\nIn many situations, the vast amount of unstructured data far exceeds the amount of survey data.\nAre integrated models even necessary when unstructured data has been adequately modeled?\n\nHow should we evaluate whether biases have been adequately modeled?"
+  },
+  {
+    "objectID": "slides.html#discussion---further-insights-4",
+    "href": "slides.html#discussion---further-insights-4",
+    "title": "Combining Efforts",
+    "section": "Discussion - further insights",
+    "text": "Discussion - further insights\n\nDo parameter-rich integrated models improve our ecological understanding?\nIn many situations, the vast amount of unstructured data far exceeds the amount of survey data.\nAre integrated models even necessary when unstructured data has been adequately modeled?"
+  },
+  {
+    "objectID": "slides.html#where-do-i-learn-more-about-inla-and-inlabru",
+    "href": "slides.html#where-do-i-learn-more-about-inla-and-inlabru",
+    "title": "Combining Efforts",
+    "section": "Where do I learn more about INLA and inlabru",
+    "text": "Where do I learn more about INLA and inlabru\n\n\n\nWebsite-tutorials\n\n\ninlabru https://inlabru-org.github.io/inlabru/\nR-INLA https://www.r-inla.org/home\n\n\n\n\n\n\nDiscussion forums\n\n\ninlabru https://github.com/inlabru-org/inlabru/discussions\nR-INLA https://groups.google.com/g/r-inla-discussion-group\n\n\n\n\n\n\nBooks\n\n\n\nBlangiardo, M., & Cameletti, M. (2015). Spatial and spatio-temporal Bayesian models with R-INLA. John Wiley & Sons.\nGómez-Rubio, V. (2020). Bayesian inference with INLA. Chapman and Hall/CRC.\nKrainski, E., Gómez-Rubio, V., Bakka, H., Lenzi, A., Castro-Camilo, D., Simpson, D., … & Rue, H. (2018). Advanced spatial modeling with stochastic partial differential equations using R and INLA. Chapman and Hall/CRC.\nWang, X., Yue, Y. R., & Faraway, J. J. (2018). Bayesian regression modeling with INLA. Chapman and Hall/CRC."
+  },
+  {
+    "objectID": "slides.html#section-1",
+    "href": "slides.html#section-1",
+    "title": "Combining Efforts",
+    "section": "",
+    "text": "“An understanding of the natural world, and what’s in it as a source of not only great curiosity but great fulfillment.”\nSir. David Attenborough\n\n\nThanks for your attention"
+  },
+  {
+    "objectID": "slides.html#references",
+    "href": "slides.html#references",
+    "title": "Combining Efforts",
+    "section": "References",
+    "text": "References\n\n\nBelmont, Jafet, Sara Martino, Janine Illian, and Håvard Rue. 2024. “Spatio-Temporal Occupancy Models with INLA.” Methods in Ecology and Evolution 15 (11): 2087–2100. https://doi.org/10.1111/2041-210x.14422.\n\n\nBotella, Christophe, Alexis Joly, Pascal Monestiez, Pierre Bonnet, and François Munoz. 2020. “Bias in Presence-Only Niche Models Related to Sampling Effort and Species Niches: Lessons for Background Point Selection.” Edited by Mirko Di Febbraro. PLOS ONE 15 (5): e0232078. https://doi.org/10.1371/journal.pone.0232078.\n\n\nBrown, Mark T., and M. Benjamin Vivas. 2005. “Landscape Development Intensity Index.” Environmental Monitoring and Assessment 101 (1-3): 289–309. https://doi.org/10.1007/s10661-005-0296-6.\n\n\nGuillera-Arroita, Gurutzeta. 2016. “Modelling of Species Distributions, Range Dynamics and Communities Under Imperfect Detection: Advances, Challenges and Opportunities.” Ecography 40 (2): 281–95. https://doi.org/10.1111/ecog.02445.\n\n\nIsaac, Nick J. B., Marta A. Jarzyna, Petr Keil, Lea I. Dambly, Philipp H. Boersch-Supan, Ella Browning, Stephen N. Freeman, et al. 2020. “Data Integration for Large-Scale Models of Species Distributions.” Trends in Ecology & Evolution 35 (1): 56–67. https://doi.org/10.1016/j.tree.2019.08.006.\n\n\nMostert, Philip S., and Robert B. O’Hara. 2023. “PointedSDMs: An R Package to Help Facilitate the Construction of Integrated Species Distribution Models.” Methods in Ecology and Evolution 14 (5): 1200–1207. https://doi.org/10.1111/2041-210x.14091.\n\n\nSimpson, D., J. B. Illian, F. Lindgren, S. H. Sørbye, and H. Rue. 2016. “Going Off Grid: Computationally Efficient Inference for Log-Gaussian Cox Processes.” Biometrika 103 (1): 49–70. https://doi.org/10.1093/biomet/asv064."
   },
   {
     "objectID": "about.html",
