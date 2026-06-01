@@ -6,7 +6,7 @@ format:
   revealjs:
     logo:  logo.png
     theme: uofg_theme.scss
-    footer: "<a href='../index.html'>Back to Home</a>"
+    footer: '<a href="https://jbelmont89.github.io/ISI_DF/" style="color:#ccc; padding:20px 30px; display:inline-block; margin:-20px -30px;">Back toHome</a>'
     header-includes: |
       <script src="custom.js" type="application/javascript"></script>
 title-slide-attributes: 
