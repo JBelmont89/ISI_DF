@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Jafet Belmont">
-  <meta name="dcterms.date" content="2026-06-01">
+  <meta name="dcterms.date" content="2026-06-03">
   <title>Jafet Belmont Osuna – Combining Efforts</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -231,7 +231,7 @@ Jafet Belmont <a href="https://orcid.org/0000-0002-6879-4412" class="quarto-titl
     </div>
 </div>
 
-  <p class="date">2026-06-01</p>
+  <p class="date">2026-06-03</p>
 </section>
 <section id="section" class="slide level2" data-background-image="river.png" data-background-size="100%">
 <h2></h2>
@@ -551,23 +551,12 @@ y_{ijt} = \begin{cases} 1 &amp; \text{if Ringlet is on checklist } i \text{ on v
 </ul>
 </div>
 </section>
-<section id="data-integration" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Data Integration</h2>
-<p>Can we do better by integrating multiple data sources?</p>
-<ul>
-<li><strong>Data integration</strong>: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.</li>
-</ul>
+<section id="section-1" class="slide level2" data-background-image="CS.gif" data-background-size="100%">
+<h2></h2>
+<div style="height: 50px;">
 
-<img data-src="images/data_int2.jpg" class="r-stretch quarto-figure-center"><p class="caption">Obtained from <span class="citation" data-cites="isaac2020">(<a href="#/references" role="doc-biblioref" onclick="">Isaac et al. 2020</a>)</span></p></section>
-<section id="data-integration-1" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Data Integration</h2>
-<p>Can we do better by integrating multiple data sources?</p>
-<ul>
-<li><p><strong>Data integration</strong>: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.</p></li>
-<li><p>Combining different data sources is challenging due to differences in study design, spatial and temporal coverage, and potential <strong>sampling biases</strong>.</p></li>
-</ul>
-
-<img data-src="images/meme2.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+</div>
+</section>
 <section id="thinned-point-process-model" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Thinned point process model</h2>
 <ul>
@@ -624,19 +613,40 @@ L_{thinn}(\beta,\alpha) = \exp\left\{\int_B\lambda(s) p(s) ds) \right\}\prod_i^m
 <li><p>We can use <code>inlabru</code> fixed point iteration method to estimate thinning probabilities <span class="math inline">\(p(s)\)</span>.</p></li>
 </ul>
 </section>
+<section id="section-2" class="slide level2" data-background-image="Data Integration.gif" data-background-size="100%">
+<h2></h2>
+<div style="height: 50px;">
+
+</div>
+</section>
+<section id="data-integration" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Data Integration</h2>
+<p>Can we do better by integrating multiple data sources?</p>
+<ul>
+<li><strong>Data integration</strong>: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.</li>
+</ul>
+
+<!-- ## Data Integration {.smaller auto-animate="true"} -->
+<!-- Can we do better by integrating multiple data sources? -->
+<!-- -   **Data integration**: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source. -->
+<!-- -   Combining different data sources is challenging due to differences in study design, spatial and temporal coverage, and potential **sampling biases**. -->
+<!-- ![](images/meme2.jpg){fig-align="center"} -->
+<img data-src="images/data_int2.jpg" class="r-stretch quarto-figure-center"><p class="caption">Obtained from <span class="citation" data-cites="isaac2020">(<a href="#/references" role="doc-biblioref" onclick="">Isaac et al. 2020</a>)</span></p></section>
 <section id="integrated-species-distribution-model" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
 <ul>
 <li>The point process model proposed for presence-only data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.</li>
 </ul>
 
-<img data-src="images/frompointstoocc.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<img data-src="images/frompointstoocc.png" class="quarto-figure quarto-figure-center r-stretch"><div class="fragment">
+<ul>
 <li><p>We can use the fact that the number of individuals in a bounded region can be characterized as <span class="math inline">\(N(A_i)\sim \mathrm{Poisson}(\int_{A_i}\lambda(s)~ds)\)</span>.</p></li>
 <li><p>The probability that an areal unit <span class="math inline">\(A_i\)</span> is occupied by a species is given by:</p></li>
 </ul>
 <p><span class="math display">\[
 \psi_i = \mathrm{Pr}\left[N(A_i)&gt;0\right] = 1 - \exp\left(-\int_{A_i}\lambda(s)~ds\right),
 \]</span></p>
+</div>
 </section>
 <section id="integrated-species-distribution-model-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
@@ -1095,7 +1105,7 @@ I_\theta(W)=n(\mathbf{s} \cap W) - \int_W\widehat{\lambda}_\theta(u) du
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level2" data-background-image="river.png" data-background-size="100%">
+<section id="section-3" class="slide level2" data-background-image="river.png" data-background-size="100%">
 <h2></h2>
 <div style="height: 50px;">
 
@@ -1108,6 +1118,10 @@ I_\theta(W)=n(\mathbf{s} \cap W) - \int_W\widehat{\lambda}_\theta(u) du
 </div>
 <p><code>Thanks for your attention</code></p>
 </section>
+<section id="acknowledgments" class="slide level2">
+<h2>Acknowledgments</h2>
+
+<img data-src="images/research_group.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="references" class="slide level2 smaller scrollable" style="margin-top: 0;">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

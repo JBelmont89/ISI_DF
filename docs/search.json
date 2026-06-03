@@ -175,20 +175,6 @@
     "text": "Sampling Bias in CS opportunistic data\nLarge volumes of CS data come from Opportunistic surveys where sampling effort is biased across space and time.\n\nPeople visit more certain places than others.\n\n\nElevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from Botella et al. (2020)).\n\nSmall populations at lower elevation could be over-sampled.\nIf we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated"
   },
   {
-    "objectID": "slides.html#data-integration",
-    "href": "slides.html#data-integration",
-    "title": "Combining Efforts",
-    "section": "Data Integration",
-    "text": "Data Integration\nCan we do better by integrating multiple data sources?\n\nData integration: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.\n\n\nObtained from (Isaac et al. 2020)"
-  },
-  {
-    "objectID": "slides.html#data-integration-1",
-    "href": "slides.html#data-integration-1",
-    "title": "Combining Efforts",
-    "section": "Data Integration",
-    "text": "Data Integration\nCan we do better by integrating multiple data sources?\n\nData integration: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.\nCombining different data sources is challenging due to differences in study design, spatial and temporal coverage, and potential sampling biases."
-  },
-  {
     "objectID": "slides.html#thinned-point-process-model",
     "href": "slides.html#thinned-point-process-model",
     "title": "Combining Efforts",
@@ -217,11 +203,18 @@
     "text": "Estimation of the thinned point process model\nThe likelihood function for the thinned point process is given by:\n\\[\nL_{thinn}(\\beta,\\alpha) = \\exp\\left\\{\\int_B\\lambda(s) p(s) ds) \\right\\}\\prod_i^m \\lambda(s_i)p(s_i)\n\\]\n\nSimpson et al. (2016) proposed an approach to approximate both the stochastic integral and the evaluation of the field at the data points using INLA.\nIn R-INLA we can defined different model components as part of the additive predictor (e.g., the Stochastic Partial Differential Equation (SPDE) approach to a GRF with Matérn covariance).\ninlabru allows the predictor to be a non-linear function of the parameter vector through an iterative model fitting scheme.\nWe can use inlabru fixed point iteration method to estimate thinning probabilities \\(p(s)\\)."
   },
   {
+    "objectID": "slides.html#data-integration",
+    "href": "slides.html#data-integration",
+    "title": "Combining Efforts",
+    "section": "Data Integration",
+    "text": "Data Integration\nCan we do better by integrating multiple data sources?\n\nData integration: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.\n\n\n\n\n\n\n\nObtained from (Isaac et al. 2020)"
+  },
+  {
     "objectID": "slides.html#integrated-species-distribution-model",
     "href": "slides.html#integrated-species-distribution-model",
     "title": "Combining Efforts",
     "section": "Integrated Species Distribution Model",
-    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for presence-only data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\n\n\n\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int_{A_i}\\lambda(s)~ds\\right),\n\\]"
+    "text": "Integrated Species Distribution Model\n\nThe point process model proposed for presence-only data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.\n\n\n\n\nWe can use the fact that the number of individuals in a bounded region can be characterized as \\(N(A_i)\\sim \\mathrm{Poisson}(\\int_{A_i}\\lambda(s)~ds)\\).\nThe probability that an areal unit \\(A_i\\) is occupied by a species is given by:\n\n\\[\n\\psi_i = \\mathrm{Pr}\\left[N(A_i)&gt;0\\right] = 1 - \\exp\\left(-\\int_{A_i}\\lambda(s)~ds\\right),\n\\]"
   },
   {
     "objectID": "slides.html#integrated-species-distribution-model-1",
@@ -399,11 +392,18 @@
     "text": "Where do I learn more about INLA and inlabru\n\n\n\nWebsite-tutorials\n\n\ninlabru https://inlabru-org.github.io/inlabru/\nR-INLA https://www.r-inla.org/home\n\n\n\n\n\n\nDiscussion forums\n\n\ninlabru https://github.com/inlabru-org/inlabru/discussions\nR-INLA https://groups.google.com/g/r-inla-discussion-group\n\n\n\n\n\n\nBooks\n\n\n\nBlangiardo, M., & Cameletti, M. (2015). Spatial and spatio-temporal Bayesian models with R-INLA. John Wiley & Sons.\nGómez-Rubio, V. (2020). Bayesian inference with INLA. Chapman and Hall/CRC.\nKrainski, E., Gómez-Rubio, V., Bakka, H., Lenzi, A., Castro-Camilo, D., Simpson, D., … & Rue, H. (2018). Advanced spatial modeling with stochastic partial differential equations using R and INLA. Chapman and Hall/CRC.\nWang, X., Yue, Y. R., & Faraway, J. J. (2018). Bayesian regression modeling with INLA. Chapman and Hall/CRC."
   },
   {
-    "objectID": "slides.html#section-1",
-    "href": "slides.html#section-1",
+    "objectID": "slides.html#section-3",
+    "href": "slides.html#section-3",
     "title": "Combining Efforts",
     "section": "",
     "text": "“An understanding of the natural world, and what’s in it as a source of not only great curiosity but great fulfillment.”\nSir. David Attenborough\n\n\nThanks for your attention"
+  },
+  {
+    "objectID": "slides.html#acknowledgments",
+    "href": "slides.html#acknowledgments",
+    "title": "Combining Efforts",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments"
   },
   {
     "objectID": "slides.html#references",

@@ -45,6 +45,8 @@ bibliography: references.bib
 
 ## Monitoring species distributions {.smaller}
 
+
+
 ::: {style="height: 50px;"}
 :::
 
@@ -322,23 +324,10 @@ Large volumes of CS data come from **Opportunistic surveys** where sampling effo
 -   If we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated
 :::
 
-## Data Integration {.smaller auto-animate="true"}
+##  {background-image="CS.gif" background-size="100%"}
 
-Can we do better by integrating multiple data sources?
-
--   **Data integration**: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.
-
-![Obtained from [@isaac2020]](images/data_int2.jpg){fig-align="center"}
-
-## Data Integration {.smaller auto-animate="true"}
-
-Can we do better by integrating multiple data sources?
-
--   **Data integration**: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.
-
--   Combining different data sources is challenging due to differences in study design, spatial and temporal coverage, and potential **sampling biases**.
-
-![](images/meme2.jpg){fig-align="center"}
+::: {style="height: 50px;"}
+:::
 
 ## Thinned point process model {.smaller auto-animate="true"}
 
@@ -397,12 +386,37 @@ $$
 
 -   We can use `inlabru` fixed point iteration method to estimate thinning probabilities $p(s)$.
 
+
+##  {background-image="Data Integration.gif" background-size="100%"}
+
+::: {style="height: 50px;"}
+:::
+
+## Data Integration {.smaller auto-animate="true"}
+
+Can we do better by integrating multiple data sources?
+
+-   **Data integration**: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.
+
+![Obtained from [@isaac2020]](images/data_int2.jpg){fig-align="center"}
+
+<!-- ## Data Integration {.smaller auto-animate="true"} -->
+
+<!-- Can we do better by integrating multiple data sources? -->
+
+<!-- -   **Data integration**: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source. -->
+
+<!-- -   Combining different data sources is challenging due to differences in study design, spatial and temporal coverage, and potential **sampling biases**. -->
+
+<!-- ![](images/meme2.jpg){fig-align="center"} -->
+
 ## Integrated Species Distribution Model {.smaller auto-animate="true"}
 
 -   The point process model proposed for presence-only data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.
 
 ![](images/frompointstoocc.png){fig-align="center"}
 
+:::{.fragment}
 -   We can use the fact that the number of individuals in a bounded region can be characterized as $N(A_i)\sim \mathrm{Poisson}(\int_{A_i}\lambda(s)~ds)$.
 
 -   The probability that an areal unit $A_i$ is occupied by a species is given by:
@@ -410,6 +424,8 @@ $$
 $$
 \psi_i = \mathrm{Pr}\left[N(A_i)>0\right] = 1 - \exp\left(-\int_{A_i}\lambda(s)~ds\right),
 $$
+:::
+
 
 ## Integrated Species Distribution Model {.smaller auto-animate="true"}
 
@@ -850,6 +866,10 @@ $$
 :::
 
 `Thanks for your attention`
+
+## Acknowledgments
+
+![](images/research_group.png){fig-align="center"}
 
 ## References {.smaller .scrollable style="margin-top: 0;"}
 
