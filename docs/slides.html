@@ -737,23 +737,34 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 </ol>
 
 <img data-src="images/blue_warbler.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="modelling-black-throated-blue-warbler-survey-data" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Survey Data</h2>
+<section id="modelling-black-throated-blue-warbler" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li>Detection/non-detection BBA survey data are available in a subregion of the Pennsylvania State.</li>
 </ul>
 
 <img data-src="images/bba_data.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="modelling-black-throated-blue-warbler-opportunistic-data" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Opportunistic Data</h2>
+<section id="modelling-black-throated-blue-warbler-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li><code>eBird</code> citizen science data are usually biased due to <strong>uneven sampling effort</strong>.</li>
 <li>Use the locations where other species have been observed as a proxy of sampling intensity</li>
 </ul>
 
 <img data-src="images/effort_map3.png" class="r-stretch quarto-figure-center"><p class="caption">Locations 17 species of birds have been reported to eBird in 2008 along with the number of visits to a given location. The orange points indicate the locations where the Black-throated blue warbler has been observed.</p></section>
-<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<section id="modelling-black-throated-blue-warbler-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
+<ul>
+<li><code>eBird</code> citizen science data are usually biased due to <strong>uneven sampling effort</strong>.</li>
+<li>Use the locations where other species have been observed as a proxy of sampling intensity</li>
+</ul>
+<p><span class="math display">\[
+\log\lambda^E(s) = \gamma_0 + \xi(s) \rightarrow \widehat{\text{effort}}
+\]</span></p>
+
+<img data-src="images/clipboard-348037584.png" class="r-stretch quarto-figure-center"><p class="caption">Posterior mean sampling intensity used as proxy for effort</p></section>
+<section id="modelling-black-throated-blue-warbler-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
@@ -769,8 +780,8 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <li>LDI is the <em>land development index</em> proposed by <span class="citation" data-cites="brown2005">Brown and Vivas (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span>. The smaller the index values is, the less the urban development is.</li>
 </ul>
 </section>
-<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-1" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<section id="modelling-black-throated-blue-warbler-4" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
@@ -786,8 +797,8 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <li>LDI is the <em>land development index</em> proposed by <span class="citation" data-cites="brown2005">Brown and Vivas (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span>. The smaller the index values is, the less the urban development is.</li>
 </ul>
 </section>
-<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-2" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<section id="modelling-black-throated-blue-warbler-5" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
@@ -817,8 +828,8 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <span id="cb1-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-3" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<section id="modelling-black-throated-blue-warbler-6" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
@@ -848,8 +859,8 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <span id="cb2-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-4" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<section id="modelling-black-throated-blue-warbler-7" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
@@ -879,8 +890,8 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <span id="cb3-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-5" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<section id="modelling-black-throated-blue-warbler-8" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler</h2>
 <ul>
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>

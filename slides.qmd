@@ -45,8 +45,6 @@ bibliography: references.bib
 
 ## Monitoring species distributions {.smaller}
 
-
-
 ::: {style="height: 50px;"}
 :::
 
@@ -386,7 +384,6 @@ $$
 
 -   We can use `inlabru` fixed point iteration method to estimate thinning probabilities $p(s)$.
 
-
 ##  {background-image="Data Integration.gif" background-size="100%"}
 
 ::: {style="height: 50px;"}
@@ -416,7 +413,7 @@ Can we do better by integrating multiple data sources?
 
 ![](images/frompointstoocc.png){fig-align="center"}
 
-:::{.fragment}
+::: fragment
 -   We can use the fact that the number of individuals in a bounded region can be characterized as $N(A_i)\sim \mathrm{Poisson}(\int_{A_i}\lambda(s)~ds)$.
 
 -   The probability that an areal unit $A_i$ is occupied by a species is given by:
@@ -425,7 +422,6 @@ $$
 \psi_i = \mathrm{Pr}\left[N(A_i)>0\right] = 1 - \exp\left(-\int_{A_i}\lambda(s)~ds\right),
 $$
 :::
-
 
 ## Integrated Species Distribution Model {.smaller auto-animate="true"}
 
@@ -535,20 +531,33 @@ $$
 
 ![](images/blue_warbler.png){fig-align="center"}
 
-## Modelling Black-throated blue warbler: Survey Data {.smaller auto-animate="true"}
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   Detection/non-detection BBA survey data are available in a subregion of the Pennsylvania State.
 
 ![](images/bba_data.png){fig-align="center"}
 
-## Modelling Black-throated blue warbler: Opportunistic Data {.smaller auto-animate="true"}
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   `eBird` citizen science data are usually biased due to **uneven sampling effort**.
 -   Use the locations where other species have been observed as a proxy of sampling intensity
 
 ![Locations 17 species of birds have been reported to eBird in 2008 along with the number of visits to a given location. The orange points indicate the locations where the Black-throated blue warbler has been observed.](images/effort_map3.png){fig-align="center"}
 
-## Modelling Black-throated blue warbler: Modeling BBA and eBird together {.smaller auto-animate="true"}
+
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
+
+-   `eBird` citizen science data are usually biased due to **uneven sampling effort**.
+-   Use the locations where other species have been observed as a proxy of sampling intensity
+
+$$
+\log\lambda^E(s) = \gamma_0 + \xi(s) \rightarrow \widehat{\text{effort}}
+$$
+
+![Posterior mean sampling intensity used as proxy for effort](images/clipboard-348037584.png){fig-align="center"}
+
+
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   `inlabru` facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.
 
@@ -563,7 +572,7 @@ $$
 
 -   LDI is the *land development index* proposed by @brown2005. The smaller the index values is, the less the urban development is.
 
-## Modelling Black-throated blue warbler: Modeling BBA and eBird together {.smaller auto-animate="true"}
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   `inlabru` facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.
 
@@ -578,7 +587,7 @@ $$
 
 -   LDI is the *land development index* proposed by @brown2005. The smaller the index values is, the less the urban development is.
 
-## Modelling Black-throated blue warbler: Modeling BBA and eBird together {.smaller auto-animate="true"}
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   `inlabru` facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.
 
@@ -612,7 +621,7 @@ lik_thinn =  bru_obs("cp",
 fit_IDM  = bru(components_idm , lik_occ , lik_thinn)
 ```
 
-## Modelling Black-throated blue warbler: Modeling BBA and eBird together {.smaller auto-animate="true"}
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   `inlabru` facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.
 
@@ -647,7 +656,7 @@ fit_IDM  = bru(components_idm , lik_occ , lik_thinn)
 
 ```
 
-## Modelling Black-throated blue warbler: Modeling BBA and eBird together {.smaller auto-animate="true"}
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   `inlabru` facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.
 
@@ -682,7 +691,7 @@ fit_IDM  = bru(components_idm , lik_occ , lik_thinn)
 
 ```
 
-## Modelling Black-throated blue warbler: Modeling BBA and eBird together {.smaller auto-animate="true"}
+## Modelling Black-throated blue warbler {.smaller auto-animate="true"}
 
 -   `inlabru` facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.
 
