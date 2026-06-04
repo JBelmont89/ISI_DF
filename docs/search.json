@@ -161,18 +161,11 @@
     "text": "Analysing de distribution of Ringlet butterfly in the UK\nWe analysed the distribution of the Ringlet butterfly (Aphantopus hyperantus) using \\(&gt;\\) 2 million records from 140,887 unique 1 km\\(^2\\) from the BNM programme between 1970 and 2014.\n\nOccupancy model framework where\nRelative list length and date of visit allow us to account for varying sampling effort and seasonality in detection probabilities.\nAnalysing this entire data set without any spatial effects only took 30 seconds compared to a 19h MCMC algorithm.\n\n\n\nincluding a spatial effect increased the running time to 5 minutes only on a standard Apple M2 Pro machine!"
   },
   {
-    "objectID": "slides.html#opportunistic-data",
-    "href": "slides.html#opportunistic-data",
+    "objectID": "slides.html#opportunistic-cs-data",
+    "href": "slides.html#opportunistic-cs-data",
     "title": "Combining Efforts",
-    "section": "Opportunistic Data",
-    "text": "Opportunistic Data\nMost of the times we we only have information of where species is available.\nOpportunistic encounters produce unstructured data which constitute the majority of available information.\n\nHarnessing the power of opportunistic data is not an easy task!\n\n\n\n\n\n\n\n\nAdvantages 😄👍\nDisadvantages 😔👎\n\n\n\n\nExtensive taxonomic, spatial and temporal coverage\nUnder-reporting of rare and inconspicuous species.\n\n\nEye-catching species that are easily identifiable by participants.\nVarying recording skills and uneven sampling effort."
-  },
-  {
-    "objectID": "slides.html#sampling-bias-in-cs-opportunistic-data",
-    "href": "slides.html#sampling-bias-in-cs-opportunistic-data",
-    "title": "Combining Efforts",
-    "section": "Sampling Bias in CS opportunistic data",
-    "text": "Sampling Bias in CS opportunistic data\nLarge volumes of CS data come from Opportunistic surveys where sampling effort is biased across space and time.\n\nPeople visit more certain places than others.\n\n\nElevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from Botella et al. (2020)).\n\nSmall populations at lower elevation could be over-sampled.\nIf we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated"
+    "section": "Opportunistic CS Data",
+    "text": "Opportunistic CS Data\nLarge volumes of CS data come from Opportunistic surveys where sampling effort is biased across space and time.\n\nMost of the times we we only have information of where species is spotted\nPeople visit more certain places than others.\n\n\nElevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from Botella et al. (2020)).\n\nSmall populations at lower elevation could be over-sampled.\nIf we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated"
   },
   {
     "objectID": "slides.html#thinned-point-process-model",

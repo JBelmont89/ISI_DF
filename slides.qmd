@@ -295,23 +295,24 @@ We analysed the distribution of the Ringlet butterfly (*Aphantopus hyperantus*) 
 -   including a spatial effect increased the running time to 5 minutes only on a standard Apple M2 Pro machine!
 :::
 
-## Opportunistic Data {.smaller auto-animate="true"}
+<!-- ## Opportunistic Data {.smaller auto-animate="true"} -->
 
-Most of the times we we only have information of where species is available.
+<!-- Most of the times we we only have information of where species is available. -->
 
-Opportunistic encounters produce **unstructured data** which constitute the majority of available information.
+<!-- Opportunistic encounters produce **unstructured data** which constitute the majority of available information. -->
 
--   Harnessing the power of opportunistic data is not an easy task!
+<!-- -   Harnessing the power of opportunistic data is not an easy task! -->
 
-| Advantages 😄👍 | Disadvantages 😔👎 |
-|------------------------------------|------------------------------------|
-| Extensive taxonomic, spatial and temporal coverage | Under-reporting of rare and inconspicuous species. |
-| Eye-catching species that are easily identifiable by participants. | Varying recording skills and uneven sampling effort. |
+<!-- | Advantages 😄👍 | Disadvantages 😔👎 | -->
+<!-- |------------------------------------|------------------------------------| -->
+<!-- | Extensive taxonomic, spatial and temporal coverage | Under-reporting of rare and inconspicuous species. | -->
+<!-- | Eye-catching species that are easily identifiable by participants. | Varying recording skills and uneven sampling effort. | -->
 
-## Sampling Bias in CS opportunistic data {.smaller}
+## Opportunistic CS Data{.smaller}
 
 Large volumes of CS data come from **Opportunistic surveys** where sampling effort is **biased** across space and time.
 
+-   Most of the times we we only have information of where species is spotted
 -   People visit more certain places than others.
 
 ![Elevation versus sampling effort (obtained through the Pl\@net Net App) in the French mediterranean region (Figure taken from @botella2020).](images/sampling_eff_ex.png){fig-align="center"}
