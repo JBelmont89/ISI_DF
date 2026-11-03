@@ -18,7 +18,7 @@ toc: false
 
       <a class="talk-card-full" href="slides.html" target="_blank">
         <div class="talk-card-left">
-          <span class="talk-year">2025</span>
+          <span class="talk-year">2026</span>
         </div>
         <div class="talk-card-right">
           <p class="talk-event">Regional Statistics Conference · 2026</p>
@@ -29,7 +29,7 @@ toc: false
       </a>
       <a class="talk-card-full" href="scene/came-for-the-ecology.html" target="_blank">
         <div class="talk-card-left">
-          <span class="talk-year">2025</span>
+          <span class="talk-year">2026</span>
         </div>
         <div class="talk-card-right">
           <p class="talk-event">Leverhulme CDT programme at SCENE· 2026</p>
