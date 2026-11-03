@@ -96,8 +96,13 @@ toc: false
     <h2 class="section-heading">Talks & Presentations</h2>
     <div class="talks-grid">
       <a class="talk-card" href="slides.html" target="_blank">
-        <div class="talk-meta">ISI World Statistics Congress · 2025</div>
+        <div class="talk-meta">Regional Statistics Conference · 2026</div>
         <div class="talk-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></div>
+        <div class="talk-tag">View slides →</div>
+      </a>
+       <a class="talk-card" href="scene/came-for-the-ecology.html" target="_blank">
+        <div class="talk-meta">Leverhulme CDT programme at SCENE· 2026</div>
+        <div class="talk-title">A journey from nature to numbers <code>inlabru</code></div>
         <div class="talk-tag">View slides →</div>
       </a>
       <!-- Add more talk cards here as you create new presentations -->
@@ -127,6 +132,10 @@ toc: false
             <div class="supervisee">
         <p class="supervisee-name">Katarina Skopalova</p>
         <p class="supervisee-topic">Statistical methods for Capture Recapture data under batchmarking for open populations</p>
+      </div>
+      <div class="supervisee">
+        <p class="supervisee-name">Kirsty Ryman Blackman</p>
+        <p class="supervisee-topic">Developing animal movement methods for extreme trajectories </p>
       </div>
     </div>
   </div>

@@ -81,7 +81,7 @@
     "href": "slides.html#possible-biases-due-to-imperfect-detection",
     "title": "Combining Efforts",
     "section": "Possible biases due to imperfect detection",
-    "text": "Possible biases due to imperfect detection\n\n\n\n\n\nUnderestimation of species distribution\nBias of the estimated relationship with covariates\nPredictive models might reflect detection instead of occurrence"
+    "text": "Possible biases due to imperfect detection\n\n\n\n\nUnderestimation of species distribution\nBias of the estimated relationship with covariates\nPredictive models might reflect detection instead of occurrence"
   },
   {
     "objectID": "slides.html#the-occupancy-model-for-survey-data",
@@ -165,7 +165,7 @@
     "href": "slides.html#opportunistic-cs-data",
     "title": "Combining Efforts",
     "section": "Opportunistic CS Data",
-    "text": "Opportunistic CS Data\nLarge volumes of CS data come from Opportunistic surveys where sampling effort is biased across space and time.\n\nMost of the times we we only have information of where species is spotted\nPeople visit more certain places than others.\n\n\nElevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from Botella et al. (2020)).\n\nSmall populations at lower elevation could be over-sampled.\nIf we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated"
+    "text": "Opportunistic CS Data\nLarge volumes of CS data come from Opportunistic surveys where sampling effort is biased across space and time.\n\nMost of the times we we only have information of where species is spotted\nPeople visit more certain places than others.\n\n\nElevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from Botella et al. (2020)).\nSmall populations at lower elevation could be over-sampled.\nIf we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated"
   },
   {
     "objectID": "slides.html#thinned-point-process-model",
@@ -221,7 +221,7 @@
     "href": "slides.html#integrated-species-distribution-model-2",
     "title": "Combining Efforts",
     "section": "Integrated Species Distribution Model",
-    "text": "Integrated Species Distribution Model\nThe marginal distribution of each site detection history is given by\n\\[\nL(\\pmb{\\psi},\\textbf{p}|\\mathbf{y}_1,\\ldots,\\mathbf{y}_M) = \\prod_{i=1}^{M} \\left[1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\} \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \\mathbb{I}_{\\sum_j y_{ij} = 0}\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}\\right]\n\\]\n\n\nIn large-scale studies, species distributions are often monitored across relatively small patches.\nIf we assume a constant intensity within each cell then \\(\\int_{A_i}\\lambda(s)ds = \\lambda_i |A_i|\\)."
+    "text": "Integrated Species Distribution Model\nThe marginal distribution of each site detection history is given by\n\\[\nL(\\pmb{\\psi},\\textbf{p}|\\mathbf{y}_1,\\ldots,\\mathbf{y}_M) = \\prod_{i=1}^{M} \\left[1-\\exp\\left\\{-\\int_{A_i}\\lambda(s) ds\\right\\} \\prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \\mathbb{I}_{\\sum_j y_{ij} = 0}\\exp\\left\\{\\int_{A_i} \\lambda(s)ds\\right\\}\\right]\n\\]\n\nIn large-scale studies, species distributions are often monitored across relatively small patches.\nIf we assume a constant intensity within each cell then \\(\\int_{A_i}\\lambda(s)ds = \\lambda_i |A_i|\\)."
   },
   {
     "objectID": "slides.html#integrated-species-distribution-model-3",
@@ -410,20 +410,188 @@
     "href": "slides.html#references",
     "title": "Combining Efforts",
     "section": "References",
-    "text": "References\n\n\nBelmont, Jafet, Sara Martino, Janine Illian, and Håvard Rue. 2024. “Spatio-Temporal Occupancy Models with INLA.” Methods in Ecology and Evolution 15 (11): 2087–2100. https://doi.org/10.1111/2041-210x.14422.\n\n\nBotella, Christophe, Alexis Joly, Pascal Monestiez, Pierre Bonnet, and François Munoz. 2020. “Bias in Presence-Only Niche Models Related to Sampling Effort and Species Niches: Lessons for Background Point Selection.” Edited by Mirko Di Febbraro. PLOS ONE 15 (5): e0232078. https://doi.org/10.1371/journal.pone.0232078.\n\n\nBrown, Mark T., and M. Benjamin Vivas. 2005. “Landscape Development Intensity Index.” Environmental Monitoring and Assessment 101 (1-3): 289–309. https://doi.org/10.1007/s10661-005-0296-6.\n\n\nGuillera-Arroita, Gurutzeta. 2016. “Modelling of Species Distributions, Range Dynamics and Communities Under Imperfect Detection: Advances, Challenges and Opportunities.” Ecography 40 (2): 281–95. https://doi.org/10.1111/ecog.02445.\n\n\nIsaac, Nick J. B., Marta A. Jarzyna, Petr Keil, Lea I. Dambly, Philipp H. Boersch-Supan, Ella Browning, Stephen N. Freeman, et al. 2020. “Data Integration for Large-Scale Models of Species Distributions.” Trends in Ecology & Evolution 35 (1): 56–67. https://doi.org/10.1016/j.tree.2019.08.006.\n\n\nMostert, Philip S., and Robert B. O’Hara. 2023. “PointedSDMs: An R Package to Help Facilitate the Construction of Integrated Species Distribution Models.” Methods in Ecology and Evolution 14 (5): 1200–1207. https://doi.org/10.1111/2041-210x.14091.\n\n\nSimpson, D., J. B. Illian, F. Lindgren, S. H. Sørbye, and H. Rue. 2016. “Going Off Grid: Computationally Efficient Inference for Log-Gaussian Cox Processes.” Biometrika 103 (1): 49–70. https://doi.org/10.1093/biomet/asv064."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Talks & Presentations",
-    "section": "",
-    "text": "Slides from conferences, seminars, and workshops.\n  \n\n\n\n  \n    \n\n      \n        \n          2025\n        \n        \n          ISI World Statistics Congress\n          Combining Efforts: Integrating Citizen Science and Survey Data using inlabru\n          Presentation on integrated species distribution models combining citizen science presence-only records with structured survey data via the INLA/inlabru framework.\n          View slides →"
+    "text": "References\n\n\nBelmont, Jafet, Sara Martino, Janine Illian, and Håvard Rue. 2024. “Spatio-Temporal Occupancy Models with INLA.” Methods in Ecology and Evolution 15 (11): 2087–100. https://doi.org/10.1111/2041-210x.14422.\n\n\nBotella, Christophe, Alexis Joly, Pascal Monestiez, Pierre Bonnet, and François Munoz. 2020. “Bias in Presence-Only Niche Models Related to Sampling Effort and Species Niches: Lessons for Background Point Selection.” PLOS ONE 15 (5): e0232078. https://doi.org/10.1371/journal.pone.0232078.\n\n\nBrown, Mark T., and M. Benjamin Vivas. 2005. “Landscape Development Intensity Index.” Environmental Monitoring and Assessment 101 (1-3): 289–309. https://doi.org/10.1007/s10661-005-0296-6.\n\n\nGuillera-Arroita, Gurutzeta. 2016. “Modelling of Species Distributions, Range Dynamics and Communities Under Imperfect Detection: Advances, Challenges and Opportunities.” Ecography 40 (2): 281–95. https://doi.org/10.1111/ecog.02445.\n\n\nIsaac, Nick J. B., Marta A. Jarzyna, Petr Keil, et al. 2020. “Data Integration for Large-Scale Models of Species Distributions.” Trends in Ecology & Evolution 35 (1): 56–67. https://doi.org/10.1016/j.tree.2019.08.006.\n\n\nMostert, Philip S., and Robert B. O’Hara. 2023. “PointedSDMs: An r Package to Help Facilitate the Construction of Integrated Species Distribution Models.” Methods in Ecology and Evolution 14 (5): 1200–1207. https://doi.org/10.1111/2041-210x.14091.\n\n\nSimpson, D., J. B. Illian, F. Lindgren, S. H. Sørbye, and H. Rue. 2016. “Going Off Grid: Computationally Efficient Inference for Log-Gaussian Cox Processes.” Biometrika 103 (1): 49–70. https://doi.org/10.1093/biomet/asv064."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "JafetBelmontOsuna",
     "section": "",
-    "text": "Lecturer in Statistics & Data Analysis\n      JafetBelmontOsuna\n      School of Mathematics & StatisticsUniversity of Glasgow\n      \n        ✉ Email\n        \n          ORCID\n        \n        UofG Profile\n      \n    \n    \n      \n    \n  \n\n\n\n  \n    About\n    \n      \n        I am a Lecturer in Statistics and Data Analysis at the University of Glasgow. My work focuses on developing statistical models to analyse biodiversity data from citizen science projects, applying Bayesian methods to characterise biological communities in changing environments.\n        I received my BSc in Biology from UNAM (México, 2014), Specialist in Applied Statistics from IIMAS-UNAM (2016), MSc in Environmental Statistics from the University of Glasgow (2017), and PhD in Statistics (2021). I have been employed by the University of Glasgow since 2018.\n      \n      \n        Research Interests\n        \n          Species distribution modelling\n          Citizen science data\n          Bayesian spatial statistics\n          INLA / inlabru\n          Model validation & diagnostics\n          Machine learning for ecological data\n        \n      \n    \n  \n\n\n\n  \n    Selected Publications\n    \n      \n        Belmont, J., Martino, S., Illian, J., & Rue, H.\n        (2025)\n        Contribution to the Discussion of the 'Discussion meeting on the analysis of citizen science data'.\n        Journal of the Royal Statistical Society: Series A, 188(3), 708–710.\n        DOI\n      \n      \n        Wilkie, C. et al.\n        (2025)\n        Landscape-scale responses of freshwater biodiversity to connectivity and stressors.\n        Global Ecology and Biogeography, 34(6), e70069.\n        DOI\n      \n      \n        Belmont, J., Martino, S., Illian, J., & Rue, H.\n        (2024)\n        Spatio-temporal occupancy models with INLA.\n        Methods in Ecology and Evolution, 15(11), 2087–2100.\n        DOI\n      \n      \n        Belmont Osuna, J., Miller, C., Scott, M., & Wilkie, C.\n        (2022)\n        A new statistical approach for identifying rare species under imperfect detection.\n        Diversity and Distributions, 28(5), 882–893.\n        DOI\n      \n      \n        Belmont, J. et al.\n        (2018)\n        Priming effects on seed germination of two perennial herb species in a disturbed lava field in central Mexico.\n        Seed Science Research, 28(1), 63–71.\n        DOI\n      \n    \n  \n\n\n\n  \n    Talks & Presentations\n    \n      \n        ISI World Statistics Congress · 2025\n        Combining Efforts: Integrating Citizen Science and Survey Data using inlabru\n        View slides →\n      \n      \n      \n    \n  \n\n\n\n  \n    PhD Supervision\n    \n      \n        Louise Blackman\n        Statistical methodology for assessing the impacts of offshore renewable developments on marine wildlife\n      \n      \n        Iain Bell\n        Spatiotemporal multivariate modelling and water pollutants under limit of detection\n      \n            \n        Katarina Skopalova\n        Statistical methods for Capture Recapture data under batchmarking for open populations"
+    "text": "Lecturer in Statistics & Data Analysis\n      JafetBelmontOsuna\n      School of Mathematics & StatisticsUniversity of Glasgow\n      \n        ✉ Email\n        \n          ORCID\n        \n        UofG Profile\n      \n    \n    \n      \n    \n  \n\n\n\n  \n    About\n    \n      \n        I am a Lecturer in Statistics and Data Analysis at the University of Glasgow. My work focuses on developing statistical models to analyse biodiversity data from citizen science projects, applying Bayesian methods to characterise biological communities in changing environments.\n        I received my BSc in Biology from UNAM (México, 2014), Specialist in Applied Statistics from IIMAS-UNAM (2016), MSc in Environmental Statistics from the University of Glasgow (2017), and PhD in Statistics (2021). I have been employed by the University of Glasgow since 2018.\n      \n      \n        Research Interests\n        \n          Species distribution modelling\n          Citizen science data\n          Bayesian spatial statistics\n          INLA / inlabru\n          Model validation & diagnostics\n          Machine learning for ecological data\n        \n      \n    \n  \n\n\n\n  \n    Selected Publications\n    \n      \n        Belmont, J., Martino, S., Illian, J., & Rue, H.\n        (2025)\n        Contribution to the Discussion of the 'Discussion meeting on the analysis of citizen science data'.\n        Journal of the Royal Statistical Society: Series A, 188(3), 708–710.\n        DOI\n      \n      \n        Wilkie, C. et al.\n        (2025)\n        Landscape-scale responses of freshwater biodiversity to connectivity and stressors.\n        Global Ecology and Biogeography, 34(6), e70069.\n        DOI\n      \n      \n        Belmont, J., Martino, S., Illian, J., & Rue, H.\n        (2024)\n        Spatio-temporal occupancy models with INLA.\n        Methods in Ecology and Evolution, 15(11), 2087–2100.\n        DOI\n      \n      \n        Belmont Osuna, J., Miller, C., Scott, M., & Wilkie, C.\n        (2022)\n        A new statistical approach for identifying rare species under imperfect detection.\n        Diversity and Distributions, 28(5), 882–893.\n        DOI\n      \n      \n        Belmont, J. et al.\n        (2018)\n        Priming effects on seed germination of two perennial herb species in a disturbed lava field in central Mexico.\n        Seed Science Research, 28(1), 63–71.\n        DOI\n      \n    \n  \n\n\n\n  \n    Talks & Presentations\n    \n      \n        Regional Statistics Conference · 2026\n        Combining Efforts: Integrating Citizen Science and Survey Data using inlabru\n        View slides →\n      \n       \n        Leverhulme CDT programme at SCENE· 2026\n        A journey from nature to numbers inlabru\n        View slides →\n      \n      \n      \n    \n  \n\n\n\n  \n    PhD Supervision\n    \n      \n        Louise Blackman\n        Statistical methodology for assessing the impacts of offshore renewable developments on marine wildlife\n      \n      \n        Iain Bell\n        Spatiotemporal multivariate modelling and water pollutants under limit of detection\n      \n            \n        Katarina Skopalova\n        Statistical methods for Capture Recapture data under batchmarking for open populations\n      \n      \n        Kirsty Ryman Blackman\n        Developing animal movement methods for extreme trajectories"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Talks & Presentations",
+    "section": "",
+    "text": "Slides from conferences, seminars, and workshops.\n  \n\n\n\n  \n    \n\n      \n        \n          2025\n        \n        \n          Regional Statistics Conference · 2026\n          Combining Efforts: Integrating Citizen Science and Survey Data using inlabru\n          Presentation on integrated species distribution models combining citizen science presence-only records with structured survey data via the INLA/inlabru framework.\n          View slides →\n        \n      \n      \n        \n          2025\n        \n        \n          Leverhulme CDT programme at SCENE· 2026\n          A journey from nature to numbers \n          Presentation on the experience from transitiong from ecology to statistics.\n          View slides →"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#a-little-about-me",
+    "href": "scene/came-for-the-ecology.html#a-little-about-me",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "A little about me",
+    "text": "A little about me\n\n\n\n\n\n\n\n\n\nLecturer in Statistics & Data Analysis, University of Glasgow\nBayesian spatio-temporal and hierarchical modelling\nINLA & inlabru for environmental and ecological problems\nTrained as an ecologist: Bsc Biology, UNAM México.\n\n\n\nKeep this short. The audience mainly needs to know where you are now, so the “before” in the rest of the talk lands."
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#the-journey",
+    "href": "scene/came-for-the-ecology.html#the-journey",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "The journey",
+    "text": "The journey\n\n\n01\nThe field\nWhere the curiosity started\n\n\n02\nThe questions\nData I couldn’t make sense of\n\n\n03\nThe tools\nLearninga new language\n\n\n04\nThe switch\nBecoming a statistician\n\n\n05\nToday\nStatistics for ecology and the environment"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#the-very-beginning",
+    "href": "scene/came-for-the-ecology.html#the-very-beginning",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "The very beginning",
+    "text": "The very beginning\n\n\n\n\nMy favorite books …"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#the-very-beginning-1",
+    "href": "scene/came-for-the-ecology.html#the-very-beginning-1",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "The very beginning",
+    "text": "The very beginning\n\n\n\n\nMy favorite movies …"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#my-years-as-an-ecologist",
+    "href": "scene/came-for-the-ecology.html#my-years-as-an-ecologist",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "My years as an ecologist",
+    "text": "My years as an ecologist\n\n\n\n\n\n\n\n\n\nStudied Biology at UNAM, México\n\n\n\n\nFieldwork in semi-arid environments, working on plant ecophysiology\n\n\n\n\nWhat I loved: being outdoors, natural history and …\n\n\n\ncomplicated things (you will see next)"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#the-question-that-hooked-me",
+    "href": "scene/came-for-the-ecology.html#the-question-that-hooked-me",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "The question that hooked me",
+    "text": "The question that hooked me\n\nDoes priming affect the germination response of two perennial herb species in a disturbed lava field in central Mexico?"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#the-question-that-hooked-me-1",
+    "href": "scene/came-for-the-ecology.html#the-question-that-hooked-me-1",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "The question that hooked me",
+    "text": "The question that hooked me\n\n\nLots of field and lab work\n\n\n\n\n\n\n\nOnce I recovered the seeds and exposed them to different treatments\n\n\nHow to model germination?\nHow to determine if different priming treatments influence the germination?\nHow do you quantify uncertainty?\nNot all the seeds are recovered . . .\n\na few of them had already germinated\nsome were dead\nsome were rocks"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#the-question-that-hooked-me-2",
+    "href": "scene/came-for-the-ecology.html#the-question-that-hooked-me-2",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "The question that hooked me",
+    "text": "The question that hooked me\nI needed answers but …\n\nI didn’t quite understand the tools that gave me those answers"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#nature-is-messy-and-so-are-its-data",
+    "href": "scene/came-for-the-ecology.html#nature-is-messy-and-so-are-its-data",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Nature is messy, and so are its data",
+    "text": "Nature is messy, and so are its data\nComplex systems, observed in complicated ways.\n\n\n\nHow we observe nature\n\nImperfect detection: animals get missed\nCorrelation in space and time\nUneven, often opportunistic, sampling\nMany zeros, a few huge counts, gaps\nModels unique to Ecology, (e.g., predator-prey, von Bertalanffy growth, Capture-recapture, distance sampling , and many more )\n\n\n\n\n\n\n\n\n\n\n“A perfect model of reality is as complex as reality itself”"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#the-moment-it-clicked",
+    "href": "scene/came-for-the-ecology.html#the-moment-it-clicked",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "The moment it clicked",
+    "text": "The moment it clicked\n\n\n\nBefore\n[Statistics felt like a recipe I had to follow to analyse ecological data]\n\n\n\nAfter\n[Statistics became a way of thinking about the ecology]\n\n\n\n\n\n\n\n\n\nWhat changed\n\n\nCuriosity: I wanted to understand what I was doing\n\n\n\n\n\n“I have no special talent. I am only passionately curious.”\nAlbert Einstein, letter to Carl Seelig (1952)"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#learning-a-new-language",
+    "href": "scene/came-for-the-ecology.html#learning-a-new-language",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Learning a new language",
+    "text": "Learning a new language\n\n\n\nWhat ecology gave me\n\nIntuition for how data are generated\nInterpreting the results within the context of the problem.\nKnowing what my models assumptions were (even though I didn’t understand why these were needed)\nQuestions worth answering\n\n\n\n\nWhat I had to learn\n\nCalculus, Linear Algebra, Differential equations, etc.\nProbability theory and statistical inference.\nProgramming (R, C++)\nComputational methods (Newton-Raphson, MCMC, INLA)\n\n\n\n\nPostgraduate studies in Applied Statistics & Environmental Statistics, followed with PhD and postdoc at UofG"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#not-an-easy-journey",
+    "href": "scene/came-for-the-ecology.html#not-an-easy-journey",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Not an easy journey",
+    "text": "Not an easy journey\n\n\n\nMy lectures in Ecology …\n\n\n\n\nMy first lecture in Statistics …\nA board full of equations I couldn’t connect to my data\n\n\\[\np(y \\mid \\theta) = \\binom{n}{y}\\,\\theta^{y}(1-\\theta)^{n-y},\n\\\\\n\\pi(\\theta) = \\frac{\\theta^{a-1}(1-\\theta)^{b-1}}{B(a,b)}\n\\]\n\\[\n\\begin{aligned}\n\\pi(\\theta \\mid y) &= \\frac{p(y \\mid \\theta)\\,\\pi(\\theta)}{\\int_0^1 p(y \\mid \\theta)\\,\\pi(\\theta)\\,d\\theta} \\\\\n&\\propto \\theta^{y}(1-\\theta)^{n-y}\\;\\theta^{a-1}(1-\\theta)^{b-1} \\\\\n&= \\theta^{(a+y)-1}\\,(1-\\theta)^{(b+n-y)-1}\n\\end{aligned}\n\\]\n\\[\n\\theta \\mid y \\sim \\text{Beta}(a + y,\\; b + n - y)\n\\]"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#finding-the-links",
+    "href": "scene/came-for-the-ecology.html#finding-the-links",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Finding the links",
+    "text": "Finding the links\nIt took me a while to understand the links."
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#finding-the-links-1",
+    "href": "scene/came-for-the-ecology.html#finding-the-links-1",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Finding the links",
+    "text": "Finding the links\nIt took me a while to understand the links.\n\n\n\nIn ecology\nI was taught to think about the data and the ecological problem\n\n\n\nIn statistics\nI learned proofs and theorems for “basic models”, but most didn’t fit my data, because… ecological data are messy\n\n\n\nThe PhD: building my own tools on what was already there\n\n\n\n01\nBasic models\nUnderstand the foundations\n\n\n02\nComplex models\nSee how they build on them\n\n\n03\nMy own tools\nModels made for messy ecological data"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#same-question-new-tools",
+    "href": "scene/came-for-the-ecology.html#same-question-new-tools",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Same question, new tools",
+    "text": "Same question, new tools"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#research-today",
+    "href": "scene/came-for-the-ecology.html#research-today",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Research today",
+    "text": "Research today\n\n\n\n\n\n\n\nBiodiversity river monitoring\nSpatio-temporal models for detection-non detection data in river networks.\n\n\n\n\n\n\n\nIntegrated Models\nCombine information from different surveys to provide a better description of the state of nature\n\n\n\n\n\n\n\nExtremes in Ecology\nUnderstand the impact of extreme events on ecological systems"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#what-i-enjoyed-back-then",
+    "href": "scene/came-for-the-ecology.html#what-i-enjoyed-back-then",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "What I enjoyed back then",
+    "text": "What I enjoyed back then\nThe Places"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#what-i-enjoyed-back-then-1",
+    "href": "scene/came-for-the-ecology.html#what-i-enjoyed-back-then-1",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "What I enjoyed back then",
+    "text": "What I enjoyed back then\nLos bichos (the creepy-crawlies)"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#what-i-enjoyed-back-then-2",
+    "href": "scene/came-for-the-ecology.html#what-i-enjoyed-back-then-2",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "What I enjoyed back then",
+    "text": "What I enjoyed back then\nThe people"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#i-never-really-left-ecology",
+    "href": "scene/came-for-the-ecology.html#i-never-really-left-ecology",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "I never really left ecology",
+    "text": "I never really left ecology\n\nBack then, I studied the system and collected data to understand it. What I really enjoyed was the puzzle: what could the data tell me?\n\n\nEcology still asks hard questions. But now the joy is in finding compelling answers through Statistics"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#what-i-enjoyed-now",
+    "href": "scene/came-for-the-ecology.html#what-i-enjoyed-now",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "What I enjoyed now",
+    "text": "What I enjoyed now"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#if-youre-an-ecologist-getting-into-statistics",
+    "href": "scene/came-for-the-ecology.html#if-youre-an-ecologist-getting-into-statistics",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "If you’re an ecologist getting into statistics",
+    "text": "If you’re an ecologist getting into statistics\n\n\nYour field knowledge is an asset, not a detour.\nLearn the language one model at a time.\nFind collaborators on both sides.\nAllow yourself to step out of your comfort zone."
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#if-youre-a-statistician-getting-into-ecology",
+    "href": "scene/came-for-the-ecology.html#if-youre-a-statistician-getting-into-ecology",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "If you’re a statistician getting into ecology",
+    "text": "If you’re a statistician getting into ecology\n\n\nUnderstand the ecological question and the system\nAsk how the data were collected\nMessy data are the interesting part, not a nuisance\nSpend a day in the field if possible."
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#thank-you",
+    "href": "scene/came-for-the-ecology.html#thank-you",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Thank you",
+    "text": "Thank you\n\nQuestions?\nJafet.BelmontOsuna@glasgow.ac.uk"
   }
 ]

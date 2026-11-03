@@ -21,9 +21,20 @@ toc: false
           <span class="talk-year">2025</span>
         </div>
         <div class="talk-card-right">
-          <p class="talk-event">ISI World Statistics Congress</p>
+          <p class="talk-event">Regional Statistics Conference · 2026</p>
           <p class="talk-full-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></p>
           <p class="talk-desc">Presentation on integrated species distribution models combining citizen science presence-only records with structured survey data via the INLA/inlabru framework.</p>
+          <span class="talk-cta">View slides →</span>
+        </div>
+      </a>
+      <a class="talk-card-full" href="scene/came-for-the-ecology.html" target="_blank">
+        <div class="talk-card-left">
+          <span class="talk-year">2025</span>
+        </div>
+        <div class="talk-card-right">
+          <p class="talk-event">Leverhulme CDT programme at SCENE· 2026</p>
+          <p class="talk-full-title">A journey from nature to numbers </p>
+          <p class="talk-desc">Presentation on the experience from transitiong from ecology to statistics.</p>
           <span class="talk-cta">View slides →</span>
         </div>
       </a>

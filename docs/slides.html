@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Jafet Belmont">
   <meta name="dcterms.date" content="2026-06-04">
@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -30,8 +33,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +46,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -98,7 +102,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -115,7 +118,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-3dc6c76708c0d85caf89edc2b62a18a3.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-51154ac296d92eefd641b022af6bbb91.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -354,13 +357,11 @@ Jafet Belmont <a href="https://orcid.org/0000-0002-6879-4412" class="quarto-titl
 <div style="height: 50px;">
 
 </div>
-<div>
 <ul>
 <li class="fragment"><p>Underestimation of species distribution</p></li>
 <li class="fragment"><p>Bias of the estimated relationship with covariates</p></li>
 <li class="fragment"><p>Predictive models might reflect detection instead of occurrence</p></li>
 </ul>
-</div>
 </section>
 <section id="the-occupancy-model-for-survey-data" class="slide level2 smaller">
 <h2>The Occupancy model for survey data</h2>
@@ -479,9 +480,6 @@ y_{ijt} = \begin{cases} 1 &amp; \text{if Ringlet is on checklist } i \text{ on v
 <li><p>Occupancy model framework where</p></li>
 <li><p>Relative list length and date of visit allow us to account for varying sampling effort and seasonality in detection probabilities.</p></li>
 </ul>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -523,12 +521,10 @@ y_{ijt} = \begin{cases} 1 &amp; \text{if Ringlet is on checklist } i \text{ on v
 <li>People visit more certain places than others.</li>
 </ul>
 
-<img data-src="images/sampling_eff_ex.png" class="r-stretch quarto-figure-center"><p class="caption">Elevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from <span class="citation" data-cites="botella2020">Botella et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>).</p><div>
-<ul>
+<img data-src="images/sampling_eff_ex.png" class="r-stretch quarto-figure-center"><p class="caption">Elevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from <span class="citation" data-cites="botella2020">Botella et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>).</p><ul>
 <li class="fragment"><p>Small populations at lower elevation could be over-sampled.</p></li>
 <li class="fragment"><p>If we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated</p></li>
 </ul>
-</div>
 </section>
 <section id="section-1" class="slide level2" data-background-image="CS.gif" data-background-size="100%">
 <h2></h2>
@@ -648,12 +644,10 @@ L(\psi_i,p_{ij}) = \left[\prod_i^N \left(1-\exp\left\{-\int_{A_i}\lambda(s) ds\r
 <p><span class="math display">\[
 L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \left[1-\exp\left\{-\int_{A_i}\lambda(s) ds\right\} \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \mathbb{I}_{\sum_j y_{ij} = 0}\exp\left\{\int_{A_i} \lambda(s)ds\right\}\right]
 \]</span></p>
-<div>
 <ul>
 <li class="fragment"><p>In large-scale studies, species distributions are often monitored across relatively small patches.</p></li>
 <li class="fragment"><p>If we assume a constant intensity within each cell then <span class="math inline">\(\int_{A_i}\lambda(s)ds = \lambda_i |A_i|\)</span>.</p></li>
 </ul>
-</div>
 </section>
 <section id="integrated-species-distribution-model-3" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
@@ -782,7 +776,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1-3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1-3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
 <span id="cb1-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
 <span id="cb1-4" class="hljs-ln-code"><a></a></span>
@@ -804,7 +798,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <span id="cb1-20" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
 <span id="cb1-21" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
 <span id="cb1-22" class="hljs-ln-code"><a></a></span>
-<span id="cb1-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="modelling-black-throated-blue-warbler-6" class="slide level2 smaller" data-auto-animate="true">
@@ -813,7 +807,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb2-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
 <span id="cb2-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
 <span id="cb2-4" class="hljs-ln-code"><a></a></span>
@@ -835,7 +829,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <span id="cb2-20" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
 <span id="cb2-21" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
 <span id="cb2-22" class="hljs-ln-code"><a></a></span>
-<span id="cb2-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="modelling-black-throated-blue-warbler-7" class="slide level2 smaller" data-auto-animate="true">
@@ -844,7 +838,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="9-21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="9-21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb3-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
 <span id="cb3-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
 <span id="cb3-4" class="hljs-ln-code"><a></a></span>
@@ -866,7 +860,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <span id="cb3-20" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
 <span id="cb3-21" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
 <span id="cb3-22" class="hljs-ln-code"><a></a></span>
-<span id="cb3-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="modelling-black-throated-blue-warbler-8" class="slide level2 smaller" data-auto-animate="true">
@@ -875,7 +869,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb4-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
 <span id="cb4-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
 <span id="cb4-4" class="hljs-ln-code"><a></a></span>
@@ -897,7 +891,7 @@ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \lef
 <span id="cb4-20" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
 <span id="cb4-21" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
 <span id="cb4-22" class="hljs-ln-code"><a></a></span>
-<span id="cb4-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-23" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="results-integrated-model-posterior-summaries" class="slide level2 smaller striped hover">
@@ -1114,12 +1108,12 @@ I_\theta(W)=n(\mathbf{s} \cap W) - \int_W\widehat{\lambda}_\theta(u) du
 <img data-src="images/research_group.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="references" class="slide level2 smaller scrollable" style="margin-top: 0;">
 <h2>References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-belmont2024" class="csl-entry" role="listitem">
-Belmont, Jafet, Sara Martino, Janine Illian, and Håvard Rue. 2024. <span>“Spatio<span>-</span>Temporal Occupancy Models with INLA.”</span> <em>Methods in Ecology and Evolution</em> 15 (11): 2087–2100. <a href="https://doi.org/10.1111/2041-210x.14422">https://doi.org/10.1111/2041-210x.14422</a>.
+Belmont, Jafet, Sara Martino, Janine Illian, and Håvard Rue. 2024. <span>“Spatio<span>-</span>Temporal Occupancy Models with INLA.”</span> <em>Methods in Ecology and Evolution</em> 15 (11): 2087–100. <a href="https://doi.org/10.1111/2041-210x.14422">https://doi.org/10.1111/2041-210x.14422</a>.
 </div>
 <div id="ref-botella2020" class="csl-entry" role="listitem">
-Botella, Christophe, Alexis Joly, Pascal Monestiez, Pierre Bonnet, and François Munoz. 2020. <span>“Bias in Presence-Only Niche Models Related to Sampling Effort and Species Niches: Lessons for Background Point Selection.”</span> Edited by Mirko Di Febbraro. <em>PLOS ONE</em> 15 (5): e0232078. <a href="https://doi.org/10.1371/journal.pone.0232078">https://doi.org/10.1371/journal.pone.0232078</a>.
+Botella, Christophe, Alexis Joly, Pascal Monestiez, Pierre Bonnet, and François Munoz. 2020. <span>“Bias in Presence-Only Niche Models Related to Sampling Effort and Species Niches: Lessons for Background Point Selection.”</span> <em>PLOS ONE</em> 15 (5): e0232078. <a href="https://doi.org/10.1371/journal.pone.0232078">https://doi.org/10.1371/journal.pone.0232078</a>.
 </div>
 <div id="ref-brown2005" class="csl-entry" role="listitem">
 Brown, Mark T., and M. Benjamin Vivas. 2005. <span>“Landscape Development Intensity Index.”</span> <em>Environmental Monitoring and Assessment</em> 101 (1-3): 289–309. <a href="https://doi.org/10.1007/s10661-005-0296-6">https://doi.org/10.1007/s10661-005-0296-6</a>.
@@ -1128,10 +1122,10 @@ Brown, Mark T., and M. Benjamin Vivas. 2005. <span>“Landscape Development Inte
 Guillera-Arroita, Gurutzeta. 2016. <span>“Modelling of Species Distributions, Range Dynamics and Communities Under Imperfect Detection: Advances, Challenges and Opportunities.”</span> <em>Ecography</em> 40 (2): 281–95. <a href="https://doi.org/10.1111/ecog.02445">https://doi.org/10.1111/ecog.02445</a>.
 </div>
 <div id="ref-isaac2020" class="csl-entry" role="listitem">
-Isaac, Nick J. B., Marta A. Jarzyna, Petr Keil, Lea I. Dambly, Philipp H. Boersch-Supan, Ella Browning, Stephen N. Freeman, et al. 2020. <span>“Data Integration for Large-Scale Models of Species Distributions.”</span> <em>Trends in Ecology &amp; Evolution</em> 35 (1): 56–67. <a href="https://doi.org/10.1016/j.tree.2019.08.006">https://doi.org/10.1016/j.tree.2019.08.006</a>.
+Isaac, Nick J. B., Marta A. Jarzyna, Petr Keil, et al. 2020. <span>“Data Integration for Large-Scale Models of Species Distributions.”</span> <em>Trends in Ecology &amp; Evolution</em> 35 (1): 56–67. <a href="https://doi.org/10.1016/j.tree.2019.08.006">https://doi.org/10.1016/j.tree.2019.08.006</a>.
 </div>
 <div id="ref-mostert2023" class="csl-entry" role="listitem">
-Mostert, Philip S., and Robert B. O’Hara. 2023. <span>“PointedSDMs: An R Package to Help Facilitate the Construction of Integrated Species Distribution Models.”</span> <em>Methods in Ecology and Evolution</em> 14 (5): 1200–1207. <a href="https://doi.org/10.1111/2041-210x.14091">https://doi.org/10.1111/2041-210x.14091</a>.
+Mostert, Philip S., and Robert B. O’Hara. 2023. <span>“PointedSDMs: An r Package to Help Facilitate the Construction of Integrated Species Distribution Models.”</span> <em>Methods in Ecology and Evolution</em> 14 (5): 1200–1207. <a href="https://doi.org/10.1111/2041-210x.14091">https://doi.org/10.1111/2041-210x.14091</a>.
 </div>
 <div id="ref-simpson2016" class="csl-entry" role="listitem">
 Simpson, D., J. B. Illian, F. Lindgren, S. H. Sørbye, and H. Rue. 2016. <span>“Going Off Grid: Computationally Efficient Inference for Log-Gaussian Cox Processes.”</span> <em>Biometrika</em> 103 (1): 49–70. <a href="https://doi.org/10.1093/biomet/asv064">https://doi.org/10.1093/biomet/asv064</a>.
@@ -1330,7 +1324,7 @@ Simpson, D., J. B. Illian, F. Lindgren, S. H. Sørbye, and H. Rue. 2016. <span>�
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1433,190 +1427,173 @@ Simpson, D., J. B. Illian, F. Lindgren, S. H. Sørbye, and H. Rue. 2016. <span>�
     
 
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
+          return false;
         }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
