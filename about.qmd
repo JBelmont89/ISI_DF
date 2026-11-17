@@ -38,6 +38,17 @@ toc: false
           <span class="talk-cta">View slides →</span>
         </div>
       </a>
+     <a class="talk-card-full" href="talks/NCSE_2026/ncse_seminar.html" target="_blank">
+        <div class="talk-card-left">
+          <span class="talk-year">2026</span>
+        </div>
+        <div class="talk-card-right">
+          <p class="talk-event">NCSE seminar· 2026</p>
+          <p class="talk-full-title">Flexible Spatial Modelling with  <code>inlabru</code>: From Data to Ecological Inference </p>
+          <p class="talk-desc">Seminar  for members of the national Centre for Statistical Ecology.</p>
+          <span class="talk-cta">View slides →</span>
+        </div>
+      </a>
 
       <!-- =====================================================
            ADD NEW TALKS BELOW — copy and paste the block above

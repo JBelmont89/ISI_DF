@@ -102,7 +102,12 @@ toc: false
       </a>
        <a class="talk-card" href="scene/came-for-the-ecology.html" target="_blank">
         <div class="talk-meta">Leverhulme CDT programme at SCENE· 2026</div>
-        <div class="talk-title">A journey from nature to numbers <code>inlabru</code></div>
+        <div class="talk-title">A journey from nature to numbers </div>
+        <div class="talk-tag">View slides →</div>
+      </a>
+        <a class="talk-card" href="talks/NCSE_2026/ncse_seminar.html" target="_blank">
+        <div class="talk-meta">NCSE seminar· 2026</div>
+        <div class="talk-title"> Flexible Spatial Modelling with  <code>inlabru</code>: From Data to Ecological Inference</code></div>
         <div class="talk-tag">View slides →</div>
       </a>
       <!-- Add more talk cards here as you create new presentations -->

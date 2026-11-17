@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/bootstrap-icons-1.11.1/all.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Jafet Belmont">
+  <meta name="dcterms.date" content="2026-11-17">
+  <title>Jafet Belmont Osuna – Flexible Spatial Modelling with inlabru</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-51154ac296d92eefd641b022af6bbb91.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="custom.js" type="application/javascript"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#ffffff" data-background-image="river.png" class="quarto-title-block center">
+  <h1 class="title">Flexible Spatial Modelling with <code>inlabru</code></h1>
+  <p class="subtitle">From Data to Ecological Inference</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Jafet Belmont <a href="https://orcid.org/0000-0002-6879-4412" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:Jafet.BelmontOsuna@glasgow.ac.uk">Jafet.BelmontOsuna@glasgow.ac.uk</a>
+</div>
+        <p class="quarto-title-affiliation">
+            School of Mathematics and Statistics, UofG
+          </p>
+    </div>
+</div>
+
+  <p class="date">2026-11-17</p>
+</section>
+<section id="section" class="slide level2" data-background-image="river.png" data-background-size="100%">
+<h2></h2>
+<div style="height: 50px;">
+
+</div>
+<div class="quote-gold">
+<blockquote>
+<p>Space is inherent to all ecological processes, influencing dynamics such as migration, dispersal, and species interactions. A primary goal in ecology is to understand how these processes shape species distributions and dynamics across space.</p>
+</blockquote>
+</div>
+</section>
+<section id="monitoring-species-distributions" class="slide level2" data-background-image="city_plan.gif" data-background-size="100%">
+<h2>Monitoring species distributions</h2>
+<blockquote>
+<p>Imagine planning a city without knowing where people live. This is exactly what we risk doing in conservation if we don’t accurately map where species exist—and why.</p>
+</blockquote>
+</section>
+<section id="monitoring-species-distributions-1" class="slide level2 smaller">
+<h2>Monitoring species distributions</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>Biodiversity monitoring programs have become essential to <strong>understand</strong> the spatial distribution of species.</p></li>
+<li><p>The analysis of species distribution data is <strong>challenging</strong></p></li>
+<li><p>Spatial dependency can complicate statistical analysis and, if unaccounted for, it can <strong>bias</strong> our interpretation of the observed patterns.</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ecological_framework.png" class="quarto-figure quarto-figure-center" style="width:100.0%;height:100.0%"></p>
+</figure>
+</div>
+</div></div>
+
+<aside><div>
+<p>Figure modified from <span class="citation" data-cites="mostert2023">(<a href="#/references" role="doc-biblioref" onclick="">Mostert and O’Hara 2023</a>)</span></p>
+</div></aside></section>
+<section id="the-challenge-of-data" class="slide level2 smaller">
+<h2>The Challenge of Data</h2>
+<ul>
+<li><p>The information available for species distributions models is radically changing</p></li>
+<li><p>As the <strong>volume</strong> of recorded ecological data continues to grow, so does the need for <strong>computationally efficient methods</strong> for fitting complex models.</p></li>
+<li><p>One major challenge in spatial modelling is translating mathematical models into <strong>code</strong></p></li>
+</ul>
+
+<img data-src="NBN_Trust_Growth.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="inla-in-ecology" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">INLA in Ecology</h2>
+<p>The R-INLA package has become a powerful tool for fitting complex spatial models in ecology.</p>
+
+<img data-src="images/scholar_search.png" class="r-stretch quarto-figure-center"><p class="caption">Google scholar search (17/11/2026)</p></section>
+<section id="inla-in-ecology-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">INLA in Ecology</h2>
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;">
+<iframe sandbox="allow-popups allow-scripts allow-same-origin allow-presentation" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="true" allowtransparency="true" frameborder="0" height="315" src="https://www.mentimeter.com/app/presentation/als852ohxxo1iuox6v8siwumcqcudx4u/embed" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" width="420">
+</iframe>
+</div>
+<!-- ![](images/QR_menti.png){fig-align="center"} -->
+</section>
+<section id="what-is-inla-and-inlabru" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What is INLA and <code>inlabru</code>?</h2>
+<ul>
+<li><strong>Short Answer</strong></li>
+</ul>
+<blockquote>
+<p>The Integrated Nested Laplace Approximation (INLA) is a fast method to do Bayesian inference with latent Gaussian models and <code>inlabru</code> is an R-package that implements this method with a flexible and simple interface.</p>
+</blockquote>
+</section>
+<section id="what-is-inla-and-inlabru-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What is INLA and <code>inlabru</code>?</h2>
+<ul>
+<li><strong>Short Answer</strong></li>
+</ul>
+<blockquote>
+<p>The Integrated Nested Laplace Approximation (INLA) is a fast method to do Bayesian inference with latent Gaussian models and <code>inlabru</code> is an R-package that implements this method with a flexible and simple interface.</p>
+</blockquote>
+<ul>
+<li><strong>The (much) longer answer</strong>
+<ul>
+<li>Rue, H., Martino, S. and Chopin, N. (2009), Approximate Bayesian inference for latent Gaussian models by using integrated nested Laplace approximations. <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em>, 71: 319-392.</li>
+<li>Van Niekerk, J., Krainski, E., Rustand, D., &amp; Rue, H. (2023). A new avenue for Bayesian inference with INLA. <em>Computational Statistics &amp; Data Analysis</em>, 181, 107692.</li>
+<li>Lindgren, F., Bachl, F., Illian, J., Suen, M. H., Rue, H., &amp; Seaton, A. E. (2024). inlabru: software for fitting latent Gaussian models with non-linear predictors. <em>arXiv preprint</em> arXiv:2407.00791.</li>
+<li>Lindgren, F., Bolin, D., &amp; Rue, H. (2022). The SPDE approach for Gaussian and non-Gaussian fields: 10 years and still running. <em>Spatial Statistics</em>, 50, 100599.</li>
+</ul></li>
+</ul>
+</section>
+<section id="latent-gaussian-models-with-an-example" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Latent Gaussian Models … with an example</h2>
+<ul>
+<li><p>Most commonly used models are actually LGMs (e.g., LM,LMM, GLM, GAM,etc)</p></li>
+<li><p>A LGM consists of three elements:</p></li>
+</ul>
+</section>
+<section id="latent-gaussian-models-with-an-example-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Latent Gaussian Models … with an example</h2>
+<ul>
+<li><p>Most commonly used models are actually LGMs (e.g., LM,LMM, GLM, GAM,etc)</p></li>
+<li><p>A LGM consists of three elements:</p>
+<ol type="1">
+<li><strong>The observation model</strong> <span class="math inline">\(\pi(\mathbf{y}|\eta,\theta) = \prod_{i=1}^n \pi(y_i|\eta_,\theta)\)</span></li>
+</ol>
+<p>The data generating process</p></li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+y_i &amp;\sim \mathcal{N}(\mu_i,\sigma_\epsilon^{2})\\
+\eta_i &amp;= \mu_i = \beta_0 + \beta_1 x_i
+\end{aligned}\]</span></p>
+</section>
+<section id="latent-gaussian-models-with-an-example-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Latent Gaussian Models … with an example</h2>
+<ul>
+<li><p>Most commonly used models are actually LGMs (e.g., LM,LMM, GLM, GAM,etc)</p></li>
+<li><p>A LGM consists of three elements:</p>
+<ol type="1">
+<li><p><strong>The observation model</strong> <span class="math inline">\(\pi(\mathbf{y}|\eta,\theta) = \prod_{i=1}^n \pi(y_i|\eta_,\theta)\)</span></p></li>
+<li><p><strong>The latent Gaussian field</strong> <span class="math inline">\(\pi(\mathbf{u}|\theta)\)</span></p></li>
+</ol>
+<p>The dependence structure</p></li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+\begin{bmatrix}
+\beta_0 \\ \beta_1 \end{bmatrix}
+&amp;\sim \mathcal{N}\left(\mathbf{0},\mathrm{Q}^{-1}
+\right)\\
+\mathrm{Q} &amp; =
+\begin{bmatrix}
+\tau_{\beta_0} &amp; 0 \\ 0 &amp; \tau_{\beta_1}
+\end{bmatrix}
+\end{aligned}\]</span></p>
+</section>
+<section id="latent-gaussian-models-with-an-example-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Latent Gaussian Models … with an example</h2>
+<ul>
+<li><p>Most commonly used models are actually LGMs (e.g., LM,LMM, GLM, GAM,etc)</p></li>
+<li><p>A LGM consists of three elements:</p>
+<ol type="1">
+<li><p><strong>The observation model</strong> <span class="math inline">\(\pi(\mathbf{y}|\eta,\theta) = \prod_{i=1}^n \pi(y_i|\eta_,\theta)\)</span></p></li>
+<li><p><strong>The latent Gaussian field</strong> <span class="math inline">\(\pi(\mathbf{u}|\theta)\)</span></p></li>
+<li><p>a vector of non-Gaussian <strong>hyperparameters</strong> <span class="math inline">\(\theta\)</span></p></li>
+</ol>
+<p><span class="math display">\[\tau_{\epsilon} = 1/ \sigma_\epsilon^{2}\]</span></p></li>
+</ul>
+</section>
+<section id="latent-gaussian-models-with-an-example-4" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Latent Gaussian Models … with an example</h2>
+<ul>
+<li><p>Most commonly used models are actually LGMs (e.g., LM,LMM, GLM, GAM,etc)</p></li>
+<li><p>A LGM consists of three elements:</p>
+<ol type="1">
+<li><p><strong>The observation model</strong> <span class="math inline">\(\pi(\mathbf{y}|\eta,\theta) = \prod_{i=1}^n \pi(y_i|\eta_,\theta)\)</span></p></li>
+<li><p><strong>The latent Gaussian field</strong> <span class="math inline">\(\pi(\mathbf{u}|\theta)\)</span></p></li>
+<li><p>a vector of non-Gaussian <strong>hyperparameters</strong> <span class="math inline">\(\theta\)</span></p></li>
+</ol></li>
+<li><p>The characteristic property is that the latent part of the hierarchical model is Gaussian, where the expected value is 0 and the precision matrix is Q.</p></li>
+<li><p>We can use INLA to compute <span class="math inline">\(\pi(\mathbf{u},\theta|\mathbf{y}) \propto \pi(\mathbf{y}|\mathbf{u},\theta)\pi(\mathbf{u}|\theta)\pi(\theta)\)</span></p></li>
+</ul>
+</section>
+<section id="real-world-datasets-are-more-complicated" class="slide level2 smaller">
+<h2>Real-world datasets are more complicated!</h2>
+<p>Data can have several dependence structures: temporal, spatial,…</p>
+<p>Using a Bayesian framework:</p>
+<ul>
+<li>Build (hierarchical) models to account for potentially complicated dependency structures in the data.</li>
+<li>Attribute uncertainty to model parameters and latent variables using priors.</li>
+</ul>
+<p>Need computationally efficient methods to calculate posteriors (this is where INLA and <code>R-INLA</code> helps!).</p>
+
+<img data-src="images/INLAlogo.jpg" class="quarto-figure quarto-figure-center r-stretch" width="200"></section>
+<section id="why-inlabru" class="slide level2 smaller" data-scrolling="true" data-auto-animate="TRUE">
+<h2 data-id="quarto-animate-title">Why <code>inlabru</code>?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Fitting spatial models in <code>R-INLA</code> interface can be cumbersome for new (and even experienced) users!</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-1542148570.png" class="quarto-figure quarto-figure-center" width="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Point process model with <code>R-INLA</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a></a>domain.polys <span class="ot">&lt;-</span> <span class="fu">Polygons</span>(<span class="fu">list</span>(<span class="fu">Polygon</span>(loc.d)), <span class="st">'0'</span>)</span>
+<span id="cb1-2" class="hljs-ln-code"><a></a>domainSP <span class="ot">&lt;-</span> <span class="fu">SpatialPolygons</span>(<span class="fu">list</span>(domain.polys))</span>
+<span id="cb1-3" class="hljs-ln-code"><a></a></span>
+<span id="cb1-4" class="hljs-ln-code"><a></a><span class="co"># Because the mesh is larger than the study area, we need to</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a></a><span class="co"># compute the intersection between each polygon</span></span>
+<span id="cb1-6" class="hljs-ln-code"><a></a><span class="co"># in the dual mesh and the study area</span></span>
+<span id="cb1-7" class="hljs-ln-code"><a></a><span class="fu">library</span>(rgeos)</span>
+<span id="cb1-8" class="hljs-ln-code"><a></a></span>
+<span id="cb1-9" class="hljs-ln-code"><a></a>w <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dmesh), <span class="cf">function</span>(i) {</span>
+<span id="cb1-10" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (<span class="fu">gIntersects</span>(dmesh[i, ], domainSP))</span>
+<span id="cb1-11" class="hljs-ln-code"><a></a>    <span class="fu">return</span>(<span class="fu">gArea</span>(<span class="fu">gIntersection</span>(dmesh[i, ], domainSP)))</span>
+<span id="cb1-12" class="hljs-ln-code"><a></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb1-13" class="hljs-ln-code"><a></a>})</span>
+<span id="cb1-14" class="hljs-ln-code"><a></a><span class="co"># Projection matrix for the integration points (mesh vertices)</span></span>
+<span id="cb1-15" class="hljs-ln-code"><a></a>A.int <span class="ot">&lt;-</span> <span class="fu">Diagonal</span>(nv, <span class="fu">rep</span>(<span class="dv">1</span>, nv))</span>
+<span id="cb1-16" class="hljs-ln-code"><a></a><span class="co"># Projection matrix for observed points (event locations)</span></span>
+<span id="cb1-17" class="hljs-ln-code"><a></a>A.y <span class="ot">&lt;-</span> <span class="fu">inla.spde.make.A</span>(<span class="at">mesh =</span> mesh, <span class="at">loc =</span> coo)</span>
+<span id="cb1-18" class="hljs-ln-code"><a></a><span class="co"># Projection matrix for mesh vertices and event locations</span></span>
+<span id="cb1-19" class="hljs-ln-code"><a></a>A.pp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(A.int, A.y)</span>
+<span id="cb1-20" class="hljs-ln-code"><a></a>Ap.pp <span class="ot">&lt;-</span> <span class="fu">inla.spde.make.A</span>(<span class="at">mesh =</span> mesh, <span class="at">loc =</span> coop)</span>
+<span id="cb1-21" class="hljs-ln-code"><a></a><span class="co"># stack for estimation</span></span>
+<span id="cb1-22" class="hljs-ln-code"><a></a>stk.e.pp <span class="ot">&lt;-</span> <span class="fu">inla.stack</span>(<span class="at">tag =</span> <span class="st">"est.pp"</span>,</span>
+<span id="cb1-23" class="hljs-ln-code"><a></a><span class="at">data =</span> <span class="fu">list</span>(<span class="at">y =</span> y.pp, <span class="at">e =</span> e.pp), </span>
+<span id="cb1-24" class="hljs-ln-code"><a></a><span class="at">A =</span> <span class="fu">list</span>(<span class="dv">1</span>, A.pp),</span>
+<span id="cb1-25" class="hljs-ln-code"><a></a><span class="at">effects =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">b0 =</span> <span class="fu">rep</span>(<span class="dv">1</span>, nv <span class="sc">+</span> n)), <span class="fu">list</span>(<span class="at">s =</span> <span class="dv">1</span><span class="sc">:</span>nv)))</span>
+<span id="cb1-26" class="hljs-ln-code"><a></a></span>
+<span id="cb1-27" class="hljs-ln-code"><a></a><span class="co"># stack for prediction stk.p</span></span>
+<span id="cb1-28" class="hljs-ln-code"><a></a>stk.p.pp <span class="ot">&lt;-</span> <span class="fu">inla.stack</span>(<span class="at">tag =</span> <span class="st">"pred.pp"</span>,</span>
+<span id="cb1-29" class="hljs-ln-code"><a></a><span class="at">data =</span> <span class="fu">list</span>(<span class="at">y =</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(coop)), <span class="at">e =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">nrow</span>(coop))),</span>
+<span id="cb1-30" class="hljs-ln-code"><a></a><span class="at">A =</span> <span class="fu">list</span>(<span class="dv">1</span>, Ap.pp),</span>
+<span id="cb1-31" class="hljs-ln-code"><a></a><span class="at">effects =</span> <span class="fu">list</span>(<span class="fu">data.frame</span>(<span class="at">b0 =</span> <span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(coop))),</span>
+<span id="cb1-32" class="hljs-ln-code"><a></a>               <span class="fu">list</span>(<span class="at">s =</span> <span class="dv">1</span><span class="sc">:</span>nv)))</span>
+<span id="cb1-33" class="hljs-ln-code"><a></a></span>
+<span id="cb1-34" class="hljs-ln-code"><a></a><span class="co"># stk.full has stk.e and stk.p</span></span>
+<span id="cb1-35" class="hljs-ln-code"><a></a>stk.full.pp <span class="ot">&lt;-</span> <span class="fu">inla.stack</span>(stk.e.pp, stk.p.pp)</span>
+<span id="cb1-36" class="hljs-ln-code"><a></a>formula <span class="ot">&lt;-</span> y <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> b0 <span class="sc">+</span> <span class="fu">f</span>(s, <span class="at">model =</span> spde)</span>
+<span id="cb1-37" class="hljs-ln-code"><a></a>res <span class="ot">&lt;-</span> <span class="fu">inla</span>(formula,  <span class="at">family =</span> <span class="st">'poisson'</span>,</span>
+<span id="cb1-38" class="hljs-ln-code"><a></a><span class="at">data =</span> <span class="fu">inla.stack.data</span>(stk.full.pp),</span>
+<span id="cb1-39" class="hljs-ln-code"><a></a><span class="at">control.predictor =</span> <span class="fu">list</span>(<span class="at">compute =</span> <span class="cn">TRUE</span>, <span class="at">link =</span> <span class="dv">1</span>,</span>
+<span id="cb1-40" class="hljs-ln-code"><a></a>                         <span class="at">A =</span> <span class="fu">inla.stack.A</span>(stk.full.pp)),</span>
+<span id="cb1-41" class="hljs-ln-code"><a></a><span class="at">E =</span> <span class="fu">inla.stack.data</span>(stk.full.pp)<span class="sc">$</span>e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="why-inlabru-1" class="slide level2 smaller" data-scrolling="true" data-auto-animate="TRUE">
+<h2 data-id="quarto-animate-title">Why <code>inlabru</code>?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Fitting spatial models in <code>R-INLA</code> interface can be cumbersome for new (and even experienced) users!</li>
+<li>In many cases, complicated spatial models are just special cases of the same model structure!!</li>
+</ul>
+<ul>
+<li class="fragment">Stage 1: What is the distribution of the responses?</li>
+<li class="fragment">Stage 2: What are the model components? and what is their distribution?</li>
+<li class="fragment">Stage 3: What are our prior beliefs about the parameters controlling the components in the model?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Point process model with <code>R-INLA</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a></a>domain.polys <span class="ot">&lt;-</span> <span class="fu">Polygons</span>(<span class="fu">list</span>(<span class="fu">Polygon</span>(loc.d)), <span class="st">'0'</span>)</span>
+<span id="cb2-2" class="hljs-ln-code"><a></a>domainSP <span class="ot">&lt;-</span> <span class="fu">SpatialPolygons</span>(<span class="fu">list</span>(domain.polys))</span>
+<span id="cb2-3" class="hljs-ln-code"><a></a></span>
+<span id="cb2-4" class="hljs-ln-code"><a></a><span class="co"># Because the mesh is larger than the study area, we need to</span></span>
+<span id="cb2-5" class="hljs-ln-code"><a></a><span class="co"># compute the intersection between each polygon</span></span>
+<span id="cb2-6" class="hljs-ln-code"><a></a><span class="co"># in the dual mesh and the study area</span></span>
+<span id="cb2-7" class="hljs-ln-code"><a></a><span class="fu">library</span>(rgeos)</span>
+<span id="cb2-8" class="hljs-ln-code"><a></a></span>
+<span id="cb2-9" class="hljs-ln-code"><a></a>w <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dmesh), <span class="cf">function</span>(i) {</span>
+<span id="cb2-10" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (<span class="fu">gIntersects</span>(dmesh[i, ], domainSP))</span>
+<span id="cb2-11" class="hljs-ln-code"><a></a>    <span class="fu">return</span>(<span class="fu">gArea</span>(<span class="fu">gIntersection</span>(dmesh[i, ], domainSP)))</span>
+<span id="cb2-12" class="hljs-ln-code"><a></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb2-13" class="hljs-ln-code"><a></a>})</span>
+<span id="cb2-14" class="hljs-ln-code"><a></a><span class="co"># Projection matrix for the integration points (mesh vertices)</span></span>
+<span id="cb2-15" class="hljs-ln-code"><a></a>A.int <span class="ot">&lt;-</span> <span class="fu">Diagonal</span>(nv, <span class="fu">rep</span>(<span class="dv">1</span>, nv))</span>
+<span id="cb2-16" class="hljs-ln-code"><a></a><span class="co"># Projection matrix for observed points (event locations)</span></span>
+<span id="cb2-17" class="hljs-ln-code"><a></a>A.y <span class="ot">&lt;-</span> <span class="fu">inla.spde.make.A</span>(<span class="at">mesh =</span> mesh, <span class="at">loc =</span> coo)</span>
+<span id="cb2-18" class="hljs-ln-code"><a></a><span class="co"># Projection matrix for mesh vertices and event locations</span></span>
+<span id="cb2-19" class="hljs-ln-code"><a></a>A.pp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(A.int, A.y)</span>
+<span id="cb2-20" class="hljs-ln-code"><a></a>Ap.pp <span class="ot">&lt;-</span> <span class="fu">inla.spde.make.A</span>(<span class="at">mesh =</span> mesh, <span class="at">loc =</span> coop)</span>
+<span id="cb2-21" class="hljs-ln-code"><a></a><span class="co"># stack for estimation</span></span>
+<span id="cb2-22" class="hljs-ln-code"><a></a>stk.e.pp <span class="ot">&lt;-</span> <span class="fu">inla.stack</span>(<span class="at">tag =</span> <span class="st">"est.pp"</span>,</span>
+<span id="cb2-23" class="hljs-ln-code"><a></a><span class="at">data =</span> <span class="fu">list</span>(<span class="at">y =</span> y.pp, <span class="at">e =</span> e.pp), </span>
+<span id="cb2-24" class="hljs-ln-code"><a></a><span class="at">A =</span> <span class="fu">list</span>(<span class="dv">1</span>, A.pp),</span>
+<span id="cb2-25" class="hljs-ln-code"><a></a><span class="at">effects =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">b0 =</span> <span class="fu">rep</span>(<span class="dv">1</span>, nv <span class="sc">+</span> n)), <span class="fu">list</span>(<span class="at">s =</span> <span class="dv">1</span><span class="sc">:</span>nv)))</span>
+<span id="cb2-26" class="hljs-ln-code"><a></a></span>
+<span id="cb2-27" class="hljs-ln-code"><a></a><span class="co"># stack for prediction stk.p</span></span>
+<span id="cb2-28" class="hljs-ln-code"><a></a>stk.p.pp <span class="ot">&lt;-</span> <span class="fu">inla.stack</span>(<span class="at">tag =</span> <span class="st">"pred.pp"</span>,</span>
+<span id="cb2-29" class="hljs-ln-code"><a></a><span class="at">data =</span> <span class="fu">list</span>(<span class="at">y =</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(coop)), <span class="at">e =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">nrow</span>(coop))),</span>
+<span id="cb2-30" class="hljs-ln-code"><a></a><span class="at">A =</span> <span class="fu">list</span>(<span class="dv">1</span>, Ap.pp),</span>
+<span id="cb2-31" class="hljs-ln-code"><a></a><span class="at">effects =</span> <span class="fu">list</span>(<span class="fu">data.frame</span>(<span class="at">b0 =</span> <span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(coop))),</span>
+<span id="cb2-32" class="hljs-ln-code"><a></a>               <span class="fu">list</span>(<span class="at">s =</span> <span class="dv">1</span><span class="sc">:</span>nv)))</span>
+<span id="cb2-33" class="hljs-ln-code"><a></a></span>
+<span id="cb2-34" class="hljs-ln-code"><a></a><span class="co"># stk.full has stk.e and stk.p</span></span>
+<span id="cb2-35" class="hljs-ln-code"><a></a>stk.full.pp <span class="ot">&lt;-</span> <span class="fu">inla.stack</span>(stk.e.pp, stk.p.pp)</span>
+<span id="cb2-36" class="hljs-ln-code"><a></a>formula <span class="ot">&lt;-</span> y <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> b0 <span class="sc">+</span> <span class="fu">f</span>(s, <span class="at">model =</span> spde)</span>
+<span id="cb2-37" class="hljs-ln-code"><a></a>res <span class="ot">&lt;-</span> <span class="fu">inla</span>(formula,  <span class="at">family =</span> <span class="st">'poisson'</span>,</span>
+<span id="cb2-38" class="hljs-ln-code"><a></a><span class="at">data =</span> <span class="fu">inla.stack.data</span>(stk.full.pp),</span>
+<span id="cb2-39" class="hljs-ln-code"><a></a><span class="at">control.predictor =</span> <span class="fu">list</span>(<span class="at">compute =</span> <span class="cn">TRUE</span>, <span class="at">link =</span> <span class="dv">1</span>,</span>
+<span id="cb2-40" class="hljs-ln-code"><a></a>                         <span class="at">A =</span> <span class="fu">inla.stack.A</span>(stk.full.pp)),</span>
+<span id="cb2-41" class="hljs-ln-code"><a></a><span class="at">E =</span> <span class="fu">inla.stack.data</span>(stk.full.pp)<span class="sc">$</span>e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="why-inlabru-2" class="slide level2 smaller" data-scrolling="true">
+<h2>Why <code>inlabru</code>?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Fitting spatial models in <code>R-INLA</code> interface can be cumbersome for new (and even experienced) users!</p></li>
+<li><p>In many cases, complicated spatial models are just special cases of the same model structure!!</p>
+<ul>
+<li>Stage 1: What is the distribution of the responses?</li>
+<li>Stage 2: What are the model components? and what is their distribution?</li>
+<li>Stage 3: What are our prior beliefs about the parameters controlling the components in the model?</li>
+</ul></li>
+<li><p><code>inlabru</code> keeps a consistent workflow no matter how complicated your model is</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Point process model with <code>inlabru</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1-3|5-6|8-12|13-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Step 1. Define model components</span></span>
+<span id="cb3-2"><a></a>cmp <span class="ot">&lt;-</span> <span class="fu">component_1</span>(...) <span class="sc">+</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">component_2</span>(...) <span class="sc">+</span> ...</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a><span class="co"># Step 2. Define the model predictor</span></span>
+<span id="cb3-6"><a></a>pred <span class="ot">&lt;-</span> geometry <span class="sc">~</span> component_1 <span class="sc">+</span> component_2 <span class="sc">+</span> ...</span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a><span class="co"># Step 3. Build the observation model</span></span>
+<span id="cb3-9"><a></a>lik <span class="ot">&lt;-</span> <span class="fu">bru_obs</span>(<span class="at">formula =</span> pred,</span>
+<span id="cb3-10"><a></a>               <span class="at">family =</span> <span class="st">"cp"</span> ,</span>
+<span id="cb3-11"><a></a>               <span class="at">data =</span> sf_object ,</span>
+<span id="cb3-12"><a></a>                ...)</span>
+<span id="cb3-13"><a></a><span class="co"># Step 4. Fit the model</span></span>
+<span id="cb3-14"><a></a>fit <span class="ot">&lt;-</span> fit <span class="ot">&lt;-</span> <span class="fu">bru</span>(comps, lik, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="why-inlabru-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Why <code>inlabru</code>?</h2>
+<p><strong>In summary</strong></p>
+<ul>
+<li class="fragment"><p><strong>Consistent</strong> workflow and user-friendly interface.</p></li>
+<li class="fragment"><p>Facilitate <strong>spatial modelling</strong> and <strong>prediction</strong> using integrated nested Laplace approximation</p></li>
+<li class="fragment"><p>Support of commonly used spatial <strong>data formats</strong> like <code>sf</code> and <code>terra</code></p></li>
+<li class="fragment"><p>Extends <code>R-INLA</code> functionality to more general <strong>nonlinear predicto</strong>r expressions via a <strong>fixed point iteration</strong> scheme.</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>It is named after <strong>Scotland’s favorite</strong> soft drink</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/irnbru.png" class="quarto-figure quarto-figure-center" style="width:25.0%;height:25.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2" data-background-image="landscape_Eff2.gif" data-background-size="100%">
+<h2></h2>
+<div style="height: 300px;">
+
+</div>
+<div class="blockquote" style="color: #FFFFFF; background-color:rgb(38, 38, 38,0.8); font-size: 1.5em; padding: 20px; border-radius: 5px;">
+<p>Determining the scale effects of landscape variables</p>
+</div>
+</section>
+<section id="scale-effect-in-ecology" class="slide level2">
+<h2>Scale effect in Ecology</h2>
+<ul>
+<li><p>Landscape studies often explore the impact of surrounding landscapes on abiotic or biotic responses at specific locations (selected for their differing landscape features).</p></li>
+<li><p>A key challenge in these studies is to identify the spatial scale at which these landscape factors affect the response variable.</p></li>
+</ul>
+
+<img data-src="images/landscape.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="methods-for-determining-scale-effect" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Methods for determining scale effect</h2>
+<p>The two most commonly used methods for estimating landscape effects are <em>threshold</em> and <em>distance-weighted</em> methods.</p>
+<p><strong>Threshold methods</strong> compare landscape variables across multiple buffer sizes centred at specific habitat patches, and then select the scale that best fits the data.</p>
+
+<img data-src="images/threshold.png" class="r-stretch quarto-figure-center"><p class="caption">Modified from <span class="citation" data-cites="lowe2022">Lowe et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></section>
+<section id="methods-for-determining-scale-effect-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Methods for determining scale effect</h2>
+<p>The two most commonly used methods for estimating landscape effects are <em>threshold</em> and <em>distance-weighted</em> methods.</p>
+<p><strong>Threshold methods</strong> compare landscape variables across multiple buffer sizes centred at specific habitat patches, and then select the scale that best fits the data.</p>
+<p>There are several issues with this approach:</p>
+<ul>
+<li>Choosing the maximum and minimum buffer sizes and the number of buffers to evaluate</li>
+<li>The larger the number of buffers to evaluate, the more models we need to fit leading to inflated Type 1 errors</li>
+<li>High degree of spatial autocorrelation between buffers</li>
+<li>Assume an uniform effect of the landscape features within a buffer</li>
+</ul>
+</section>
+<section id="methods-for-determining-scale-effect-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Methods for determining scale effect</h2>
+<p>The two most commonly used methods for estimating landscape effects are <em>threshold</em> and <em>distance-weighted</em> methods.</p>
+<p><em>Distance-weighted</em> methods assign continuous weights to landscape variables, giving greater importance to areas nearer to the study sites and less to those farther away.</p>
+
+<img data-src="images/distance_w.png" class="r-stretch quarto-figure-center"><p class="caption">Modified from <span class="citation" data-cites="lowe2022">Lowe et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></section>
+<section id="the-kernel-function" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Kernel function</h2>
+<p><em>Distance-weighted</em> summarise landscape variables by calculating a weighted average, where the weights <span class="math inline">\(w\)</span> are determined using a known kernel function.</p>
+<ul>
+<li><p>These kernels are defined by the distance between the sample location <span class="math inline">\(i\)</span> and the surrounding locations.</p></li>
+<li><p>Usually an exponential or a Gaussian kernel are assumed for the shape of <span class="math inline">\(w(\cdot)\)</span> e.g.,</p></li>
+</ul>
+<p><span class="math display">\[w(\mathbf{s}_i,\mathbf{s}_j,\sigma) = \dfrac{\mathrm{exp(-||\mathbf{s}_i-\mathbf{s}_j||^2/2\sigma^2)}}{\sum_{i\neq j} \mathrm{exp}(-||\mathbf{s}_i-\mathbf{s}_j||^2/2\sigma^2)}\]</span></p>
+<ul>
+<li><span class="math inline">\(\sigma\)</span>, the scale parameter, describes how rapidly the effects of the landscape variables decline with the Euclidean distance between locations.</li>
+<li>Smaller <span class="math inline">\(\sigma\)</span> values indicate that nearby locations have a larger weight, whereas large <span class="math inline">\(\sigma\)</span> place large weights on distant values of the covariate(s) of interest. The goal is then to estimate <span class="math inline">\(\{\beta,\sigma,u_i\}\)</span>.</li>
+</ul>
+</section>
+<section id="the-kernel-function-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Kernel function</h2>
+
+<img data-src="images/kernells.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="species-distribution-model" class="slide level2 smaller">
+<h2>Species distribution model</h2>
+<p>A simple species distribution model can be specified as follows:</p>
+<p><span class="math display">\[\begin{aligned}
+y_i &amp;\sim \mathrm{Bernoulli}(\theta_i)  \\
+\log \left(\frac{\theta_i}{1 - \theta_i} \right) &amp;= \beta_0+ \sum_{k\in K} \beta_k s_k(x^k(\mathbf{s}_i,\sigma)) + u_i , \\
+s_k(x^k(\mathbf{s}_i,\sigma)) &amp; = \sum_{i\neq j}  x^k(\mathbf{s}_j)w(\mathbf{s}_i,\mathbf{s}_j,\sigma)
+\end{aligned}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(s_k(z^k(\mathbf{x}_i,\sigma))\)</span> is the weighted average of the <span class="math inline">\(k\)</span>th landscape variable <span class="math inline">\(z^k\)</span> with weights <span class="math inline">\(w(\cdot)\)</span> and <span class="math inline">\(\beta^k\)</span> are the effects of such spatially weighted variables.</p></li>
+<li><p>We just need one extra step for estimating <span class="math inline">\(\sigma\)</span> , for which we can use the iterated INLA linearisation step in <code>inlabru</code>.</p></li>
+</ul>
+</section>
+<section id="simulation-study" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simulation Study</h2>
+<p>Simulation study and comparing the results from fitting model with <code>inlabru</code> against an MLE approach <span class="citation" data-cites="chandler2016">(<a href="#/references" role="doc-biblioref" onclick="">Chandler and Hepinstall-Cymerman 2016</a>)</span>.</p>
+
+<img data-src="images/simulated_cov.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="simulation-study-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simulation Study</h2>
+<p>Simulation study and comparing the results from fitting model with <code>inlabru</code> against an MLE approach <span class="citation" data-cites="chandler2016">(<a href="#/references" role="doc-biblioref" onclick="">Chandler and Hepinstall-Cymerman 2016</a>)</span>.</p>
+<p>Simulated true presence-absence data according to the following occupancy probabilities:</p>
+<p><span class="math display">\[\mathrm{logit}(\psi_i) = \beta_0 + \beta_1 \times f(x(\mathbf{s}_i,\sigma))\]</span></p>
+<p><strong>Survey data</strong> consist of a random sample of 10% of the total grid cells ( <span class="math inline">\(n=360\)</span> ) where the true presence/absence data are recorded.</p>
+
+<img data-src="images/true_occ.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="simulation-study-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simulation Study</h2>
+<p>Simulation study and comparing the results from fitting model with <code>inlabru</code> against an MLE approach (<span class="citation" data-cites="chandler2016">Chandler and Hepinstall-Cymerman (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>).</p>
+<p><strong>Results</strong></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>True</th>
+<th>MLE</th>
+<th><code>inlabru</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\beta_0\)</span></td>
+<td>-3</td>
+<td>-3.11</td>
+<td>-2.96</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta_1\)</span></td>
+<td>1.5</td>
+<td>1.58</td>
+<td>1.5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td>15</td>
+<td>14.1</td>
+<td>13.88</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/est_kernel_sim.png" class="quarto-figure quarto-figure-center" width="546"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="what-do-we-gain-with-inlabru" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What do we gain with <code>inlabru</code>?</h2>
+<p>Several <code>R</code> packages now facilitate the analysis of landscape effects</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Data format support</th>
+<th style="text-align: left;">Buffer scale analysis</th>
+<th>Distance weighted analysis</th>
+<th>Spatial random effects</th>
+<th>Account for observational processess</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multilandr</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>siland</code></td>
+<td><code>sf</code> shapefiles</td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td><code>scalescape</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-do-we-gain-with-inlabru-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What do we gain with <code>inlabru</code>?</h2>
+<p>Several <code>R</code> packages now facilitate the analysis of landscape effects</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Data format support</th>
+<th style="text-align: left;">Buffer scale analysis</th>
+<th>Distance weighted analysis</th>
+<th>Spatial random effects</th>
+<th>Account for observational processess</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multilandr</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>siland</code></td>
+<td><code>sf</code> shapefiles</td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td><code>scalescape</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>inlabru</code></td>
+<td><code>terra</code> and <code>sf</code></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Support of different landscape data formats (rasters or shapefiles)</li>
+</ul>
+</section>
+<section id="what-do-we-gain-with-inlabru-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What do we gain with <code>inlabru</code>?</h2>
+<p>Several <code>R</code> packages now facilitate the analysis of landscape effects</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Data format support</th>
+<th style="text-align: left;">Buffer scale analysis</th>
+<th>Distance weighted analysis</th>
+<th>Spatial random effects</th>
+<th>Account for observational processess</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multilandr</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>siland</code></td>
+<td><code>sf</code> shapefiles</td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td><code>scalescape</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>inlabru</code></td>
+<td><code>terra</code> and <code>sf</code></td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Support of different landscape data formats (rasters or shapefiles)</p></li>
+<li><p>Provides flexibility with user-defined kernel functions (defined as regular r expressions)</p></li>
+</ul>
+</section>
+<section id="what-do-we-gain-with-inlabru-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What do we gain with <code>inlabru</code>?</h2>
+<p>Several <code>R</code> packages now facilitate the analysis of landscape effects</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Data format support</th>
+<th style="text-align: left;">Buffer scale analysis</th>
+<th>Distance weighted analysis</th>
+<th>Spatial random effects</th>
+<th>Account for observational processess</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multilandr</code></td>
+<td><code>terra</code> raster</td>
+<td style="text-align: left;">✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>siland</code></td>
+<td><code>sf</code> shapefiles</td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td><code>scalescape</code></td>
+<td><code>terra</code> raster</td>
+<td style="text-align: left;">❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>inlabru</code></td>
+<td><code>terra</code> and <code>sf</code></td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Support of different landscape data formats (rasters or shapefiles)</p></li>
+<li><p>Provides flexibility with user-defined kernel functions (defined as regular r expressions)</p></li>
+<li><p>Capabilities to fit explicit spatial or spatio-temporal models</p></li>
+</ul>
+</section>
+<section id="what-do-we-gain-with-inlabru-4" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What do we gain with <code>inlabru</code>?</h2>
+<p>Several <code>R</code> packages now facilitate the analysis of landscape effects</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Data format support</th>
+<th style="text-align: left;">Buffer scale analysis</th>
+<th>Distance weighted analysis</th>
+<th>Spatial random effects</th>
+<th>Account for observational processess</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multilandr</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>siland</code></td>
+<td><code>sf</code> shapefiles</td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td><code>scalescape</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>inlabru</code></td>
+<td><code>terra</code> and <code>sf</code></td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Support of different landscape data formats (rasters or shapefiles)</p></li>
+<li><p>Provides flexibility with user-defined kernel functions (defined as regular r expressions)</p></li>
+<li><p>Capabilities to fit explicit spatial or spatio-temporal models</p></li>
+<li><p>Multiple response types (e.g, binary, counts, continuous).</p></li>
+<li><p>Account for complex observational processes (e.g., imperfect detection)</p></li>
+</ul>
+</section>
+<section id="what-do-we-gain-with-inlabru-5" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What do we gain with <code>inlabru</code>?</h2>
+<p>Several <code>R</code> packages now facilitate the analysis of landscape effects</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Data format support</th>
+<th style="text-align: left;">Buffer scale analysis</th>
+<th>Distance weighted analysis</th>
+<th>Spatial random effects</th>
+<th>Account for observational processess</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multilandr</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>siland</code></td>
+<td><code>sf</code> shapefiles</td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td><code>scalescape</code></td>
+<td><code>terra</code> rasters</td>
+<td style="text-align: left;">❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>inlabru</code></td>
+<td><code>terra</code> and <code>sf</code></td>
+<td style="text-align: left;">✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Support of different landscape data formats (rasters or shapefiles)</p></li>
+<li><p>Provides flexibility with user-defined kernel functions (defined as regular r expressions)</p></li>
+<li><p>Capabilities to fit explicit spatial or spatio-temporal models</p></li>
+<li><p>Multiple response types (e.g, binary, counts, continuous).</p></li>
+<li><p>Account for complex observational processes (e.g., imperfect detection)</p></li>
+<li><p><strong>Combining multiple data sources?</strong></p></li>
+</ul>
+</section>
+<section id="section-2" class="slide level2" data-background-image="IDM_video2.gif" data-background-size="100%">
+<h2></h2>
+<div style="height: 250px;">
+
+</div>
+<div class="blockquote" style="color: #FFFFFF; background-color:rgb(38, 38, 38,0.8); font-size: 1.5em; padding: 20px; border-radius: 5px;">
+<p>Combining efforts: Integrating multiple Data sources for modelling species distributions</p>
+</div>
+</section>
+<section id="the-new-era-of-biodiversity-data" class="slide level2 smaller">
+<h2>The new era of biodiversity data</h2>
+<ul>
+<li><p>The rise of <strong>new technologies</strong> and <strong>data submission platform</strong>s have provided access to multiple data sources</p></li>
+<li><p>New opportunities for studying the <strong>spatial distributions</strong> of wildlife populations.</p></li>
+<li><p>Datasets are typically <strong>designed</strong> with a particular goal in mind.</p></li>
+</ul>
+
+<img data-src="images/techs.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="planned-structured-survey-data" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Planned <strong>Structured</strong> Survey Data</h2>
+<ul>
+<li>Planned Surveys produce <strong>structured data</strong> which involves constant monitoring schemes using standardised methods at sites on a regular basis.</li>
+</ul>
+
+<img data-src="images/survey_data.png" class="r-stretch quarto-figure-center"><p class="caption">Figure modified from <span class="citation" data-cites="guillera-arroita2016">(<a href="#/references" role="doc-biblioref" onclick="">Guillera-Arroita 2016</a>)</span></p></section>
+<section id="planned-structured-survey-data-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Planned <strong>Structured</strong> Survey Data</h2>
+<ul>
+<li><p>Planned Surveys produce <strong>structured data</strong> which involves constant monitoring schemes using standardised methods at sites on a regular basis.</p></li>
+<li><p>These are <strong>expensive</strong> to collect and tend to be geographically and temporally restricted.</p></li>
+</ul>
+
+<img data-src="images/meme1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="citizen-science-unstructured-data" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Citizen Science <strong>Unstructured</strong> Data</h2>
+<p><strong>Unstructured data</strong> constitute the majority of available information.</p>
+<ul>
+<li><strong>Citizen science</strong> projects offer a cost-effective solution to investigate species distributions at large spatial and temporal scales.</li>
+</ul>
+
+<img data-src="images/CS_apps.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="citizen-science-data" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Citizen Science Data</h2>
+<p><strong>Unstructured data</strong> constitute the majority of available information.</p>
+<ul>
+<li><strong>Citizen science</strong> projects offer a cost-effective solution to investigate species distributions at large spatial and temporal scales.</li>
+<li>Harnessing the power of CS data is not an easy task!</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Advantages 😄👍</th>
+<th>Disadvantages 😔👎</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Extensive taxonomic, spatial and temporal coverage.</td>
+<td>Under-reporting of rare and inconspicuous species.</td>
+</tr>
+<tr class="even">
+<td>Eye-catching species that are easily identifiable by participants.</td>
+<td>Varying recording skills and uneven sampling effort.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-integration" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Data Integration</h2>
+<p>How can we combine the information from different data sources?</p>
+<ul>
+<li><strong>Data integration</strong>: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.</li>
+</ul>
+
+<img data-src="images/data_int2.jpg" class="r-stretch quarto-figure-center"><p class="caption">Obtained from <span class="citation" data-cites="isaac2020">(<a href="#/references" role="doc-biblioref" onclick="">Isaac et al. 2020</a>)</span></p></section>
+<section id="data-integration-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Data Integration</h2>
+<p>How can we combine the information from different data sources?</p>
+<ul>
+<li><p><strong>Data integration</strong>: aims to describe explicitly the differences in how datasets were assembled by using distinct observation submodels for each data source.</p></li>
+<li><p>Combining different data sources is challenging due to differences in study design, spatial and temporal coverage, and potential <strong>sampling biases</strong>.</p></li>
+</ul>
+
+<img data-src="images/meme2.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-3" class="slide level2" data-background-image="CS.gif" data-background-size="100%">
+<h2></h2>
+</section>
+<section id="sampling-bias-in-cs-opportunistic-data" class="slide level2 smaller">
+<h2>Sampling Bias in CS opportunistic data</h2>
+<p>Large volumes of CS data come from <strong>Opportunistic surveys</strong> where sampling effort is <strong>biased</strong> across space and time.</p>
+<ul>
+<li>People visit more certain places than others.</li>
+</ul>
+
+<img data-src="images/sampling_eff_ex.png" class="r-stretch quarto-figure-center"><p class="caption">Elevation versus sampling effort (obtained through the Pl@net Net App) in the French mediterranean region (Figure taken from <span class="citation" data-cites="botella2020">Botella et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>).</p><ul>
+<li class="fragment"><p>Small populations at lower elevation could be over-sampled.</p></li>
+<li class="fragment"><p>If we assume sampling is evenly distributed, species occupancy at higher elevation would be under-estimated</p></li>
+</ul>
+</section>
+<section id="thinned-point-process-model" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Thinned point process model</h2>
+<ul>
+<li>The true locations <span class="math inline">\(\mathbf{s}=s_1,\ldots,s_m\)</span> where a species occur are a realization of a Point Process, specifically a log-Gaussian Cox process (LGCP).</li>
+</ul>
+<p><span class="math display">\[\lambda(s)=\exp\{X(s)'\beta + Z(s)\}\]</span></p>
+
+<img data-src="images/lambda_true.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="thinned-point-process-model-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Thinned point process model</h2>
+<ul>
+<li>The true locations <span class="math inline">\(\mathbf{s}=s_1,\ldots,s_m\)</span> where a species occur are a realization of a Point Process, specifically a log-Gaussian Cox process (LGCP).</li>
+<li>The true point pattern is partially observed due to <strong>imperfect detection</strong> and <strong>accessibility constrains</strong> reflected by an uneven sampling effort.</li>
+</ul>
+
+<img data-src="images/tired_hiker.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="thinned-point-process-model-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Thinned point process model</h2>
+<ul>
+<li>The true locations <span class="math inline">\(\mathbf{s}=s_1,\ldots,s_m\)</span> where a species occur are a realization of a Point Process, specifically a log-Gaussian Cox process (LGCP).</li>
+<li>The true point pattern is partially observed due to <strong>imperfect detection</strong> and <strong>accessibility constrains</strong> reflected by an uneven sampling effort</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>The locations <span class="math inline">\(\mathbf{s}=s_1,\ldots,s_n\)</span> where opportunistic encounters have actually occurred are the result of a <strong>thinned point process</strong>.</li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+\lambda^{pp}(s)&amp;=\lambda(s)\times p(s)\\
+\text{logit}(p(s)) &amp;= \alpha^{pp}_0 + \alpha^{pp}_1\times g(s) + \ldots
+\end{aligned}\]</span></p>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lambda_obs.png" class="quarto-figure quarto-figure-center" style="width:100.0%;height:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="estimation-of-the-thinned-point-process-model" class="slide level2 smaller">
+<h2>Estimation of the thinned point process model</h2>
+<p>The likelihood function for the thinned point process is given by:</p>
+<p><span class="math display">\[L_{thinn}(\beta,\alpha) = \exp\left\{\int_B\lambda(s) p(s) ds)\right\}\prod_i^m \lambda(s_i)p(s_i)\]</span></p>
+<ul>
+<li><p><span class="citation" data-cites="simpson2016">Simpson et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span> proposed an approach to approximate both the stochastic integral and the evaluation of the field at the data points using INLA.</p></li>
+<li><p>In <code>R-INLA</code> we can defined different model components as part of the additive predictor.</p></li>
+<li><p><code>inlabru</code> allows the predictor to be a non-linear function of the parameter vector through an iterative model fitting scheme.</p></li>
+<li><p>We can use <code>inlabru</code> fixed point iteration method to estimate thinning probabilities <span class="math inline">\(p(s)\)</span>.</p></li>
+</ul>
+</section>
+<section id="section-4" class="slide level2" data-background-image="survey_video.gif" data-background-size="100%">
+<h2></h2>
+</section>
+<section id="the-problem-with-detection" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The problem with detection</h2>
+
+<img data-src="images/findwally1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="the-problem-with-detection-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The problem with detection</h2>
+
+<img data-src="images/findwally2.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="possible-biases-due-to-imperfect-detection" class="slide level2">
+<h2>Possible biases due to imperfect detection</h2>
+<ul>
+<li class="fragment"><p>Underestimation of species distribution</p></li>
+<li class="fragment"><p>Bias of the estimated relationship with covariates</p></li>
+<li class="fragment"><p>Predictive models might reflect detection instead of occurrence</p></li>
+</ul>
+</section>
+<section id="the-occupancy-model-for-survey-data" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Occupancy model for survey data</h2>
+<p><strong>Basic idea:</strong> Data contain information about two processes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/occ_mod1.png" class="quarto-figure quarto-figure-center" style="width:100.0%;height:100.0%"></p>
+</figure>
+</div>
+</section>
+<section id="the-occupancy-model-for-survey-data-1" class="slide level2 smaller">
+<h2>The Occupancy model for survey data</h2>
+<p><strong>Basic idea:</strong> Data contain information about two processes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/occ_mod2.png" class="quarto-figure quarto-figure-center" style="width:100.0%;height:100.0%"></p>
+</figure>
+</div>
+</section>
+<section id="occupancy-models-in-inla" class="slide level2 smaller">
+<h2>Occupancy Models in INLA</h2>
+<p>For a set of set of <span class="math inline">\(M\)</span> discrete sites, let the detection history of the <span class="math inline">\(i\)</span>th site <span class="math inline">\(\mathbf{d}_i= y_{i1},\ldots,y_{iK}\)</span>.</p>
+<p>The joint likelihood is then:</p>
+<p><span class="math display">\[ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \underbrace{\prod_{i=1}^{m} \left[\psi_i \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}}\right]}_{\text{sites with at least one detection}}\underbrace{\prod_{i=m+1}^M\left[\psi_i\prod_j^{K_i}(1-p_{ij})+(1-\psi_i)\right]}_{\text{sites with only 0's}}.\]</span></p>
+<p>The likelihood for occupancy model is factorized into univariate models for the marginal distribution of each site detection history.</p>
+<p><span class="math display">\[ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \left[\psi_i \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \mathbb{I}_{\sum_j y_{ij} = 0}(1-\psi_i) \right]\]</span></p>
+<p><span class="citation" data-cites="belmont2024">Belmont et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span> show how this a LGM (and thus possible to be fitted using INLA ) under some mild conditions.</p>
+</section>
+<section id="section-5" class="slide level2" data-background-image="Data Integration.gif" data-background-size="&quot;100%">
+<h2></h2>
+</section>
+<section id="integrated-species-distribution-model" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
+<ul>
+<li>The point process model proposed for CS data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.</li>
+</ul>
+
+<img data-src="images/frompointstoocc.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="integrated-species-distribution-model-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
+<ul>
+<li>The point process model proposed for CS data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.</li>
+</ul>
+
+<img data-src="images/frompointstoocc.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li><p>We can use the fact that the number of individuals in a bounded region can be characterized as <span class="math inline">\(N(A_i)\sim \mathrm{Poisson}(\int_{A_i}\lambda(s)~ds)\)</span>.</p></li>
+<li><p>The probability that an areal unit <span class="math inline">\(A_i\)</span> is occupied by a species is given by:</p></li>
+</ul>
+<p><span class="math display">\[\psi_i = \mathrm{Pr}\left[N(A_i)&gt;0\right] = 1 - \exp\left(-\int_{A_i}\lambda(s)~ds\right),\]</span></p>
+</section>
+<section id="integrated-species-distribution-model-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
+<ul>
+<li><p>The point process model proposed for CS data is defined on a continuous space, but the occupancy model for survey data is defined in a discretised space.</p></li>
+<li><p>We can use the fact that the number of individuals in a bounded region can be characterized as <span class="math inline">\(N(A_i)\sim \mathrm{Poisson}(\int_{A_i}\lambda(s)~ds)\)</span>.</p></li>
+<li><p>The probability that an areal unit <span class="math inline">\(A_i\)</span> is occupied by a species is given by:</p></li>
+</ul>
+<p><span class="math display">\[\psi_i = \mathrm{Pr}\left[N(A_i)&gt;0\right] = 1 - \exp\left(-\int_{A_i}\lambda(s)~ds\right),\]</span></p>
+<p>Thus, the intensity-based OM likelihood becomes:</p>
+<p><span class="math display">\[L(\psi_i,p_{ij}) = \left[\prod_i^N \left(1-\exp\left\{-\int_{A_i}\lambda(s) ds\right\}\right)\prod_j^{K_i}p_{ij}^{y_{ij}}(1-p_{ij})^{1-y_{ij}} \right] \times\\ \prod_{i=N+1}^M\left[ \left(1-\exp\left\{\int_{A_i}\lambda(s) ds\right\}\right) \prod_j^{K_i}(1-p_{ij})+\exp\left\{\int_{A_i} \lambda(s)ds\right\}  \right].\]</span></p>
+</section>
+<section id="integrated-species-distribution-model-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
+<p>The marginal distribution of each site detection history is given by</p>
+<p><span class="math display">\[ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \left[1-\exp\left\{-\int_{A_i}\lambda(s) ds\right\} \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \mathbb{I}_{\sum_j y_{ij} = 0}\exp\left\{\int_{A_i} \lambda(s)ds\right\}\right]\]</span></p>
+<ul>
+<li class="fragment"><p>In large-scale studies, species distributions are often monitored across relatively small patches.</p></li>
+<li class="fragment"><p>If we assume a constant intensity within each cell then <span class="math inline">\(\int_{A_i}\lambda(s)ds = \lambda_i |A_i|\)</span>.</p></li>
+</ul>
+</section>
+<section id="integrated-species-distribution-model-4" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
+<p>The marginal distribution of each site detection history is given by</p>
+<p><span class="math display">\[ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \left[1-\exp\left\{-\int_{A_i}\lambda(s) ds\right\} \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \mathbb{I}_{\sum_j y_{ij} = 0}\exp\left\{\int_{A_i} \lambda(s)ds\right\}\right]\]</span></p>
+<ul>
+<li><p>In large-scale studies, species distributions are often monitored across relatively small patches.</p></li>
+<li><p>If we assume a constant intensity within each cell then <span class="math inline">\(\int_{A_i}\lambda(s)ds = \lambda_i |A_i|\)</span>.</p></li>
+<li><p>We can link the occupancy probabilities to the intensity function (<span class="math inline">\(\psi_i = 1 -\exp(|A_i|\lambda_i)\)</span>) through the cloglog link (<span class="math inline">\(\mathrm{cloglog}(\psi) =\log[-\log(1-\psi_i)]\)</span>)</p></li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+\mathrm{cloglog}(\psi_i) &amp;=  \log(|A_i|) + \log(\lambda_i) \\
+&amp;= \log(|A_i|)+\beta_0 + \sum_{q=1}^P\beta_q x_{iq} + z_i\\
+&amp;= \beta_0^* + \sum_{q=1}^P\beta_q x_q(s) + z_i
+\end{aligned}\]</span></p>
+</section>
+<section id="integrated-species-distribution-model-5" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Integrated Species Distribution Model</h2>
+<p>The marginal distribution of each site detection history is given by</p>
+<p><span class="math display">\[ L(\pmb{\psi},\textbf{p}|\mathbf{y}_1,\ldots,\mathbf{y}_M) = \prod_{i=1}^{M} \left[1-\exp\left\{-\int_{A_i}\lambda(s) ds\right\} \prod_j^{K_i} p_{ij}^{y_{ij}} (1-p_{ij})^{1-y_{ij}} + \mathbb{I}_{\sum_j y_{ij} = 0}\exp\left\{\int_{A_i} \lambda(s)ds\right\}\right]\]</span></p>
+<ul>
+<li><p>In large-scale studies, species distributions are often monitored across relatively small patches.</p></li>
+<li><p>If we assume a constant intensity within each cell then <span class="math inline">\(\int_{A_i}\lambda(s)ds = \lambda_i |A_i|\)</span>.</p></li>
+<li><p>We can link the occupancy probabilities to the intensity function (<span class="math inline">\(\psi_i = 1 -\exp(|A_i|\lambda_i)\)</span>) through the cloglog link (<span class="math inline">\(\mathrm{cloglog}(\psi) =\log[-\log(1-\psi_i)]\)</span>)</p></li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+\mathrm{cloglog}(\psi_i) &amp;= \beta_0^* + \sum_{q=1}^P\beta_q x_q(s) + z_i
+\end{aligned}\]</span></p>
+<ul>
+<li>The likelihood of the integrated model becomes <span class="math inline">\(L_{\text{idm}}(\beta,\alpha,\gamma) = L_{pp}(\beta,\alpha) \times L_{occ}(\beta,\gamma)\)</span></li>
+</ul>
+</section>
+<section id="case-study-modelling-the-distribution-of-the-black-throated-blue-warbler-in-pennsylvania-usa." class="slide level2 smaller">
+<h2>Case Study: Modelling the Distribution of the black-throated blue warbler in Pennsylvania, USA.</h2>
+<ul>
+<li>Occurrence data for the Black-throated blue warbler (<em>Setophaga caerulescens</em>) in Pennsylvania, USA are available from two sources:</li>
+</ul>
+<ol type="1">
+<li><p>The <strong>Pennsylvania Breeding Bird Atlas</strong> (BBA): <em>Point count surveys</em> collected through a standardized data collection protocol from 2005 to 2008 .</p></li>
+<li><p>The second data set does not follow a standard data collection protocol, but instead are observations reported by citizen scientists to the <strong>eBird</strong> platform in 2008.</p></li>
+</ol>
+
+<img data-src="images/blue_warbler.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="modelling-black-throated-blue-warbler-survey-data" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Survey Data</h2>
+<ul>
+<li>Detection/non-detection BBA survey data are available in a subregion of the Pennsylvania State.</li>
+</ul>
+
+<img data-src="images/bba_data.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="modelling-black-throated-blue-warbler-opportunistic-data" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Opportunistic Data</h2>
+<ul>
+<li><code>eBird</code> citizen science data are usually biased due to <strong>uneven sampling effort</strong>.</li>
+<li>Use the locations where other species have been observed as a proxy of sampling intensity</li>
+</ul>
+
+<img data-src="images/effort_map3.png" class="r-stretch quarto-figure-center"><p class="caption">Locations 17 species of birds have been reported to eBird in 2008 along with the number of visits to a given location. The orange points indicate the locations where the Black-throated blue warbler has been observed.</p></section>
+<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<ul>
+<li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+\log(\lambda(s)^{(\text{eBird})}) &amp;= \color{black}{\beta_0} + \color{black}{\beta'X(s)} + \color{black}{Z(s)} + \log(p(s)) \\
+\mathrm{logit}(p(s)^{(\text{eBird})}) &amp;= \alpha_0 + \alpha_1 \times \hat{\text{effort}}(s)\\
+\mathrm{cloglog}(\psi(s)^{(\text{BBA})}) &amp;=  |C_i| + \color{black}{\beta_0} + \color{black}{\beta'X(s)} + \color{black}{Z(s)} \\
+\mathrm{logit}(p_{ij}^{(\text{BBA})}) &amp;= \gamma_0 + \gamma_1 \times \text{Canopy} + \gamma_2 \times \text{LDI}
+\end{aligned}\]</span> - LDI is the <em>land development index</em> proposed by <span class="citation" data-cites="brown2005">Brown and Vivas (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span>. The smaller the index values is, the less the urban development is.</p>
+</section>
+<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<ul>
+<li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+\log(\lambda(s)^{(\text{eBird})}) &amp;= \color{red}{\beta_0} + \color{red}{\beta'X(s)} + \color{red}{Z(s)} + \log(p(s)) \\
+\mathrm{logit}(p(s)^{(\text{eBird})}) &amp;= \alpha_0 + \alpha_1 \times \hat{\text{effort}}(s)\\
+\mathrm{cloglog}(\psi(s)^{(\text{BBA})}) &amp;=  |C_i| + \color{red}{\beta_0} + \color{red}{\beta'X(s)} + \color{red}{Z(s)} \\
+\mathrm{logit}(p_{ij}^{(\text{BBA})}) &amp;= \gamma_0 + \gamma_1 \times \text{Canopy} + \gamma_2 \times \text{LDI}
+\end{aligned}\]</span> - LDI is the <em>land development index</em> proposed by <span class="citation" data-cites="brown2005">Brown and Vivas (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span>. The smaller the index values is, the less the urban development is.</p>
+</section>
+<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<ul>
+<li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="1-3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb4-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
+<span id="cb4-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
+<span id="cb4-4" class="hljs-ln-code"><a></a></span>
+<span id="cb4-5" class="hljs-ln-code"><a></a>formula_occ <span class="ot">=</span> <span class="fu">inla.mdata</span>(Y, X) <span class="sc">~</span>  <span class="fu">log</span>(.data.<span class="sc">$</span>radius) <span class="sc">+</span> Intercept  <span class="sc">+</span> elevation  <span class="sc">+</span> ... <span class="sc">+</span> spatial_field</span>
+<span id="cb4-6" class="hljs-ln-code"><a></a>formula_thinn <span class="ot">=</span> geometry <span class="sc">~</span> Intercept   <span class="sc">+</span> elevation <span class="sc">+</span> ...<span class="sc">+</span> spatial_field <span class="sc">+</span> </span>
+<span id="cb4-7" class="hljs-ln-code"><a></a>                           <span class="fu">log_detect</span>(<span class="at">xy =</span> geometry,<span class="at">p1 =</span>  alpha_0, <span class="at">p2 =</span> alpha_1)  </span>
+<span id="cb4-8" class="hljs-ln-code"><a></a></span>
+<span id="cb4-9" class="hljs-ln-code"><a></a>lik_occ <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="at">formula =</span> formula_occ, </span>
+<span id="cb4-10" class="hljs-ln-code"><a></a>               <span class="at">family =</span> <span class="st">"occupancy"</span>,</span>
+<span id="cb4-11" class="hljs-ln-code"><a></a>               <span class="at">data =</span> bba_sf,</span>
+<span id="cb4-12" class="hljs-ln-code"><a></a>               <span class="at">response_data =</span> <span class="fu">list</span>(<span class="at">X =</span> X_mat,<span class="at">Y =</span> Y_mat),</span>
+<span id="cb4-13" class="hljs-ln-code"><a></a>               <span class="at">control.family =</span> <span class="fu">list</span>(<span class="at">control.link =</span> <span class="fu">list</span>(<span class="at">model =</span> <span class="st">"cloglog"</span>),</span>
+<span id="cb4-14" class="hljs-ln-code"><a></a>                                     <span class="at">link.simple =</span> <span class="st">"logit"</span>))</span>
+<span id="cb4-15" class="hljs-ln-code"><a></a>lik_thinn <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="st">"cp"</span>,</span>
+<span id="cb4-16" class="hljs-ln-code"><a></a>                  <span class="at">formula =</span> formula_thinn , </span>
+<span id="cb4-17" class="hljs-ln-code"><a></a>                  <span class="at">data =</span>  ebird_sf ,</span>
+<span id="cb4-18" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
+<span id="cb4-19" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
+<span id="cb4-20" class="hljs-ln-code"><a></a></span>
+<span id="cb4-21" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<ul>
+<li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="5-7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb5-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
+<span id="cb5-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
+<span id="cb5-4" class="hljs-ln-code"><a></a></span>
+<span id="cb5-5" class="hljs-ln-code"><a></a>formula_occ <span class="ot">=</span> <span class="fu">inla.mdata</span>(Y, X) <span class="sc">~</span>  <span class="fu">log</span>(.data.<span class="sc">$</span>radius) <span class="sc">+</span> Intercept  <span class="sc">+</span> elevation  <span class="sc">+</span> ... <span class="sc">+</span> spatial_field</span>
+<span id="cb5-6" class="hljs-ln-code"><a></a>formula_thinn <span class="ot">=</span> geometry <span class="sc">~</span> Intercept   <span class="sc">+</span> elevation <span class="sc">+</span> ...<span class="sc">+</span> spatial_field <span class="sc">+</span> </span>
+<span id="cb5-7" class="hljs-ln-code"><a></a>                           <span class="fu">log_detect</span>(<span class="at">xy =</span> geometry,<span class="at">p1 =</span>  alpha_0, <span class="at">p2 =</span> alpha_1)  </span>
+<span id="cb5-8" class="hljs-ln-code"><a></a></span>
+<span id="cb5-9" class="hljs-ln-code"><a></a>lik_occ <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="at">formula =</span> formula_occ, </span>
+<span id="cb5-10" class="hljs-ln-code"><a></a>               <span class="at">family =</span> <span class="st">"occupancy"</span>,</span>
+<span id="cb5-11" class="hljs-ln-code"><a></a>               <span class="at">data =</span> bba_sf,</span>
+<span id="cb5-12" class="hljs-ln-code"><a></a>               <span class="at">response_data =</span> <span class="fu">list</span>(<span class="at">X =</span> X_mat,<span class="at">Y =</span> Y_mat),</span>
+<span id="cb5-13" class="hljs-ln-code"><a></a>               <span class="at">control.family =</span> <span class="fu">list</span>(<span class="at">control.link =</span> <span class="fu">list</span>(<span class="at">model =</span> <span class="st">"cloglog"</span>),</span>
+<span id="cb5-14" class="hljs-ln-code"><a></a>                                     <span class="at">link.simple =</span> <span class="st">"logit"</span>))</span>
+<span id="cb5-15" class="hljs-ln-code"><a></a>lik_thinn <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="st">"cp"</span>,</span>
+<span id="cb5-16" class="hljs-ln-code"><a></a>                  <span class="at">formula =</span> formula_thinn , </span>
+<span id="cb5-17" class="hljs-ln-code"><a></a>                  <span class="at">data =</span>  ebird_sf ,</span>
+<span id="cb5-18" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
+<span id="cb5-19" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
+<span id="cb5-20" class="hljs-ln-code"><a></a></span>
+<span id="cb5-21" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-4" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<ul>
+<li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="9-19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb6-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
+<span id="cb6-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
+<span id="cb6-4" class="hljs-ln-code"><a></a></span>
+<span id="cb6-5" class="hljs-ln-code"><a></a>formula_occ <span class="ot">=</span> <span class="fu">inla.mdata</span>(Y, X) <span class="sc">~</span>  <span class="fu">log</span>(.data.<span class="sc">$</span>radius) <span class="sc">+</span> Intercept  <span class="sc">+</span> elevation  <span class="sc">+</span> ... <span class="sc">+</span> spatial_field</span>
+<span id="cb6-6" class="hljs-ln-code"><a></a>formula_thinn <span class="ot">=</span> geometry <span class="sc">~</span> Intercept   <span class="sc">+</span> elevation <span class="sc">+</span> ...<span class="sc">+</span> spatial_field <span class="sc">+</span> </span>
+<span id="cb6-7" class="hljs-ln-code"><a></a>                           <span class="fu">log_detect</span>(<span class="at">xy =</span> geometry,<span class="at">p1 =</span>  alpha_0, <span class="at">p2 =</span> alpha_1)  </span>
+<span id="cb6-8" class="hljs-ln-code"><a></a></span>
+<span id="cb6-9" class="hljs-ln-code"><a></a>lik_occ <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="at">formula =</span> formula_occ, </span>
+<span id="cb6-10" class="hljs-ln-code"><a></a>               <span class="at">family =</span> <span class="st">"occupancy"</span>,</span>
+<span id="cb6-11" class="hljs-ln-code"><a></a>               <span class="at">data =</span> bba_sf,</span>
+<span id="cb6-12" class="hljs-ln-code"><a></a>               <span class="at">response_data =</span> <span class="fu">list</span>(<span class="at">X =</span> X_mat,<span class="at">Y =</span> Y_mat),</span>
+<span id="cb6-13" class="hljs-ln-code"><a></a>               <span class="at">control.family =</span> <span class="fu">list</span>(<span class="at">control.link =</span> <span class="fu">list</span>(<span class="at">model =</span> <span class="st">"cloglog"</span>),</span>
+<span id="cb6-14" class="hljs-ln-code"><a></a>                                     <span class="at">link.simple =</span> <span class="st">"logit"</span>))</span>
+<span id="cb6-15" class="hljs-ln-code"><a></a>lik_thinn <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="st">"cp"</span>,</span>
+<span id="cb6-16" class="hljs-ln-code"><a></a>                  <span class="at">formula =</span> formula_thinn , </span>
+<span id="cb6-17" class="hljs-ln-code"><a></a>                  <span class="at">data =</span>  ebird_sf ,</span>
+<span id="cb6-18" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
+<span id="cb6-19" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
+<span id="cb6-20" class="hljs-ln-code"><a></a></span>
+<span id="cb6-21" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="modelling-black-throated-blue-warbler-modeling-bba-and-ebird-together-5" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Modelling Black-throated blue warbler: Modeling BBA and eBird together</h2>
+<ul>
+<li><code>inlabru</code> facilitates fitting multi-likelihood models that share a common state-space process parameters but have different observational processes.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a></a>components_idm <span class="ot">=</span>  <span class="er">~</span> <span class="fu">Intercept</span>(<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb7-2" class="hljs-ln-code"><a></a>  <span class="fu">elevation</span>(elevation_raster, <span class="at">model =</span> <span class="st">"linear"</span>) <span class="sc">+</span>...<span class="sc">+</span> <span class="fu">spatial_field</span>(geometry, <span class="at">model=</span>matern) <span class="sc">+</span></span>
+<span id="cb7-3" class="hljs-ln-code"><a></a>  <span class="fu">alpha_0</span>(<span class="dv">1</span>,<span class="at">mean.linear=</span> <span class="dv">3</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>) <span class="sc">+</span> <span class="fu">alpha_1</span>(<span class="dv">1</span>,<span class="at">mean.linear =</span><span class="dv">1</span>, <span class="at">prec.linear=</span> <span class="dv">1</span><span class="sc">/</span><span class="fl">2.72</span>)</span>
+<span id="cb7-4" class="hljs-ln-code"><a></a></span>
+<span id="cb7-5" class="hljs-ln-code"><a></a>formula_occ <span class="ot">=</span> <span class="fu">inla.mdata</span>(Y, X) <span class="sc">~</span>  <span class="fu">log</span>(.data.<span class="sc">$</span>radius) <span class="sc">+</span> Intercept  <span class="sc">+</span> elevation  <span class="sc">+</span> ... <span class="sc">+</span> spatial_field</span>
+<span id="cb7-6" class="hljs-ln-code"><a></a>formula_thinn <span class="ot">=</span> geometry <span class="sc">~</span> Intercept   <span class="sc">+</span> elevation <span class="sc">+</span> ...<span class="sc">+</span> spatial_field <span class="sc">+</span> </span>
+<span id="cb7-7" class="hljs-ln-code"><a></a>                           <span class="fu">log_detect</span>(<span class="at">xy =</span> geometry,<span class="at">p1 =</span>  alpha_0, <span class="at">p2 =</span> alpha_1)  </span>
+<span id="cb7-8" class="hljs-ln-code"><a></a></span>
+<span id="cb7-9" class="hljs-ln-code"><a></a>lik_occ <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="at">formula =</span> formula_occ, </span>
+<span id="cb7-10" class="hljs-ln-code"><a></a>               <span class="at">family =</span> <span class="st">"occupancy"</span>,</span>
+<span id="cb7-11" class="hljs-ln-code"><a></a>               <span class="at">data =</span> bba_sf,</span>
+<span id="cb7-12" class="hljs-ln-code"><a></a>               <span class="at">response_data =</span> <span class="fu">list</span>(<span class="at">X =</span> X_mat,<span class="at">Y =</span> Y_mat),</span>
+<span id="cb7-13" class="hljs-ln-code"><a></a>               <span class="at">control.family =</span> <span class="fu">list</span>(<span class="at">control.link =</span> <span class="fu">list</span>(<span class="at">model =</span> <span class="st">"cloglog"</span>),</span>
+<span id="cb7-14" class="hljs-ln-code"><a></a>                                     <span class="at">link.simple =</span> <span class="st">"logit"</span>))</span>
+<span id="cb7-15" class="hljs-ln-code"><a></a>lik_thinn <span class="ot">=</span>  <span class="fu">bru_obs</span>(<span class="st">"cp"</span>,</span>
+<span id="cb7-16" class="hljs-ln-code"><a></a>                  <span class="at">formula =</span> formula_thinn , </span>
+<span id="cb7-17" class="hljs-ln-code"><a></a>                  <span class="at">data =</span>  ebird_sf ,</span>
+<span id="cb7-18" class="hljs-ln-code"><a></a>                  <span class="at">samplers =</span> penn_state,</span>
+<span id="cb7-19" class="hljs-ln-code"><a></a>                  <span class="at">domain =</span> <span class="fu">list</span>(<span class="at">geometry =</span> mesh))</span>
+<span id="cb7-20" class="hljs-ln-code"><a></a></span>
+<span id="cb7-21" class="hljs-ln-code"><a></a>fit_IDM  <span class="ot">=</span> <span class="fu">bru</span>(components_idm , lik_occ , lik_thinn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="results-integrated-model-posterior-summaries" class="slide level2 smaller striped hover">
+<h2>Results Integrated Model: posterior summaries</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 59%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Posterior mean and 95% CrIs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept (<span class="math inline">\(\beta_0\)</span>)</td>
+<td style="text-align: left;">-3.97 (-5.37,-1.61)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Canopy (<span class="math inline">\(\beta_1\)</span>)</td>
+<td style="text-align: left;"><strong>0.87</strong> (0.65,1.08)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Elevation (<span class="math inline">\(\beta_3\)</span>)</td>
+<td style="text-align: left;"><strong>1.12</strong> (0.93,1.3)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slope (<span class="math inline">\(\beta_4\)</span>)</td>
+<td style="text-align: left;">0.07 (-0.03,0.17)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aspect (<span class="math inline">\(\beta_5\)</span>)</td>
+<td style="text-align: left;">-0.13 (-0.24,-0.03)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Intercept - detection eBird (<span class="math inline">\(\alpha_0\)</span>)</td>
+<td style="text-align: left;">2.55 (1.67,3.44)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Effort (<span class="math inline">\(\alpha_1\)</span>)</td>
+<td style="text-align: left;"><strong>1.46</strong> (1.22,1.7)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Intercept - detection BBA (<span class="math inline">\(\gamma_0\)</span>)s</td>
+<td style="text-align: left;">0.93 (0.37,1.5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Canopy (<span class="math inline">\(\gamma_1\)</span>)</td>
+<td style="text-align: left;">0.31 (-0.14,0.76)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LDI (<span class="math inline">\(\gamma_1\)</span>)</td>
+<td style="text-align: left;"><strong>0.68</strong> (0.13,1.23)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\rho_z\)</span></td>
+<td style="text-align: left;">129.82 (79.92,211.03)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sigma_z\)</span></td>
+<td style="text-align: left;">2.04 (1.47,2.82)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="results-integrated-model-predictions" class="slide level2 smaller">
+<h2>Results Integrated Model: Predictions</h2>
+
+<img data-src="images/ISDM_maps.png" class="quarto-figure quarto-figure-center r-stretch" width="777"></section>
+<section id="discussion" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion</h2>
+<ul>
+<li>Over the last decade there has been bloom in the development of tools for fitting ISDMs (<em>with quite a few wrappers around INLA</em>).</li>
+</ul>
+
+<img data-src="isdm_packages.gif" class="r-stretch"></section>
+<section id="discussion-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion</h2>
+<ul>
+<li><p>Over the last decade there has been bloom in the development of tools for fitting ISDMs (<em>with quite a few wrappers around INLA</em>).</p></li>
+<li><p>Despite their popular use, the increasing adoption of ISDMs calls for careful scrutiny, as these models should not be adopted uncritically.</p></li>
+</ul>
+</section>
+<section id="discussion-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion</h2>
+<ul>
+<li><p>Over the last decade there has been bloom in the development of tools for fitting ISDMs (<em>with quite a few wrappers around INLA</em>).</p></li>
+<li><p>Despite their popular use, the increasing adoption of ISDMs calls for careful scrutiny, as these models should not be adopted uncritically.</p></li>
+<li><p>It is unclear whether an ISDM for the Black-throated Blue Warbler provides any more meaningful information than a point process model.</p></li>
+</ul>
+<p><span class="math display">\[I_\theta(W)=n(\mathbf{s} \cap W) - \int_W\widehat{\lambda}_\theta(u) du\]</span></p>
+
+<img data-src="images/pearson.png" class="r-stretch quarto-figure-center"><p class="caption">Pearson residuals for thinned PP and ISD models.</p></section>
+<section id="discussion-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion</h2>
+<ul>
+<li><p>Over the last decade there has been bloom in the development of tools for fitting ISDMs (<em>with quite a few wrappers around INLA</em>).</p></li>
+<li><p>Despite their popular use, the increasing adoption of ISDMs calls for careful scrutiny, as these models should not be adopted uncritically.</p></li>
+<li><p>It is unclear whether an ISDM for the Black-throated Blue Warbler provides any more meaningful information than a point process model.</p></li>
+<li><p>This example has been presented as a case study for several works.</p></li>
+</ul>
+
+<img data-src="images/case_studies.png" class="quarto-figure quarto-figure-center r-stretch" width="540"></section>
+<section id="discussion---further-insights" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion - further insights</h2>
+<ul>
+<li><p>Do parameter-rich integrated models improve our ecological understanding?</p></li>
+<li><p>In many situations, the vast amount of unstructured data far exceeds the amount of survey data.</p></li>
+<li><p>Are integrated models even necessary when unstructured data has been adequately modeled?</p></li>
+</ul>
+</section>
+<section id="discussion---further-insights-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion - further insights</h2>
+<ul>
+<li><p>Do parameter-rich integrated models improve our ecological understanding?</p>
+<ul>
+<li>How do we quantify the information gained by data integration?</li>
+</ul></li>
+<li><p>In many situations, the vast amount of unstructured data far exceeds the amount of survey data.</p></li>
+<li><p>Are integrated models even necessary when unstructured data has been adequately modeled?</p></li>
+</ul>
+</section>
+<section id="discussion---further-insights-2" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion - further insights</h2>
+<ul>
+<li><p>Do parameter-rich integrated models improve our ecological understanding?</p></li>
+<li><p>In many situations, the vast amount of unstructured data far exceeds the amount of survey data.</p>
+<ul>
+<li>How can we weight high-quality survey data so that it isn’t overwhelmed by unstructured data?</li>
+</ul></li>
+<li><p>Are integrated models even necessary when unstructured data has been adequately modeled?</p></li>
+</ul>
+</section>
+<section id="discussion---further-insights-3" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion - further insights</h2>
+<ul>
+<li><p>Do parameter-rich integrated models improve our ecological understanding?</p></li>
+<li><p>In many situations, the vast amount of unstructured data far exceeds the amount of survey data.</p></li>
+<li><p>Are integrated models even necessary when unstructured data has been adequately modeled?</p>
+<ul>
+<li>How should we evaluate whether biases have been adequately modeled?&nbsp;</li>
+</ul></li>
+</ul>
+</section>
+<section id="discussion---further-insights-4" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Discussion - further insights</h2>
+<ul>
+<li><p>Do parameter-rich integrated models improve our ecological understanding?</p></li>
+<li><p>In many situations, the vast amount of unstructured data far exceeds the amount of survey data.</p></li>
+<li><p>Are integrated models even necessary when unstructured data has been adequately modeled?</p></li>
+</ul>
+
+<img data-src="images/meme3.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="where-do-i-learn-more-about-inla-and-inlabru" class="slide level2 smaller">
+<h2>Where do I learn more about INLA and <code>inlabru</code></h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="bi-globe2 " style="color: #ff7226;" role="img" aria-hidden="true"></i> Website-tutorials</strong></p>
+</div>
+<div class="callout-content">
+<p><code>inlabru</code> <a href="https://inlabru-org.github.io/inlabru/" class="uri">https://inlabru-org.github.io/inlabru/</a></p>
+<p><code>R-INLA</code> <a href="https://www.r-inla.org/home" class="uri">https://www.r-inla.org/home</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="bi-chat-left-quote " style="color: #0c7c0c;" role="img" aria-hidden="true"></i> Discussion forums</strong></p>
+</div>
+<div class="callout-content">
+<p><code>inlabru</code> <a href="https://github.com/inlabru-org/inlabru/discussions" class="uri">https://github.com/inlabru-org/inlabru/discussions</a></p>
+<p><code>R-INLA</code> <a href="https://groups.google.com/g/r-inla-discussion-group" class="uri">https://groups.google.com/g/r-inla-discussion-group</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="bi-book " style="color: #4f11eb;" role="img" aria-hidden="true"></i> Books</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Blangiardo, M., &amp; Cameletti, M. (2015). Spatial and spatio-temporal Bayesian models with R-INLA. John Wiley &amp; Sons.</p></li>
+<li><p>Gómez-Rubio, V. (2020). Bayesian inference with INLA. Chapman and Hall/CRC.</p></li>
+<li><p>Krainski, E., Gómez-Rubio, V., Bakka, H., Lenzi, A., Castro-Camilo, D., Simpson, D., … &amp; Rue, H. (2018). Advanced spatial modeling with stochastic partial differential equations using R and INLA. Chapman and Hall/CRC.</p></li>
+<li><p>Wang, X., Yue, Y. R., &amp; Faraway, J. J. (2018). Bayesian regression modeling with INLA. Chapman and Hall/CRC.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="where-do-i-learn-more-about-inla-and-inlabru-1" class="slide level2 smaller">
+<h2>Where do I learn more about INLA and <code>inlabru</code></h2>
+<p><strong><code>inlabru</code> workshops</strong></p>
+<p>If interested get in touch!📧</p>
+<iframe src="inlabru-courses-map.html" width="100%" height="560" style="border:0;">
+</iframe>
+</section>
+<section id="where-do-i-learn-more-about-inla-and-inlabru-2" class="slide level2 smaller">
+<h2>Where do I learn more about INLA and <code>inlabru</code></h2>
+<p><strong><code>inlabru</code> book </strong> <em>in process</em></p>
+
+<img data-src="images/clipboard-3671789301.png" class="r-stretch"></section>
+<section id="section-6" class="slide level2" data-background-image="background_video.gif" data-background-size="100%">
+<h2></h2>
+<div style="height: 150px;">
+
+</div>
+<div class="quote-gold">
+<p>“<em>An understanding of the natural world, and what’s in it as a source of not only great curiosity but great fulfillment.</em>” &gt; Sir. David Attenborough</p>
+</div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-belmont2024" class="csl-entry" role="listitem">
+Belmont, Jafet, Sara Martino, Janine Illian, and Håvard Rue. 2024. <span>“Spatio<span>-</span>Temporal Occupancy Models with INLA.”</span> <em>Methods in Ecology and Evolution</em> 15 (11): 2087–100. <a href="https://doi.org/10.1111/2041-210x.14422">https://doi.org/10.1111/2041-210x.14422</a>.
+</div>
+<div id="ref-botella2020" class="csl-entry" role="listitem">
+Botella, Christophe, Alexis Joly, Pascal Monestiez, Pierre Bonnet, and François Munoz. 2020. <span>“Bias in Presence-Only Niche Models Related to Sampling Effort and Species Niches: Lessons for Background Point Selection.”</span> <em>PLOS ONE</em> 15 (5): e0232078. <a href="https://doi.org/10.1371/journal.pone.0232078">https://doi.org/10.1371/journal.pone.0232078</a>.
+</div>
+<div id="ref-brown2005" class="csl-entry" role="listitem">
+Brown, Mark T., and M. Benjamin Vivas. 2005. <span>“Landscape Development Intensity Index.”</span> <em>Environmental Monitoring and Assessment</em> 101 (1-3): 289–309. <a href="https://doi.org/10.1007/s10661-005-0296-6">https://doi.org/10.1007/s10661-005-0296-6</a>.
+</div>
+<div id="ref-chandler2016" class="csl-entry" role="listitem">
+Chandler, Richard, and Jeffrey Hepinstall-Cymerman. 2016. <span>“Estimating the Spatial Scales of Landscape Effects on Abundance.”</span> <em>Landscape Ecology</em> 31 (6): 1383–94. <a href="https://doi.org/10.1007/s10980-016-0380-z">https://doi.org/10.1007/s10980-016-0380-z</a>.
+</div>
+<div id="ref-guillera-arroita2016" class="csl-entry" role="listitem">
+Guillera-Arroita, Gurutzeta. 2016. <span>“Modelling of Species Distributions, Range Dynamics and Communities Under Imperfect Detection: Advances, Challenges and Opportunities.”</span> <em>Ecography</em> 40 (2): 281–95. <a href="https://doi.org/10.1111/ecog.02445">https://doi.org/10.1111/ecog.02445</a>.
+</div>
+<div id="ref-isaac2020" class="csl-entry" role="listitem">
+Isaac, Nick J. B., Marta A. Jarzyna, Petr Keil, et al. 2020. <span>“Data Integration for Large-Scale Models of Species Distributions.”</span> <em>Trends in Ecology &amp; Evolution</em> 35 (1): 56–67. <a href="https://doi.org/10.1016/j.tree.2019.08.006">https://doi.org/10.1016/j.tree.2019.08.006</a>.
+</div>
+<div id="ref-lowe2022" class="csl-entry" role="listitem">
+Lowe, Erin B., Ben Iuliano, Claudio Gratton, and Anthony R. Ives. 2022. <span>“<span>‘</span>Scalescape<span>’</span>: An r Package for Estimating Distance-Weighted Landscape Effects on an Environmental Response.”</span> <em>Landscape Ecology</em> 37 (7): 1771–85. <a href="https://doi.org/10.1007/s10980-022-01437-5">https://doi.org/10.1007/s10980-022-01437-5</a>.
+</div>
+<div id="ref-mostert2023" class="csl-entry" role="listitem">
+Mostert, Philip S., and Robert B. O’Hara. 2023. <span>“PointedSDMs: An r Package to Help Facilitate the Construction of Integrated Species Distribution Models.”</span> <em>Methods in Ecology and Evolution</em> 14 (5): 1200–1207. <a href="https://doi.org/10.1111/2041-210x.14091">https://doi.org/10.1111/2041-210x.14091</a>.
+</div>
+<div id="ref-simpson2016" class="csl-entry" role="listitem">
+Simpson, D., J. B. Illian, F. Lindgren, S. H. Sørbye, and H. Rue. 2016. <span>“Going Off Grid: Computationally Efficient Inference for Log-Gaussian Cox Processes.”</span> <em>Biometrika</em> 103 (1): 49–70. <a href="https://doi.org/10.1093/biomet/asv064">https://doi.org/10.1093/biomet/asv064</a>.
+</div>
+</div>
+</section>
+<section id="case-study-scale-effect-of-forest-coverage-on-parus-major" class="slide level2 smaller">
+<h2>Case Study: Scale effect of forest coverage on <em>Parus major</em></h2>
+<p>The Swiss breeding bird survey (“Monitoring Häufige Brutvögel” MHB) has monitored the populations of approximately 150 common species since 1999.</p>
+<ul>
+<li><p>The MHB covers 267 1-km squares distributed across Switzerland and involves roughly 200 skilled birdwatchers annually, mainly volunteers.</p></li>
+<li><p>Surveys are conducted along a transect that does not change over the years and is 4-6 kms in length on average.</p></li>
+</ul>
+
+<img data-src="images/great_tit.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="case-study-scale-effect-of-forest-coverage-on-parus-major-1" class="slide level2 smaller">
+<h2>Case Study: Scale effect of forest coverage on <em>Parus major</em></h2>
+<p><strong>Buffer analysis</strong> using <code>inlabru</code> to determine the effect of forest coverage on the distribution of <em>Parus major</em></p>
+<p><span class="math display">\[ \begin{aligned} y_i &amp;\sim \mathrm{Bernoulli}(\psi_i)\\ \mathrm{logit}(\psi_{i}) &amp;= \beta_0 +\beta_1 \times p_{i,\delta} \end{aligned} \]</span> where <span class="math inline">\(p_{i,\delta}\)</span> denotes the percentage of the forest landscape in a buffer of radius <span class="math inline">\(\delta \in 0.5~\text{Km},1~\text{Km}, \ldots, 5~\text{Km}\)</span> centered on site <span class="math inline">\(i\)</span>.</p>
+
+<img data-src="images/buffer_analysis.png" class="quarto-figure quarto-figure-center r-stretch" width="748"></section>
+<section id="case-study-scale-effect-of-forest-coverage-on-parus-major-2" class="slide level2 smaller">
+<h2>Case Study: Scale effect of forest coverage on <em>Parus major</em></h2>
+<p><strong>Distance weighted analysis</strong> to determine the effect of forest coverage on the distribution of <em>Parus major</em></p>
+<p><span class="math display">\[ \begin{aligned} y_i &amp;\sim \mathrm{Bernoulli}(\theta_i)  \\ \mathrm{logit}(\psi_i) &amp;= \beta_0+ \beta_1 \times f(x(\mathbf{s}_i,\sigma)) \\ f(x(\mathbf{s}_i,\sigma)) &amp; = \sum_{i\neq j} f(\mathbf{s}_j)w(\mathbf{s}_i,\mathbf{s}_j,\sigma) \end{aligned} \]</span> <strong>Results</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Post. mean and 95% CrIs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\beta_0\)</span></td>
+<td><strong>1.01</strong> (0.19, 1.85 )</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta_1\)</span></td>
+<td><strong>0.01</strong> (-0.01, 0.04)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td><strong>1.14</strong> (0.03, 4.59)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/pred_eff_probs.png" class="quarto-figure quarto-figure-center" width="580"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="simulation-study-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simulation Study</h2>
+
+<img data-src="images/sim1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="simulation-study-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simulation Study</h2>
+
+<img data-src="images/sim2.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="simulation-study-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simulation Study</h2>
+
+<img data-src="images/sim3.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="simulation-study-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simulation Study</h2>
+
+<img data-src="images/sim4.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="simulation-study-7" class="slide level2">
+<h2>Simulation Study</h2>
+<ul>
+<li>Compute MAE and correlation of <span class="math inline">\(\lambda(s_{obs})\)</span> and <span class="math inline">\(\hat{\lambda(s_{obs})}\)</span> across 100 data sets for each scenario.</li>
+</ul>
+
+
+
+<img data-src="images/sim_res.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://jbelmont89.github.io/ISI_DF/" style="color:#ccc; padding:20px 30px; display:inline-block; margin:-20px -30px;">Back to Home</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
