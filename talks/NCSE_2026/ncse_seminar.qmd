@@ -361,7 +361,7 @@ lik <- bru_obs(formula = pred,
                data = sf_object ,
                 ...)
 # Step 4. Fit the model
-fit <- fit <- bru(comps, lik, ...)
+fit <- bru(comps, lik, ...)
 
 ```
 :::
@@ -375,7 +375,7 @@ fit <- fit <- bru(comps, lik, ...)
 ::: incremental
 - **Consistent** workflow and user-friendly interface.
 
-- Facilitate **spatial modelling** and **prediction** using integrated nested Laplace approximation
+- Facilitate **spatial modelling** and **prediction** using Integrated Nested Laplace approximation
 
 - Support of commonly used spatial **data formats** like `sf` and `terra`
 

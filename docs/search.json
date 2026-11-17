@@ -116,14 +116,14 @@
     "href": "talks/NCSE_2026/ncse_seminar.html#why-inlabru-2",
     "title": "Flexible Spatial Modelling with inlabru",
     "section": "Why inlabru?",
-    "text": "Why inlabru?\n\n\n\nFitting spatial models in R-INLA interface can be cumbersome for new (and even experienced) users!\nIn many cases, complicated spatial models are just special cases of the same model structure!!\n\nStage 1: What is the distribution of the responses?\nStage 2: What are the model components? and what is their distribution?\nStage 3: What are our prior beliefs about the parameters controlling the components in the model?\n\ninlabru keeps a consistent workflow no matter how complicated your model is\n\n\n\nPoint process model with inlabru\n\n\n\n# Step 1. Define model components\ncmp &lt;- component_1(...) + \n  component_2(...) + ...\n\n# Step 2. Define the model predictor\npred &lt;- geometry ~ component_1 + component_2 + ...\n\n# Step 3. Build the observation model\nlik &lt;- bru_obs(formula = pred,\n               family = \"cp\" ,\n               data = sf_object ,\n                ...)\n# Step 4. Fit the model\nfit &lt;- fit &lt;- bru(comps, lik, ...)"
+    "text": "Why inlabru?\n\n\n\nFitting spatial models in R-INLA interface can be cumbersome for new (and even experienced) users!\nIn many cases, complicated spatial models are just special cases of the same model structure!!\n\nStage 1: What is the distribution of the responses?\nStage 2: What are the model components? and what is their distribution?\nStage 3: What are our prior beliefs about the parameters controlling the components in the model?\n\ninlabru keeps a consistent workflow no matter how complicated your model is\n\n\n\nPoint process model with inlabru\n\n\n\n# Step 1. Define model components\ncmp &lt;- component_1(...) + \n  component_2(...) + ...\n\n# Step 2. Define the model predictor\npred &lt;- geometry ~ component_1 + component_2 + ...\n\n# Step 3. Build the observation model\nlik &lt;- bru_obs(formula = pred,\n               family = \"cp\" ,\n               data = sf_object ,\n                ...)\n# Step 4. Fit the model\nfit &lt;- bru(comps, lik, ...)"
   },
   {
     "objectID": "talks/NCSE_2026/ncse_seminar.html#why-inlabru-3",
     "href": "talks/NCSE_2026/ncse_seminar.html#why-inlabru-3",
     "title": "Flexible Spatial Modelling with inlabru",
     "section": "Why inlabru?",
-    "text": "Why inlabru?\nIn summary\n\nConsistent workflow and user-friendly interface.\nFacilitate spatial modelling and prediction using integrated nested Laplace approximation\nSupport of commonly used spatial data formats like sf and terra\nExtends R-INLA functionality to more general nonlinear predictor expressions via a fixed point iteration scheme.\n\n\n\nIt is named after Scotland’s favorite soft drink"
+    "text": "Why inlabru?\nIn summary\n\nConsistent workflow and user-friendly interface.\nFacilitate spatial modelling and prediction using Integrated Nested Laplace approximation\nSupport of commonly used spatial data formats like sf and terra\nExtends R-INLA functionality to more general nonlinear predictor expressions via a fixed point iteration scheme.\n\n\n\nIt is named after Scotland’s favorite soft drink"
   },
   {
     "objectID": "talks/NCSE_2026/ncse_seminar.html#section-1",
