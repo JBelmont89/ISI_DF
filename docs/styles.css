@@ -25,6 +25,23 @@
 }
 
 
+.talks-year + .talks-year { margin-top: 2.5rem; }
+
+.talks-year-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.talks-year-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.2;
+}
 
 .reveal .slides section:has(pre code:nth-of-type(2).current-fragment) .step1,
 .reveal .slides section:has(pre code:nth-of-type(3).current-fragment) .step2,

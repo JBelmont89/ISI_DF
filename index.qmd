@@ -94,31 +94,47 @@ toc: false
 <section class="talks-section">
   <div class="section-inner">
     <h2 class="section-heading">Talks & Presentations</h2>
-    <div class="talks-grid">
-      <a class="talk-card" href="slides.html" target="_blank">
-        <div class="talk-meta">Regional Statistics Conference · 2026</div>
-        <div class="talk-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></div>
-        <div class="talk-tag">View slides →</div>
-      </a>
-       <a class="talk-card" href="scene/came-for-the-ecology.html" target="_blank">
-        <div class="talk-meta">Leverhulme CDT programme at SCENE· 2026</div>
-        <div class="talk-title">A journey from nature to numbers </div>
-        <div class="talk-tag">View slides →</div>
-      </a>
-        <a class="talk-card" href="talks/NCSE_2026/ncse_seminar.html" target="_blank">
-        <div class="talk-meta">NCSE seminar· 2026</div>
-        <div class="talk-title"> Flexible Spatial Modelling with  <code>inlabru</code>: From Data to Ecological Inference</code></div>
-        <div class="talk-tag">View slides →</div>
-      </a>
-      <!-- Add more talk cards here as you create new presentations -->
-      <!-- Example:
-      <a class="talk-card" href="talks/talk2/slides.html" target="_blank">
-        <div class="talk-meta">Conference Name · Year</div>
-        <div class="talk-title">Your Talk Title Here</div>
-        <div class="talk-tag">View slides →</div>
-      </a>
-      -->
+
+    <!-- New year: copy this whole block, change the year, and put it ABOVE the previous one -->
+    <!--
+    <div class="talks-year">
+      <h3 class="talks-year-heading">2027</h3>
+      <div class="talks-grid">
+        <a class="talk-card" href="talks/EVENT_2027/slides.html" target="_blank" rel="noopener">
+          <div class="talk-meta">Conference Name</div>
+          <div class="talk-title">Your Talk Title Here</div>
+          <div class="talk-tag">View slides →</div>
+        </a>
+      </div>
     </div>
+    -->
+
+    <div class="talks-year">
+      <h3 class="talks-year-heading">2026</h3>
+      <div class="talks-grid">
+        <a class="talk-card" href="slides.html" target="_blank" rel="noopener">
+          <div class="talk-meta">Regional Statistics Conference</div>
+          <div class="talk-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></div>
+          <div class="talk-tag">View slides →</div>
+        </a>
+        <a class="talk-card" href="scene/came-for-the-ecology.html" target="_blank" rel="noopener">
+          <div class="talk-meta">Leverhulme CDT programme at SCENE</div>
+          <div class="talk-title">A journey from nature to numbers</div>
+          <div class="talk-tag">View slides →</div>
+        </a>
+        <a class="talk-card" href="talks/SCENE_2026/rotational_project.pdf" target="_blank" rel="noopener">
+          <div class="talk-meta">Leverhulme CDT programme at SCENE</div>
+          <div class="talk-title">When the unusual matters: How rare extreme events shape ecological processes</div>
+          <div class="talk-tag">View slides →</div>
+        </a>
+        <a class="talk-card" href="talks/NCSE_2026/ncse_seminar.html" target="_blank" rel="noopener">
+          <div class="talk-meta">NCSE seminar</div>
+          <div class="talk-title">Flexible Spatial Modelling with <code>inlabru</code>: From Data to Ecological Inference</div>
+          <div class="talk-tag">View slides →</div>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 

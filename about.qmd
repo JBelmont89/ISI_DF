@@ -14,48 +14,88 @@ toc: false
 
 <section class="talks-full-section">
   <div class="section-inner">
-    <div class="talks-full-grid">
 
-      <a class="talk-card-full" href="slides.html" target="_blank">
-        <div class="talk-card-left">
-          <span class="talk-year">2026</span>
-        </div>
-        <div class="talk-card-right">
-          <p class="talk-event">Regional Statistics Conference · 2026</p>
-          <p class="talk-full-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></p>
-          <p class="talk-desc">Presentation on integrated species distribution models combining citizen science presence-only records with structured survey data via the INLA/inlabru framework.</p>
-          <span class="talk-cta">View slides →</span>
-        </div>
-      </a>
-      <a class="talk-card-full" href="scene/came-for-the-ecology.html" target="_blank">
-        <div class="talk-card-left">
-          <span class="talk-year">2026</span>
-        </div>
-        <div class="talk-card-right">
-          <p class="talk-event">Leverhulme CDT programme at SCENE· 2026</p>
-          <p class="talk-full-title">A journey from nature to numbers </p>
-          <p class="talk-desc">Presentation on the experience from transitiong from ecology to statistics.</p>
-          <span class="talk-cta">View slides →</span>
-        </div>
-      </a>
-     <a class="talk-card-full" href="talks/NCSE_2026/ncse_seminar.html" target="_blank">
-        <div class="talk-card-left">
-          <span class="talk-year">2026</span>
-        </div>
-        <div class="talk-card-right">
-          <p class="talk-event">NCSE seminar· 2026</p>
-          <p class="talk-full-title">Flexible Spatial Modelling with  <code>inlabru</code>: From Data to Ecological Inference </p>
-          <p class="talk-desc">Seminar  for members of the national Centre for Statistical Ecology.</p>
-          <span class="talk-cta">View slides →</span>
-        </div>
-      </a>
+    <!-- =====================================================
+         NEW YEAR: copy this block, change the year in BOTH
+         places, and put it ABOVE the previous year.
+         NEW TALK: copy one <a class="talk-card-full"> … </a>
+         into the right year's grid (newest first).
+         =====================================================
+    <div class="talks-year">
+      <h2 class="talks-year-heading">2027</h2>
+      <div class="talks-full-grid">
 
-      <!-- =====================================================
-           ADD NEW TALKS BELOW — copy and paste the block above
-           and update: href, year, event, title, desc
-           ===================================================== -->
+        <a class="talk-card-full" href="talks/EVENT_2027/slides.html" target="_blank" rel="noopener">
+          <div class="talk-card-left">
+            <span class="talk-year">2027</span>
+          </div>
+          <div class="talk-card-right">
+            <p class="talk-event">Conference Name</p>
+            <p class="talk-full-title">Talk title</p>
+            <p class="talk-desc">One-sentence description.</p>
+            <span class="talk-cta">View slides →</span>
+          </div>
+        </a>
 
+      </div>
     </div>
+    -->
+
+    <div class="talks-year">
+      <h2 class="talks-year-heading">2026</h2>
+      <div class="talks-full-grid">
+
+        <a class="talk-card-full" href="slides.html" target="_blank" rel="noopener">
+          <div class="talk-card-left">
+            <span class="talk-year">2026</span>
+          </div>
+          <div class="talk-card-right">
+            <p class="talk-event">Regional Statistics Conference</p>
+            <p class="talk-full-title">Combining Efforts: Integrating Citizen Science and Survey Data using <code>inlabru</code></p>
+            <p class="talk-desc">Presentation on integrated species distribution models combining citizen science presence-only records with structured survey data via the INLA/inlabru framework.</p>
+            <span class="talk-cta">View slides →</span>
+          </div>
+        </a>
+
+        <a class="talk-card-full" href="scene/came-for-the-ecology.html" target="_blank" rel="noopener">
+          <div class="talk-card-left">
+            <span class="talk-year">2026</span>
+          </div>
+          <div class="talk-card-right">
+            <p class="talk-event">Leverhulme CDT programme at SCENE</p>
+            <p class="talk-full-title">A journey from nature to numbers</p>
+            <p class="talk-desc">Presentation on the experience of transitioning from ecology to statistics.</p>
+            <span class="talk-cta">View slides →</span>
+          </div>
+        </a>
+
+        <a class="talk-card-full" href="talks/SCENE_2026/rotational_project.pdf" target="_blank" rel="noopener">
+          <div class="talk-card-left">
+            <span class="talk-year">2026</span>
+          </div>
+          <div class="talk-card-right">
+            <p class="talk-event">Leverhulme CDT programme at SCENE</p>
+            <p class="talk-full-title">When the unusual matters: How rare extreme events shape ecological processes</p>
+            <p class="talk-desc">Presentation on Extreme Value Theory and Ecology.</p>
+            <span class="talk-cta">View slides →</span>
+          </div>
+        </a>
+
+        <a class="talk-card-full" href="talks/NCSE_2026/ncse_seminar.html" target="_blank" rel="noopener">
+          <div class="talk-card-left">
+            <span class="talk-year">2026</span>
+          </div>
+          <div class="talk-card-right">
+            <p class="talk-event">NCSE seminar</p>
+            <p class="talk-full-title">Flexible Spatial Modelling with <code>inlabru</code>: From Data to Ecological Inference</p>
+            <p class="talk-desc">Seminar for members of the National Centre for Statistical Ecology.</p>
+            <span class="talk-cta">View slides →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
   </div>
 </section>
 ```
