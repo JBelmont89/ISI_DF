@@ -1159,7 +1159,7 @@
     "href": "scene/came-for-the-ecology.html#not-an-easy-journey",
     "title": "I Came for the Ecology, Stayed for the Statistics",
     "section": "Not an easy journey",
-    "text": "Not an easy journey\n\n\n\nMy lectures in Ecology …\n\n\n\n\nMy first lecture in Statistics …\nA board full of equations I couldn’t connect to my data\n\n\\[\np(y \\mid \\theta) = \\binom{n}{y}\\,\\theta^{y}(1-\\theta)^{n-y},\n\\\\\n\\pi(\\theta) = \\frac{\\theta^{a-1}(1-\\theta)^{b-1}}{B(a,b)}\n\\]\n\\[\n\\begin{aligned}\n\\pi(\\theta \\mid y) &= \\frac{p(y \\mid \\theta)\\,\\pi(\\theta)}{\\int_0^1 p(y \\mid \\theta)\\,\\pi(\\theta)\\,d\\theta} \\\\\n&\\propto \\theta^{y}(1-\\theta)^{n-y}\\;\\theta^{a-1}(1-\\theta)^{b-1} \\\\\n&= \\theta^{(a+y)-1}\\,(1-\\theta)^{(b+n-y)-1}\n\\end{aligned}\n\\]\n\\[\n\\theta \\mid y \\sim \\text{Beta}(a + y,\\; b + n - y)\n\\]"
+    "text": "Not an easy journey\n\n\n\nMy lectures in Ecology …\n\n\n\n\nMy first lecture in Statistics …\nA board full of equations I couldn’t connect to my data\n\n\\[p(y \\mid \\theta) = \\binom{n}{y}\\,\\theta^{y}(1-\\theta)^{n-y},\n\\\\\n\\pi(\\theta) = \\frac{\\theta^{a-1}(1-\\theta)^{b-1}}{B(a,b)}\\]\n\\[\\begin{aligned}\n\\pi(\\theta \\mid y) &= \\frac{p(y \\mid \\theta)\\,\\pi(\\theta)}{\\int_0^1 p(y \\mid \\theta)\\,\\pi(\\theta)\\,d\\theta} \\\\\n&\\propto \\theta^{y}(1-\\theta)^{n-y}\\;\\theta^{a-1}(1-\\theta)^{b-1} \\\\\n&= \\theta^{(a+y)-1}\\,(1-\\theta)^{(b+n-y)-1}\n\\end{aligned}\\]\n\\[\\theta \\mid y \\sim \\text{Beta}(a + y,\\; b + n - y)\\]"
   },
   {
     "objectID": "scene/came-for-the-ecology.html#finding-the-links",
@@ -1244,6 +1244,13 @@
     "title": "I Came for the Ecology, Stayed for the Statistics",
     "section": "Thank you",
     "text": "Thank you\n\nQuestions?\nJafet.BelmontOsuna@glasgow.ac.uk"
+  },
+  {
+    "objectID": "scene/came-for-the-ecology.html#workshop-series-on-ecological-statistics-at-uofg",
+    "href": "scene/came-for-the-ecology.html#workshop-series-on-ecological-statistics-at-uofg",
+    "title": "I Came for the Ecology, Stayed for the Statistics",
+    "section": "Workshop series on ecological statistics at UofG",
+    "text": "Workshop series on ecological statistics at UofG"
   },
   {
     "objectID": "talks/NCSE_2026/LICENSE.html",

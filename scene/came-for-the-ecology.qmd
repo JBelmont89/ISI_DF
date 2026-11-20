@@ -121,37 +121,35 @@ My favorite movies ...
 :::
 :::::
 
-
 ## My years as an ecologist
 
-:::: {.columns}
-::: {.column width="45%"}
-::: {.r-stack}
-![](images/clipboard-125254731.png){.fragment .fade-in-then-out fragment-index=1}
+:::::::::: columns
+:::: {.column width="45%"}
+::: r-stack
+![](images/clipboard-125254731.png){.fragment .fade-in-then-out fragment-index="1"}
 
-![](images/clipboard-891136893.png){.fragment fragment-index=2}
-:::
-:::
-
-::: {.column width="55%"}
-::: {.fragment fragment-index=1}
-- Studied Biology at UNAM, México
-:::
-
-::: {.fragment fragment-index=2}
-- Fieldwork in semi-arid environments, working on plant ecophysiology
-:::
-
-::: {.fragment fragment-index=3}
-- What I loved: being outdoors, natural history and ...
-:::
-
-::: {.fragment fragment-index=4}
-complicated things (you will see next)
-:::
+![](images/clipboard-891136893.png){.fragment fragment-index="2"}
 :::
 ::::
 
+::::::: {.column width="55%"}
+::: {.fragment fragment-index="1"}
+- Studied Biology at UNAM, México
+:::
+
+::: {.fragment fragment-index="2"}
+- Fieldwork in semi-arid environments, working on plant ecophysiology
+:::
+
+::: {.fragment fragment-index="3"}
+- What I loved: being outdoors, natural history and ...
+:::
+
+::: {.fragment fragment-index="4"}
+complicated things (you will see next)
+:::
+:::::::
+::::::::::
 
 ## The question that hooked me {.smaller auto-animate="TRUE"}
 
@@ -163,16 +161,15 @@ Does priming affect the germination response of two perennial herb species in a 
 
 ## The question that hooked me {.smaller auto-animate="TRUE"}
 
-:::::: columns
+::::::: columns
 ::: {.column width="45%"}
 Lots of field and lab work
 
 ![](images/proj2.png){fig-align="center" width="530"}
 :::
 
-:::: {.column width="45%"}
-
-:::{.fragment}
+::::: {.column width="45%"}
+::: fragment
 Once I recovered the seeds and exposed them to different treatments
 :::
 
@@ -185,8 +182,8 @@ Once I recovered the seeds and exposed them to different treatments
   - some were dead
   - some were rocks
 :::
-::::
-::::::
+:::::
+:::::::
 
 ## The question that hooked me {.smaller auto-animate="TRUE"}
 
@@ -310,23 +307,17 @@ Postgraduate studies in Applied Statistics & Environmental Statistics, followed 
 A board full of equations I couldn't connect to my data
 
 ::: board
-$$
-p(y \mid \theta) = \binom{n}{y}\,\theta^{y}(1-\theta)^{n-y},
+$$p(y \mid \theta) = \binom{n}{y}\,\theta^{y}(1-\theta)^{n-y},
 \\
-\pi(\theta) = \frac{\theta^{a-1}(1-\theta)^{b-1}}{B(a,b)}
-$$
+\pi(\theta) = \frac{\theta^{a-1}(1-\theta)^{b-1}}{B(a,b)}$$
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \pi(\theta \mid y) &= \frac{p(y \mid \theta)\,\pi(\theta)}{\int_0^1 p(y \mid \theta)\,\pi(\theta)\,d\theta} \\
 &\propto \theta^{y}(1-\theta)^{n-y}\;\theta^{a-1}(1-\theta)^{b-1} \\
 &= \theta^{(a+y)-1}\,(1-\theta)^{(b+n-y)-1}
-\end{aligned}
-$$
+\end{aligned}$$
 
-$$
-\theta \mid y \sim \text{Beta}(a + y,\; b + n - y)
-$$
+$$\theta \mid y \sim \text{Beta}(a + y,\; b + n - y)$$
 
 ```{=html}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -491,3 +482,7 @@ Questions?
 
 [Jafet.BelmontOsuna\@glasgow.ac.uk](jafet.belmontosuna@glasgow.ac.uk)
 :::
+
+## Workshop series on ecological statistics at UofG
+
+![](images/clipboard-814072964.png){fig-align="center" width="431"}
